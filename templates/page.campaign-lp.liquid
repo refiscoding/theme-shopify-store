@@ -1,3 +1,4 @@
+{{ 'product-card-style.compare.css' | asset_url | stylesheet_tag }}
 <!-- Banner -->
 <div class="home-banner-content">
   <div class="home-banner-texts">
@@ -114,7 +115,6 @@
 <div class="list-products-bf">
   <div class="content-bf">
     <h4>Top Products</h4>
-    
       <h4>MS Office</h4>
       {%- assign collection = collections[section.settings.collection-2] -%}
     <section class="deals-of-the-week">
@@ -126,6 +126,9 @@
             </div>
           {% endfor %}
         </div>
+    </div>
+    <div class="product-price">
+      <span class="price">{{ product.price | money }}</span>
     </div>
     <div class="action">
       <a href={{product.url}}>Shop Now</a>
@@ -148,6 +151,9 @@
           {% endfor %}
         </div>
     </div>
+    <div class="product-price">
+      <span class="price">{{ product.price | money }}</span>
+    </div>
     <div class="action">
       <a href={{product.url}}>Shop Now</a>
   </div>
@@ -169,6 +175,9 @@
           {% endfor %}
         </div>
     </div>
+    <div class="product-price">
+      <span class="price">{{ product.price | money }}</span>
+    </div>
     <div class="action">
       <a href={{product.url}}>Shop Now</a>
   </div>
@@ -189,6 +198,9 @@
             </div>
           {% endfor %}
         </div>
+    </div>
+    <div class="product-price">
+      <span class="price">{{ product.price | money }}</span>
     </div>
     <div class="action">
       <a href={{product.url}}>Shop Now</a>
