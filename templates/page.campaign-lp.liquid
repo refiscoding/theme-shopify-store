@@ -113,19 +113,23 @@
 <!-- List of products -->
 <div class="list-products-bf">
   <div class="content-bf">
-    <h2>Top Products</h2>
+    <h4>Top Products</h4>
+    
       <h4>MS Office</h4>
       {%- assign collection = collections[section.settings.collection-2] -%}
     <section class="deals-of-the-week">
 <div class="container">
         <div class="d-flex space-between deals-collection">
-          {% for product in collection.products limit: 4 %}
+          {% for product in collection.products limit: 3 %}
             <div class="deals-collection-product">
               {% include 'product_grid' %}
             </div>
           {% endfor %}
         </div>
     </div>
+    <div class="action">
+      <a href={{product.url}}>Shop Now</a>
+  </div>
 </section>
       <a href="/collections/microsoft-office-2019">View All</a>
   </div>
@@ -137,13 +141,16 @@
     <section class="deals-of-the-week">
 <div class="container">
         <div class="d-flex space-between deals-collection">
-          {% for product in collection.products limit: 4 %}
+          {% for product in collection.products limit: 3 %}
             <div class="deals-collection-product">
               {% include 'product_grid' %}
             </div>
           {% endfor %}
         </div>
     </div>
+    <div class="action">
+      <a href={{product.url}}>Shop Now</a>
+  </div>
 </section>
       <a href="/collections/windows-10">View All</a>    
   </div>
@@ -155,13 +162,16 @@
     <section class="deals-of-the-week">
 <div class="container">
         <div class="d-flex space-between deals-collection">
-          {% for product in collection.products limit: 4 %}
+          {% for product in collection.products limit: 3 %}
             <div class="deals-collection-product">
               {% include 'product_grid' %}
             </div>
           {% endfor %}
         </div>
     </div>
+    <div class="action">
+      <a href={{product.url}}>Shop Now</a>
+  </div>
 </section>
       <a href="/collections/windows-server-2022">View All</a>
   </div>
@@ -173,13 +183,16 @@
     <section class="deals-of-the-week">
 <div class="container">
         <div class="d-flex space-between deals-collection">
-          {% for product in collection.products limit: 4 %}
+          {% for product in collection.products limit: 3 %}
             <div class="deals-collection-product">
               {% include 'product_grid' %}
             </div>
           {% endfor %}
         </div>
     </div>
+    <div class="action">
+      <a href={{product.url}}>Shop Now</a>
+  </div>
 </section>
       <a href="/collections/office-apps">View All</a>
   </div>
