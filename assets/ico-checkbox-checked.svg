@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="10px" viewBox="0 0 12 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>✅</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="1.975219 5.17091757 0.375 6.91210228 4.63703677 10.829086 11.625 2.66249222 9.82818539 1.125 4.43321618 7.42991614"></polygon>
+    </defs>
+    <g id="Login" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Software-Eu-/-Create-Your-Account" transform="translate(-624.000000, -615.000000)">
+            <g id="Login" transform="translate(562.000000, 230.000000)">
+                <g id="Check" transform="translate(60.000000, 382.000000)">
+                    <g id="_-/-Atoms-/-Icons-/-Textbox-Checkmark" transform="translate(2.000000, 2.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Indicator" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

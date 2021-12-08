@@ -1,0 +1,68 @@
+<section style="margin: 60px 0;">
+
+  <h1>Choose your free gift</h1>
+
+  <div class="free-gift-box d-flex space-between align-center">
+    <div class="d-flex space-between align-center">
+
+      {% assign product = all_products[section.settings.usb] %}
+      {% assign variant = product.selected_or_first_available_variant %}
+
+      <img src="{{ product.featured_image | img_url: '165x165' }}">
+
+      <div>
+          <p style="font-size: 18px; margin-bottom: 20px;"><b>{{ product.title }}</b><br>(worth: $35 USD)</p>
+          <a href="/cart/add?id=31097279676486&quantity=1" class="btn-primary" id="btn-select" style="padding: 10px 30px; text-decoration: none;">SELECT</a>
+      </div>
+    </div>
+
+    <div class="d-flex space-between align-center">
+
+      {% assign product = all_products[section.settings.install] %}
+      {% assign variant = product.selected_or_first_available_variant %}
+
+      <img src="{{ product.featured_image | img_url: '165x165' }}">
+
+      <div>
+          <p style="font-size: 18px; margin-bottom: 20px;"><b>{{ product.title }}</b><br>(worth: $45 USD)</p>
+          <a href="/cart/add?id=31097280528454&quantity=1" class="btn-primary" id="btn-select" style="padding: 10px 30px; text-decoration: none;">SELECT</a>
+      </div>
+    </div>
+
+    <div class="d-flex space-between align-center">
+
+      {% assign product = all_products[section.settings.insurance] %}
+      {% assign variant = product.selected_or_first_available_variant %}
+
+      <img src="{{ product.featured_image | img_url: '165x165' }}">
+
+      <div>
+          <p style="font-size: 18px; margin-bottom: 20px;"><b>{{ product.title }}</b><br>(worth: $19 USD)</p>
+          <a href="/cart/add?id=31097282887750&quantity=1" class="btn-primary" id="btn-select" style="padding: 10px 30px; text-decoration: none;">SELECT</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Free Gift",
+  "settings": [
+    {
+      "type": "product",
+      "id": "usb",
+      "label": "USB backup"
+    },
+    {
+      "type": "product",
+      "id": "install",
+      "label": "Installation Service"
+    },
+    {
+      "type": "product",
+      "id": "insurance",
+      "label": "Software Insurance"
+    }
+  ]
+}
+{% endschema %}

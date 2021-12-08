@@ -1,0 +1,169 @@
+{{ 'page-compare-microsoft-office-2021.css' | asset_url | stylesheet_tag }}
+{{ 'text-image.css' | asset_url | stylesheet_tag }}
+{{ 'product-card-style.compare.css' | asset_url | stylesheet_tag }}
+<div class="page-compare-office-2021">
+    <section class="compare-offices">
+        <h1>Compare MS Office 2021 Editions</h1>
+        {% capture extraContent %}
+            <ul class="extra-info-content">
+                <li>
+                    <span class="icon"><i class="fas fa-check"></i></span>
+                    <span>lifetime standard license</span>
+                </li>
+                <li>
+                    <span class="icon"><i class="fas fa-check"></i></span>
+                    <span>works on Windows 10 & Mac OS 10.12 & up</span>
+                </li>
+                <li>
+                    <span class="icon"><i class="fas fa-check"></i></span>
+                    <span>works with Visio 2019 & Project 2019</span>
+                </li>
+                <li>
+                    <span class="icon"><i class="fas fa-check"></i></span>
+                    <span>24/7 live chat tech support</span>
+                </li>
+            </ul>
+        {% endcapture %}
+        <div class="compare-list slick-me">
+            <div class="compare-list-item">
+                {% assign product = all_products['microsoft-office-2021-home-student-pc'] %}
+                {% assign macVersion = all_products['microsoft-office-2021-home-student-mac'] %}
+                {% assign apps = 'word,powerpoint,excel,onenote' %}
+                {% include 'product-card-style-compare' %}
+            </div>
+
+            <div class="compare-list-item">
+                {% assign product = all_products['microsoft-office-2021-home-and-business-pc'] %}
+                {% assign macVersion = all_products['microsoft-office-2021-home-and-business-mac'] %}
+                {% assign apps = 'word,powerpoint,excel,onenote,outlook' %}
+                {% include 'product-card-style-compare' %}
+            </div>
+
+            <div class="compare-list-item">
+                {% assign product = all_products['microsoft-office-2021-professional'] %}
+                {% assign macVersion = false %}
+                {% assign apps = 'word,powerpoint,excel,onenote,outlook,publisher,access' %}
+                {% include 'product-card-style-compare' %}
+            </div>
+
+            <div class="compare-list-item">
+                {% assign product = all_products['microsoft-office-2021-professional-plus'] %}
+                {% assign macVersion = false %}
+                {% assign apps = 'word,powerpoint,excel,onenote,outlook,publisher,access' %}
+                {% include 'product-card-style-compare' %}
+            </div>
+        </div>
+    </section>
+    <section class="what-is-new">
+        <h3>What's new in Office 2021</h3>
+        {% assign title = 'New Excel' %}
+        {% assign image = 'page-compare-office-2021_laptop-excel.png' | file_url %}
+        {% assign imageHeight = '578px' %}
+        {% assign isRight = false %}
+        {% assign extraClass = '' %}
+        {% assign content = '' %}
+        {% capture content %}
+            <p><strong>XLOOKUP:</strong>  Row by row, find anything you need in a table or range with XLOOKUP.</p>
+            <p><strong>Dynamic arrays:</strong>  You can now write one formula in Excel and return an array of values. Use Excel to expedite calculations and insights with 6 new functions: FILTER, SORT, SORTBY, UNIQUE, SEQUENCE, and RANDARRAY.</p>
+            <p><strong>LET function:</strong> Microsoft has included the LET function in Office 2021. It assigns names to calculation results to store intermediate calculations, values, or defining names inside a formula.</p>
+            <p><strong>XMATCH function:</strong> The XMATCH function in Excel searches for a specified item in an array/range of cells and returns the item's relative position. XMATCH can also help you return a value in an array.</p>
+        {% endcapture %}
+        {% include 'text-image' %}
+
+        {% assign title = 'New in Outlook' %}
+        {% assign image = 'page-compare-office-2021_laptop-outlook.png' | file_url %}
+        {% assign imageHeight = '578px' %}
+        {% assign isRight = true %}
+        {% assign extraClass = 'gray-background' %}
+        {% assign content = '' %}
+        {% capture content %}
+            <p><strong>Translator and ink in Outlook:</strong> Translate email messages into more than 70 languages and view the transcript— all within Outlook.</p>
+            <p><strong>Drawing/inking:</strong> Annotate email images or draw in a separate canvas using your finger, pen, or mouse.</p>
+            <p><strong>Instant search:</strong> use Instant Search in Outlook to quickly find emails. Select the search bar (located above the Outlook ribbon) to help find email messages anywhere in Outlook. Just like you do in, say, Gmail.</p>
+            <p>New in PowerPoint </p>
+            <p><strong>New and improved Record Slide Show:</strong> You can now record Slide Show. Office 2021 now supports presenter video recording, laser pointer recording, and ink recording.</p>
+            <p><strong>Replay your ink strokes:</strong> Draw and replay your ink strokes as they were drawn. This allows you to illustrate things step by step or even show a thought process. You can also pause the replay and select the point to start the replay.</p>
+            <p><strong>Arrange elements on your slides for screen readers:</strong> Select elements in screen-reading order and rearrange them as necessary. This allows you to communicate your message effectively.</p>
+        {% endcapture %}
+        {% include 'text-image' %}
+
+        {% assign title = 'New in Access' %}
+        {% assign image = 'page-compare-office-2021_laptop-access.png' | file_url %}
+        {% assign imageHeight = '578px' %}
+        {% assign isRight = false %}
+        {% assign extraClass = '' %}
+        {% assign content = '' %}
+        {% capture content %}
+            <p><strong>Refresh, remove or relink linked tables:</strong> Access now has an updated Linked Table Manager in a central location for viewing and managing all data sources and linked tables in the database.</p>
+            <p><strong>The new Date/Time Extended data type:</strong> Access has an updated Date/Time data type to enhance syntax compatibility with SQL and increase accuracy and level of detail in records that include dates and times. Microsoft implemented the SQL DateTime2 data type into Access.</p>
+            <p><strong>Tab manager:</strong> Keep tabs on your database objects in Access. You can see the active tab, easily drag tabs to rearrange them, and close database objects with just one click.</p>
+        {% endcapture %}
+        {% include 'text-image' %}
+
+        {% assign title = 'New in Visio' %}
+        {% assign image = 'page-compare-office-2021_laptop-visio.png' | file_url %}
+        {% assign imageHeight = '578px' %}
+        {% assign isRight = true %}
+        {% assign extraClass = 'gray-background' %}
+        {% assign content = '' %}
+        {% capture content %}
+            <p><strong>New Azure stencils and shapes:</strong> Visio now has more stencils to help you create up-to-date Azure diagrams. You can build Azure diagrams for network topologies, virtual machine configurations, operations, and more.</p>
+            <p><strong>New AWS stencils and shapes:</strong> Visio now has infrastructure shapes from Amazon Web Services (AWS). You can use stencils with the latest AWS shapes to you create diagrams.</p>
+            <p><strong>Content for social distancing planning in the workplace:</strong> The new Visio template, and the Workplace Social Distancing stencil, provide several shapes, fill patterns, and line patterns, both scaled and unscaled, to help space replanning.</p>
+        {% endcapture %}
+        {% include 'text-image' %}
+
+        {% assign title = 'New in Word' %}
+        {% assign image = 'page-compare-office-2021_laptop-word.png' | file_url %}
+        {% assign imageHeight = '578px' %}
+        {% assign isRight = false %}
+        {% assign extraClass = '' %}
+        {% assign content = '' %}
+        {% capture content %}
+            <p><strong>Find what you need with Microsoft Search:</strong> This powerful tool helps you quickly find what you're looking for, such as text, commands, help, and more.</p>
+            <p><strong>Try the Sketched style outline:</strong> You can give a casual, hand-drawn look to shapes in your presentations with the Sketched style outline.</p>
+        {% endcapture %}
+        {% include 'text-image' %}
+    </section>
+    <section class="footer-shop-now">
+        <h4>Shop Office 2021 Today at Discounted Prices. Our Offer comes With a Lifetime Customer Support.</h4>
+        <a href="/collections/microsoft-office-2021">Shop MS Office 2021</a>
+    </section>
+</div>
+<script type="text/javascript">
+    let waitJQuery = setInterval(function() {
+        if (typeof $ == "function") {
+            clearInterval(waitJQuery);
+
+            $('.slick-me').slick({
+                dots: false,
+                arrows: false,
+                infinite: false,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                responsive: [
+                    {
+                        breakpoint: 720,
+                        settings: {
+                            dots: false,
+                            arrows: false,
+                            infinite: true,
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            dots: false,
+                            arrows: false,
+                            infinite: true,
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        }
+    }, 300);
+</script>

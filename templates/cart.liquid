@@ -1,0 +1,302 @@
+<!----- Mobile cart ----->
+
+<form action="/cart" method="post" novalidate class="mobile-only"
+      style="position: fixed; width: 100%; bottom: calc(100% - 87.5%);">
+
+    <div class="cart-item" style="display: none;">
+            {% for item in cart.items %}
+
+            <div class="d-flex space-between align-center">
+
+              <div class="cart-line-item-info">
+
+              <div class="line-item-title">
+
+                {% unless item.product.has_only_default_variant %}
+                  <p class="visually-hidden">{{ item.variant.title }}</p>
+                {% endunless %}
+
+                {%- assign property_size = item.properties | size -%}
+
+                {% if property_size > 0 %}
+                  {% for p in item.properties %}
+                    {% unless p.last == blank %}
+                    {{ p.first }}:
+
+                    {% if p.last contains '/uploads/' %}
+                      <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                    {% else %}
+                      {{ p.last }}
+                    {% endif %}
+
+                    {% endunless %}
+                  {% endfor %}
+                {% endif %}
+
+                <div class="price medium-up--hide">
+                {% if item.original_line_price != item.line_price %}
+                  <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
+                  <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_price" style="display:none !important;"></span>
+                  {{ item.price | money }}
+                  <span class="visually-hidden">{{ 'cart.label.original_price' | t }}</span>
+                  <s>{{ item.original_price | money }}</s>
+                {% else %}
+                <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_total" style="display:none !important;"></span>
+                  {{ item.price | money }}
+                {% endif %}
+                </div>
+              </div>
+
+              <div class="d-flex space-between align-center">
+
+              <div class="line-item-price">
+                {% if item.original_line_price != item.line_price %}
+                  <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
+                  {{ item.price | money }}
+                  <span class="visually-hidden">{{ 'cart.label.original_price' | t }}</span>
+                  <s>{{ item.original_price | money }}</s>
+                {% else %}
+                <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_total" style="display:none !important;"></span>
+                  {{ item.price | money }}
+                {% endif %}
+              </div>
+
+                <div class="input-quantity">
+                  <button class="minus"></button>
+                  <input type="number"
+                        id="updates_{{ item.key }}"
+                        name="updates[]"
+                        value="{{ item.quantity }}"
+                        min="1"
+                        aria-label="{{ 'cart.general.item_quantity' | t }}">
+                  <button class="plus"></button>
+                </div>
+
+              </div>
+
+              <div class="shopping-cart__product-removal grid__item">
+                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
+                  {% include 'icon-delete' %}
+                </a>
+              </div>
+
+            </div>
+
+            </div>
+
+            {% endfor %}
+    </div>
+
+     <input class="btn-primary" type="submit" name="checkout" value="Checkout" style="width: 100%;"/>
+
+  {% comment %}{% section 'cart-upsell-product' %}{% endcomment %}
+
+  </form>
+
+<!----- Desktop cart ----->
+
+<div class="container">
+<div class="shopping-cart">
+
+  {% if cart.item_count > 0 %}
+
+  <form action="/cart" method="post" novalidate>
+
+    <div class="shopping-cart__header d-flex space-between align-center">
+      <h1>{{ 'cart.general.title' | t }}</h1>
+        <input class="btn-primary top-checkout uppercase" type="submit" name="checkout" value="Checkout" />
+    </div>
+
+
+    <div class="cart-item-title d-flex align-center">
+      <p style="flex: 0 0 62.5%;">Product</p>
+      <p style="flex: 0 0 18.5%;">Quantity</p>
+      <p>Subtotal</p>
+    </div>
+
+      <div class="cart-item">
+              {% for item in cart.items %}
+
+              <div class="d-flex align-center">
+
+                <div class="cart-line-item-image">
+                  {% if item.image != blank %}
+                      {{ item | img_url: "182x182" | img_tag: item.title }}
+                  {% endif %}
+                </div>
+
+                <div class="line-item-title">
+                  <h5>{{ item.product.title }}</h5>
+                  <div class="d-flex space-between promise-text">
+                    <p>{% include 'icon-tick' %}<b>FREE SHIPPING</b></p>
+                    <p>{% include 'icon-tick' %}<b>60 DAYS MONEY BACK</b></p>
+                  </div>
+                  {% unless item.product.has_only_default_variant %}
+                    <p class="visually-hidden">{{ item.variant.title }}</p>
+                  {% endunless %}
+
+                  {%- assign property_size = item.properties | size -%}
+
+                  {% if property_size > 0 %}
+                    {% for p in item.properties %}
+                      {% unless p.last == blank %}
+                      {{ p.first }}:
+
+                      {% if p.last contains '/uploads/' %}
+                        <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                      {% else %}
+                        {{ p.last }}
+                      {% endif %}
+
+                      {% endunless %}
+                    {% endfor %}
+                  {% endif %}
+
+                  <div class="price medium-up--hide" style="display: none;">
+                  {% if item.original_line_price != item.line_price %}
+                    <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
+                    <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_price" style="display:none !important;"></span>
+                    {{ item.price | money }}
+                    <span class="visually-hidden">{{ 'cart.label.original_price' | t }}</span>
+                    <s>{{ item.original_price | money }}</s>
+                  {% else %}
+                  <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_total" style="display:none !important;"></span>
+                    {{ item.price | money }}
+                  {% endif %}
+                  </div>
+
+                </div>
+
+                <div class="input-quantity">
+                  <button class="minus"></button>
+                  <input type="number"
+                        id="updates_{{ item.key }}"
+                        name="updates[]"
+                        value="{{ item.quantity }}"
+                        min="1"
+                        aria-label="{{ 'cart.general.item_quantity' | t }}">
+                  <button class="plus"></button>
+
+                </div>
+
+
+                <div class="line-item-price">
+                  {% if item.original_line_price != item.line_price %}
+                    <span class="visually-hidden">{{ 'cart.label.discounted_price' | t }}</span>
+                    {{ item.price | money }}
+                    <span class="visually-hidden">{{ 'cart.label.original_price' | t }}</span>
+                    <s>{{ item.original_price | money }}</s>
+                  {% else %}
+                  <span class="Bold-theme-hook-DO-NOT-DELETE bold_cart_item_total" style="display:none !important;"></span>
+                    {{ item.price | money }}
+                  {% endif %}
+                </div>
+
+
+
+
+              <div class="shopping-cart__product-removal">
+                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
+                  {% include 'icon-delete' %}
+                </a>
+              </div>
+
+              </div>
+
+              {% endfor %}
+      </div>
+
+      <!-- Free Gift
+
+      {% for item in cart.items %}
+
+      {% if item.product.title == "Windows 10 Pro Edition 64 Bit" %}
+
+      {% section 'free-gift' %}
+
+      {% elsif item.product.title == "Microsoft Office 2011 Home and Student for Mac" %}
+
+      {% section 'free-gift' %}
+
+
+      {% elsif item.product.title == "Microsoft Office 2016 Home and Student for Mac" %}
+
+      {% section 'free-gift' %}
+
+      {% elsif item.product.title == "Microsoft Office 2019 Home and Student for Mac" %}
+
+      {% section 'free-gift' %}
+
+      {% elsif item.product.title == "Microsoft Office 2019 Home and Student" %}
+
+      {% section 'free-gift' %}
+
+      {% elsif item.product.title == "Microsoft Office 2019 Home and Business" %}
+
+      {% section 'free-gift' %}
+
+      {% else %}
+
+
+      {% endif %}
+
+      {% endfor %}
+
+      -->
+
+
+      <div class="d-flex space-between align-center cart-total">
+        <p><b>Total</b></p>
+        <div>
+          <h6>{{ cart.total_price | money }}</h6>
+        </div>
+      </div>
+
+          <p class="text-center" style="margin: 40px; font-size: 18px; border: 1px solid #01303f; padding: 15px 0;">
+            *Prices will be shown in USD at checkout, to pay in local currency, choose <b>Paypal</b> at checkout.
+          </p>
+
+    {% comment %}{% section 'cart-upsell-product' %}{% endcomment %}
+
+    <div class="d-flex space-between align-center cart-badge desktop-only">
+      <img src="{{ 'icon-trust-business.png' | asset_img_url: 'master' }}">
+      <img src="{{ 'reseller.png' | asset_img_url: 'master' }}">
+      <img src="{{ 'icon-bbb.png' | asset_img_url: 'master' }}">
+      <img src="{{ 'jabber.png' | asset_img_url: 'master' }}">
+      <img src="{{ 'icon-trust-privacy.png' | asset_img_url: 'master' }}">
+    </div>
+
+    <button class="btn-primary uppercase bottom-checkout d-flex align-center" type="submit" name="checkout">
+      <div class="d-flex space-between align-center" style="width: 250px; margin: 0 auto;">
+        <p>checkout</p>
+        <p>{{ cart.total_price | money_with_currency }}</p>
+      </div>
+    </button>
+
+    </form>
+
+
+  {% else %}
+
+    <h1>{{ 'cart.general.title' | t }}</h1>
+
+    {% comment %}
+    Cart empty state
+    {% endcomment %}
+    <div class="supports-cookies">
+      <p>{{ 'cart.general.empty' | t }}</p>
+      <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+    </div>
+
+    {% comment %}
+    Cart no cookies state
+    ---------------------
+    Browser cookies are required to use the cart. If cookies aren't enabled in the
+    browser a message is displayed prompting the user to enable them.
+    {% endcomment %}
+    <div class="supports-no-cookies">
+      <p>{{ 'cart.general.cookies_required' | t }}</p>
+    </div>
+  {% endif %}
+</div>
+</div>

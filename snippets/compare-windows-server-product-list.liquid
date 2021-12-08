@@ -1,0 +1,41 @@
+{% assign handles = 'windows-server-2022-datacenter,windows-server-2019-standard-core-licenses,windows-server-2016-standard,standard,microsoft-windows-server-2012-standard' | split: ',' %}
+
+<div class="product-list centered">
+    <ul class="custom-table">
+        <li></li>
+        {% for handle in handles %}
+            {% assign item = all_products[handle] %}
+            {% assign title = '' %}
+            {% assign shopNowUrl = '#' %}
+
+            {% if handle == 'windows-server-2022-datacenter' %}
+                {% assign title = 'Windows Server 2022' %}
+                {% assign shopNowUrl = '/collections/windows-server-2022' %}
+            {% elsif handle == 'microsoft-windows-server-2012-standard' %}
+                {% assign title = 'Windows Server 2012/2012 R2' %}
+                {% assign shopNowUrl = '/collections/windows-server-2012' %}
+            {% elsif handle == 'windows-server-2016-standard' %}
+                {% assign title = 'Windows Server 2016' %}
+                {% assign shopNowUrl = '/collections/windows-server-2016' %}
+            {% elsif handle == 'windows-server-2019-standard-core-licenses' %}
+                {% assign title = 'Windows Server 2019' %}
+                {% assign shopNowUrl = '/collections/windows-server' %}
+            {% endif %}
+
+            <li>
+                <div class="image-box">
+                    <img src="{{ item | img_url: 'small' }}" alt="Product Image" title="{{title}}"/>
+                </div>
+                <h4 class="title">
+                    {{ title }}
+                </h4>
+                <div class="price-box">
+                    <span class="from-price">From {{ item.price | money }}</span>
+                </div>
+                <a class="shop-now" href="{{ shopNowUrl }}">
+                    Shop Now
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

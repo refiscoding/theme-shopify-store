@@ -1,0 +1,2068 @@
+<div class="page-width">
+
+  <div class="uk-margin-left uk-margin-right">
+
+      
+	{% if page.handle contains "office-2019" %}
+    <div class="landing-page-compare">
+      <div class="title-compare">
+          <h1>Editions of Microsoft Office 2019</h1>
+          <p>Office 2019 comes in five editions with each edition targeting a unique group of users.
+          Understanding which edition works best for your line of work is the key to getting the most out of Office 2019.</p>
+      </div>
+     </div>
+    {% elsif page.handle contains "office-2016" %}
+    	<h2 class="uk-margin-medium-top uk-text-center"><b>{{ page.title }}</b></h2>
+    {% endif %}
+    {% if page.handle contains "office-2019" %}
+      <div class="uk-overflow-auto">
+        <!-- product info-->
+        <div class="content-bf">
+        <ul class="d-flex flex-wrap space-between recomm-container">
+              {%- for link in linklists.office-2019.links -%}
+                <li style="width:150px; border: 1px solid #FAFAFA; border-radius: 2px;list-style:none;">
+                  <div class="uk-background-primary uk-padding-small-bottom">
+                    <p class="uk-text-center large-txt uk-padding-xsmall-top uk-padding-small-left uk-padding-small-right"
+                       style="height: 120px;"><b>{{ link.object.title | remove: "Microsoft" }}</b></p>
+        			<img data-src="{{ link.object.featured_image | img_url: 'master' }}" uk-img src="{{ link.object.featured_image | img_url: 'master' }}" style="max-width:100%;">
+                    <p class="text-center large-txt"><b>{{ link.object.price | money_with_currency }}</b></p>
+                    <form class="product-form" action="/cart/add" data-productid="{{ link.object.id}}"  method="post">
+                      <input type="hidden" name="id" data-productid="{{ link.object.id}}" class="product-select" value="{{ link.object.variants[0].id }}" data-variant-title="{{ link.object.variants[0].title }}" />
+                      <button type="submit" class="btn-primary uppercase" style="padding: 10px;">
+                        <span class="btn-white-label"><b>ADD TO CART</b></span>
+                        <span uk-icon="icon: cart" class="uk-margin-small-left"></span>
+                      </button>
+                    </form>
+                  </div>
+                    <ul class="uk-padding-small-left uk-padding-small-right">
+                      <li class="font-medium medium-txt uk-margin-small-top"><span uk-icon="icon: check"></span>office apps</li>
+                      <ul class="uk-list uk-list-bullet uk-padding-small-left small-txt">
+                        <li>Word</li>
+                        <li>Powerpoint</li>
+                        <li>Excel</li>
+                        <li>OneNote</li>
+                        {% if link.object.handle != "office2019hs" %}
+                          <li>Outlook</li>
+                        {% endif %}
+                        {% if link.object.handle != "office2019hs" and link.object.handle != "office2019hb" %}
+                          <li>Publisher</li>
+                        {% endif %}
+                        {% if link.object.handle != "office2019hs" and link.object.handle != "office2019hb" and link.object.handle != "office2019stdol" %}
+                          <li>Access</li>
+                        {% endif %}
+                      </ul>
+
+                      <li class="uk-flex uk-margin-small-top">
+                        <span uk-icon="icon: check" style="width: 30%;"></span><p class="font-medium medium-txt">lifetime standard license</p>
+                      </li>
+
+                      <li class="uk-flex uk-margin-small-top">
+                        {% if link.object.handle == "office2019hs" or link.object.handle == "office2019hb" %}
+                          <span uk-icon="icon: check" style="width: 40%;"></span><p class="font-medium medium-txt">works on Windows 10 & Mac OS 10.12 & up</p>
+                        {% else %}
+                          <span uk-icon="icon: check" style="width: 30%;"></span><p class="font-medium medium-txt">works on Windows 10</p>
+                        {% endif %}
+                      </li>
+
+                      <li class="uk-flex uk-margin-small-top">
+                        <span uk-icon="icon: check" style="width: 35%;"></span><p class="font-medium medium-txt">works with Visio 2019 & Project 2019</p>
+                      </li>
+
+                      <li class="uk-flex uk-margin-small-top">
+                        <span uk-icon="icon: check" style="width: 30%;"></span><p class="font-medium medium-txt">24/7 live chat customer support</p>
+                      </li>
+                    </ul>
+
+                  <!-- learn more -->
+                    <div class="uk-block uk-fit-content uk-margin-auto uk-margin-top uk-margin-bottom">
+                      <a href="{{ link.url }}" class="medium-txt uk-margin-auto">
+                        <b><span class="btn-label">LEARN MORE</span></b>
+                        <span uk-icon="icon: chevron-right; ratio: 1.15;"></span>
+                      </a>
+                    </div>
+                </li>
+              {% endfor %}
+        </ul>
+        </div>
+      </div>
+
+    {% elsif page.handle contains "office-2016" %}
+      <div class="uk-overflow-auto">
+        <!-- product info-->
+        <ul class="uk-flex uk-flex-between uk-margin-medium-top">
+            {%- for link in linklists.office-2016.links -%}
+              <li class="uk-width-1-5-1-2@m" style="border: 1px solid #FAFAFA; border-radius: 2px;">
+                <div class="uk-background-primary uk-padding-small-bottom">
+                  <p class="uk-text-center large-txt uk-padding-xsmall-top uk-padding-small-left uk-padding-small-right" style="height: 75px;">
+                    <b>{{ link.object.title | remove: "Microsoft" }}</b>
+                  </p>
+                  <img data-src="{{ link.object.featured_image | img_url: 'master' }}" uk-img>
+                  <p class="text-center large-txt"><b>{{ link.object.price | money_with_currency }}</b></p>
+                  <form class="product-form" action="/cart/add" data-productid="{{ link.object.id}}"  method="post">
+                    <input type="hidden" name="id" data-productid="{{ link.object.id}}" class="product-select" value="{{ link.object.variants[0].id }}" data-variant-title="{{ link.object.variants[0].title }}" />
+                    <button type="submit" class="add-to-cart uk-text-white uk-margin-top uk-display-block uk-margin-auto">
+                      <span class="btn-white-label"><b>ADD TO CART</b></span>
+                      <span uk-icon="icon: cart" class="uk-margin-small-left"></span>
+                    </button>
+                  </form>
+                </div>
+                  <ul style="padding: 0 30px;">
+                    <li class="font-medium uk-margin-small-top"><span uk-icon="icon: check"></span>office apps</li>
+                    <ul class="uk-list uk-list-bullet uk-padding-small-left medium-txt">
+                      <li>Word</li>
+                      <li>Powerpoint</li>
+                      <li>Excel</li>
+                      <li>OneNote</li>
+                      {% if link.object.handle != "office2016hs" %}
+                        <li>Outlook</li>
+                      {% endif %}
+                      {% if link.object.handle != "office2016hs" and link.object.handle != "office2016hb" %}
+                        <li>Publisher</li>
+                      {% endif %}
+                      {% if link.object.handle != "office2016hs" and link.object.handle != "office2016hb" and link.object.handle != "office2016std_ol" %}
+                        <li>Access</li>
+                      {% endif %}
+                    </ul>
+
+                    <li class="uk-flex uk-margin-small-top">
+                      <span uk-icon="icon: check" style="width: 30%;"></span><p class="font-medium">lifetime standard license</p>
+                    </li>
+
+                    <li class="uk-flex uk-margin-small-top">
+                      {% if link.object.handle == "office2016hs" or link.object.handle == "office2016hb" %}
+                        <span uk-icon="icon: check" style="width: 20%;"></span><p class="font-medium">for 1 Pc / Mac</p>
+                      {% else %}
+                        <span uk-icon="icon: check" style="width: 20%;"></span><p class="font-medium">for 1 Pc</p>
+                      {% endif %}
+                    </li>
+
+                    <li class="uk-flex uk-margin-small-top">
+                      <span uk-icon="icon: check" style="width: 35%;"></span><p class="font-medium">works with Visio 2016 & Project 2016</p>
+                    </li>
+
+                    <li class="uk-flex uk-margin-small-top">
+                      <span uk-icon="icon: check" style="width: 30%;"></span><p class="font-medium">24/7 live chat customer support</p>
+                    </li>
+                  </ul>
+
+                <!-- learn more -->
+                  <div class="uk-block uk-fit-content uk-margin-auto uk-margin-top uk-margin-bottom">
+                    <a href="{{ link.url }}" class="medium-txt uk-margin-auto">
+                      <b><span class="btn-label">LEARN MORE</span></b>
+                      <span uk-icon="icon: chevron-right; ratio: 1.15;"></span>
+                    </a>
+                  </div>
+              </li>
+            {% endfor %}
+      </ul>
+      </div>
+
+    {% elsif page.handle contains "office-365" %}
+
+      <ul uk-switcher class="uk-flex uk-flex-between uk-margin-medium-top">
+        <li class="product-switcher uk-text-center uk-background-primary uk-padding-xsmall uk-width-1-3-1-2@m"><a href="#">Home & Personal</a></li>
+        <li class="product-switcher uk-text-center uk-background-primary uk-padding-xsmall uk-width-1-3-1-2@m"><a href="#">Business</a></li>
+        <li class="product-switcher uk-text-center uk-background-primary uk-padding-xsmall uk-width-1-3-1-2@m"><a href="#">Enterprise</a></li>
+      </ul>
+
+        <ul class="uk-switcher uk-overflow-auto">
+          <!-- home & personal -->
+            <li>
+              <!-- product info-->
+              <ul class="uk-flex uk-flex-between uk-margin-medium-top">
+                  <li style="width: 200px"></li>
+                  {%- for link in linklists.office-365-home-personal.links -%}
+                    <li class="uk-flex uk-flex-column uk-flex-middle" style="width: 200px;">
+                      <div class="uk-padding-small-bottom">
+                        <p class="uk-text-center large-txt uk-padding-xsmall-top uk-padding-small-left uk-padding-small-right" style="height: 85px;">
+                          <b>{{ link.object.title }}</b>
+                        </p>
+                        <img class="uk-display-block uk-fit-content uk-margin-auto" data-src="{{ link.object.featured_image | img_url: '150x' }}" uk-img>
+                        <h4 class="text-center"><b>{{ link.object.price | money_with_currency }}</b></h4>
+                        <form class="product-form uk-display-block uk-fit-content uk-margin-auto" action="/cart/add" data-productid="{{ link.object.id}}"  method="post">
+                          <input type="hidden" name="id" data-productid="{{ link.object.id}}" class="product-select" value="{{ link.object.variants[0].id }}" data-variant-title="{{ link.object.variants[0].title }}" />
+                          <button type="submit" class="add-to-cart uk-text-white uk-margin-top small--hide">
+                            <span class="btn-white-label"><b>ADD TO CART</b></span>
+                            <span uk-icon="icon: cart" class="uk-margin-small-left"></span>
+                          </button>
+                          <button type="submit" class="add-to-cart xsmall-txt uk-text-white uk-margin-top medium-up--hide" style="padding: 10px;">
+                            <span class="btn-white-label"><b>ADD TO CART</b></span>
+                            <span uk-icon="icon: cart" class="uk-margin-small-left"></span>
+                          </button>
+                        </form>
+                      </div>
+                    </li>
+                  {% endfor %}
+              </ul>
+
+              <ul class="uk-flex uk-flex-between" uk-accordion>
+                <li class="large-txt" style="width: 200px">
+                  <a class="uk-accordion-title" href="#" style="background: transparent; padding: 0;"><b>office apps</b></a>
+                  <ul class="uk-accordion-content uk-list uk-list-bullet medium-txt" style="padding: 0;">
+                    <li>Word</li>
+                    <li>Powerpoint</li>
+                    <li>Excel</li>
+                    <li>OneNote</li>
+                    <li>Outlook</li>
+                    <li>Publisher (Pc only)</li>
+                    <li>Access (Pc only)</li>
+                  </ul>
+                </li>
+                <li class="uk-text-center" style="width: 200px; margin-top: 0;">
+                  <span uk-icon="icon: check; ratio: 1.15"></span>
+                </li>
+                <li class="uk-text-center" style="width: 200px; margin-top: 0;">
+                  <span uk-icon="icon: check; ratio: 1.15"></span>
+                </li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between" uk-accordion>
+                <li class="large-txt" style="width: 200px;">
+                  <a class="uk-accordion-title" href="#" style="background: transparent; padding: 0;"><b>services</b></a>
+                    <ul class="uk-accordion-content uk-list uk-list-bullet medium-txt" style="padding: 0;">
+                      <li>OneDrive</li>
+                      <li>Skype</li>
+                    </ul>
+                </li>
+                <li class="uk-text-center" style="width: 200px; margin-top: 0"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+                <li class="uk-text-center" style="width: 200px; margin-top: 0;"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li style="width: 200px;"><b>user, device</b></li>
+                <li class="uk-text-center" style="width: 200px;">1 user, across all devices</li>
+                <li class="uk-text-center" style="width: 200px;">6 users max, across all devices</li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li style="width: 200px;"><b>subscription</b></li>
+                <li class="uk-text-center" style="width: 200px">yearly</li>
+                <li class="uk-text-center" style="width: 200px">yearly</li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li style="width: 200px"><b>storage</b></li>
+                <li class="uk-text-center" style="width: 200px">6TB OneDrive cloud storage</li>
+                <li class="uk-text-center" style="width: 200px">1TB OneDrive cloud storage</li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between uk-flex-middle">
+                <li style="width: 200px"><b>Works on<br/>Windows, macOS,<br/>iOS & Android</b></li>
+                <li class="uk-text-center" style="width: 200px"><span uk-icon="icon: check; ratio: 1.15"></li>
+                <li class="uk-text-center" style="width: 200px"><span uk-icon="icon: check; ratio: 1.15"></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li style="width: 200px"><b>24/7 customer support</b></li>
+                <li class="uk-text-center" style="width: 200px"><span uk-icon="icon: check; ratio: 1.15"></li>
+                <li class="uk-text-center" style="width: 200px"><span uk-icon="icon: check; ratio: 1.15"></li>
+              </ul>
+              <hr>
+            </li>
+          <!-- business -->
+            <li style="width: 1110px">
+                <!-- product info-->
+                <ul class="uk-flex uk-flex-between uk-margin-medium-top">
+                    <li style="width: 200px;"></li>
+                    {%- for link in linklists.office-365-business.links -%}
+                      <li class="uk-width-1-4">
+                        <div class="uk-padding-small-bottom">
+                          <p class="uk-text-center large-txt uk-padding-xsmall-top uk-padding-small-left uk-padding-small-right" style="height: 60px;">
+                            <b>{{ link.object.title }}</b>
+                          </p>
+                          <img class="uk-display-block uk-fit-content uk-margin-auto" data-src="{{ link.object.featured_image | img_url: '150x' }}" uk-img>
+                          <h4 class="text-center"><b>{{ link.object.price | money_with_currency }}</b></h4>
+                          <form class="product-form" action="/cart/add" data-productid="{{ link.object.id}}"  method="post">
+                            <input type="hidden" name="id" data-productid="{{ link.object.id}}" class="product-select" value="{{ link.object.variants[0].id }}" data-variant-title="{{ link.object.variants[0].title }}" />
+                            <button type="submit" class="add-to-cart uk-text-white uk-margin-top uk-display-block uk-margin-auto">
+                              <span class="btn-white-label"><b>ADD TO CART</b></span>
+                              <span uk-icon="icon: cart" class="uk-margin-small-left"></span>
+                            </button>
+                          </form>
+                        </div>
+                      </li>
+                    {% endfor %}
+                </ul>
+
+                <ul class="uk-flex uk-flex-between" uk-accordion>
+                  <li class="large-txt" style="width: 200px;">
+                    <a class="uk-accordion-title" href="#" style="background: transparent; padding: 0;"><b>office apps</b></a>
+                    <ul class="uk-accordion-content uk-list uk-list-bullet medium-txt" style="padding: 0;">
+                      <li>Word</li>
+                      <li>Powerpoint</li>
+                      <li>Excel</li>
+                      <li>OneNote</li>
+                      <li>Outlook</li>
+                      <li>Publisher (Pc only)</li>
+                      <li>Access (Pc only)</li>
+                    </ul>
+                  </li>
+                  <li class="uk-width-1-4 uk-text-center" style="margin-top: 0;">
+                    <span uk-icon="icon: check; ratio: 1.15"></span><br/>
+                    <span class="medium-txt">(web & mobile versions only)</span>
+                  </li>
+                  <li class="uk-width-1-4 uk-text-center" style="margin-top: 0;">
+                    <span uk-icon="icon: check; ratio: 1.15"></span>
+                  </li>
+                  <li class="uk-width-1-4 uk-text-center" style="margin-top: 0;">
+                    <span uk-icon="icon: check; ratio: 1.15"></span>
+                  </li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between">
+                  <li class="large-txt" style="width: 200px"><b>services</b></li>
+                  <li class="uk-width-1-4 uk-text-center">
+                    <ul class="uk-list uk-list-bullet medium-txt uk-fit-content uk-margin-auto uk-text-left" style="padding: 0;">
+                      <li>OneDrive</li>
+                      <li>Exchange</li>
+                      <li>SharePoint</li>
+                      <li>Teams</li>
+                      <li>Skype</li>
+                    </ul>
+                  </li>
+                  <li class="uk-width-1-4 uk-text-center">
+                    <ul class="uk-list uk-list-bullet medium-txt uk-fit-content uk-margin-auto uk-text-left" style="padding: 0;">
+                      <li>OneDrive</li>
+                    </ul>
+                  </li>
+                  <li class="uk-width-1-4 uk-text-center">
+                    <ul class="uk-list uk-list-bullet medium-txt uk-fit-content uk-margin-auto uk-text-left" style="padding: 0;">
+                      <li>OneDrive</li>
+                      <li>Exchange</li>
+                      <li>SharePoint</li>
+                      <li>Teams</li>
+                      <li>Skype</li>
+                    </ul>
+                  </li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between">
+                  <li style="width: 200px"><b>50GB mailbox</b></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="minus"></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li style="width: 200px"><b>custom email<br/>domain name</b></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="minus"></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between">
+                  <li style="width: 200px"><b>subscription</b></li>
+                  <li class="uk-width-1-4 uk-text-center">yearly</li>
+                  <li class="uk-width-1-4 uk-text-center">yearly</li>
+                  <li class="uk-width-1-4 uk-text-center">yearly</li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li style="width: 200px"><b>1TB OneDrive<br/>cloud storage</b></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li style="width: 200px"><b>300 users max.</b></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li style="width: 200px"><b>works on<br/>Windows, macOS,<br/>iOS & Android</b></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li style="width: 200px"><b>multiple languages</b></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between">
+                  <li style="width: 200px"><b>24/7 customer support</b></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-4 uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+            </li>
+          <!-- enterprise -->
+            <li style="width: 1110px">
+              <div class="uk-overflow-auto">
+                <!-- product info-->
+                <ul class="uk-flex uk-flex-between uk-margin-medium-top">
+                    <li class="uk-width-1-6@m"></li>
+                    {%- for link in linklists.office-365-enterprise.links -%}
+                      <li class="uk-width-1-5@m">
+                        <div class="uk-padding-small-bottom">
+                          <p class="uk-text-center large-txt uk-padding-xsmall-top uk-padding-small-left uk-padding-small-right">
+                            <b>{{ link.object.title | remove: "Microsoft" | remove: "Enterprise" }}</b>
+                          </p>
+                          <a href="{{ link.object.url }}">
+                            <img class="uk-display-block uk-fit-content uk-margin-auto" data-src="{{ link.object.featured_image | img_url: '150x' }}" uk-img>
+                          </a>
+                          <h4 class="text-center"><b>{{ link.object.price | money_with_currency }}</b></h4>
+                          <form class="product-form" action="/cart/add" data-productid="{{ link.object.id}}"  method="post">
+                            <input type="hidden" name="id" data-productid="{{ link.object.id}}" class="product-select" value="{{ link.object.variants[0].id }}" data-variant-title="{{ link.object.variants[0].title }}" />
+                            <button type="submit" class="add-to-cart uk-text-white uk-margin-top uk-display-block uk-margin-auto">
+                              <span class="btn-white-label"><b>ADD TO CART</b></span>
+                              <span uk-icon="icon: cart" class="uk-margin-small-left"></span>
+                            </button>
+                          </form>
+                        </div>
+                      </li>
+                    {% endfor %}
+                </ul>
+
+                <ul class="uk-flex uk-flex-between" uk-accordion>
+                  <li class="uk-width-1-6@m">
+                    <a class="uk-accordion-title" href="#" style="background: transparent; padding: 0;"><b>office apps</b></a>
+                    <ul class="uk-accordion-content uk-list uk-list-bullet medium-txt" style="padding: 0;">
+                      <p>Install on up to 5 PCs or Macs per user</p><br/>
+                      <li>Word</li>
+                      <li>Powerpoint</li>
+                      <li>Excel</li>
+                      <li>OneNote</li>
+                      <li>Outlook</li>
+                      <li>Publisher (Pc only)</li>
+                      <li>Access (Pc only)</li>
+                    </ul>
+                  </li>
+                  <li class="uk-width-1-5@m uk-text-center" style="margin-top: 0;">
+                    <span uk-icon="icon: check; ratio: 1.15"></span>
+                  </li>
+                  <li class="uk-width-1-5@m uk-text-center" style="margin-top: 0;">
+                    <span uk-icon="icon: check; ratio: 1.15"></span>
+                    <br/>
+                    <span class="medium-txt">(web & mobile versions only)</span>
+                  </li>
+                  <li class="uk-width-1-5@m uk-text-center" style="margin-top: 0;">
+                    <span uk-icon="icon: check; ratio: 1.15"></span>
+                  </li>
+                  <li class="uk-width-1-5@m uk-text-center" style="margin-top: 0;">
+                    <span uk-icon="icon: check; ratio: 1.15"></span>
+                  </li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between">
+                  <li class="uk-width-1-6@m"><b>services</b></li>
+                  <li class="uk-width-1-5@m uk-text-center">
+                    <ul class="uk-list uk-list-bullet medium-txt uk-fit-content uk-margin-auto uk-text-left" style="padding: 0;">
+                      <li>Microsoft Whiteboard</li>
+                      <li>OneDrive</li>
+                      <li>Sway</li>
+                      <li>Forms</li>
+                    </ul>
+                  </li>
+                  <li class="uk-width-1-5@m uk-text-center">
+                    <ul class="uk-list uk-list-bullet medium-txt uk-fit-content uk-margin-auto uk-text-left" style="padding: 0;">
+                      <li>Exchange</li>
+                      <li>Delve</li>
+                      <li>Teams</li>
+                      <li>SharePoint</li>
+                      <li>Yammer</li>
+                      <li>OneDrive</li>
+                      <li>Stream</li>
+                      <li>Sway</li>
+                      <li>PowerApps</li>
+                      <li>Forms</li>
+                      <li>Power Automate</li>
+                      <li>Planner</li>
+                      <li>To Do</li>
+                      <li>Shifts</li>
+                      <li>MyAnalytics</li>
+                      <li>Skype</li>
+                    </ul>
+                  </li>
+                  <li class="uk-width-1-5@m uk-text-center">
+                    <ul class="uk-list uk-list-bullet medium-txt uk-fit-content uk-margin-auto uk-text-left" style="padding: 0;">
+                      <li>Exchange</li>
+                      <li>Delve</li>
+                      <li>Teams</li>
+                      <li>SharePoint</li>
+                      <li>Yammer</li>
+                      <li>OneDrive</li>
+                      <li>Stream</li>
+                      <li>Sway</li>
+                      <li>PowerApps</li>
+                      <li>Forms</li>
+                      <li>Power Automate</li>
+                      <li>Planner</li>
+                      <li>To Do</li>
+                      <li>Shifts</li>
+                      <li>MyAnalytics</li>
+                      <li>Skype</li>
+                    </ul>
+                  </li>
+                  <li class="uk-width-1-5@m uk-text-center">
+                    <ul class="uk-list uk-list-bullet medium-txt uk-fit-content uk-margin-auto uk-text-left" style="padding: 0;">
+                      <li>Exchange</li>
+                      <li>Delve</li>
+                      <li>Teams</li>
+                      <li>SharePoint</li>
+                      <li>Yammer</li>
+                      <li>OneDrive</li>
+                      <li>Stream</li>
+                      <li>Sway</li>
+                      <li>PowerApps</li>
+                      <li>Forms</li>
+                      <li>Power Automate</li>
+                      <li>Planner</li>
+                      <li>To Do</li>
+                      <li>Shifts</li>
+                      <li>MyAnalytics</li>
+                      <li>Power BI Pro</li>
+                      <li>Skype</li>
+                    </ul>
+                  </li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between">
+                  <li class="uk-width-1-6@m"><b>users</b></li>
+                  <li class="uk-width-1-5@m uk-text-center">unlimited</li>
+                  <li class="uk-width-1-5@m uk-text-center">unlimited</li>
+                  <li class="uk-width-1-5@m uk-text-center">unlimited</li>
+                  <li class="uk-width-1-5@m uk-text-center">unlimited</li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between">
+                  <li class="uk-width-1-6@m"><b>subscription</b></li>
+                  <li class="uk-width-1-5@m uk-text-center">yearly</li>
+                  <li class="uk-width-1-5@m uk-text-center">yearly</li>
+                  <li class="uk-width-1-5@m uk-text-center">yearly</li>
+                  <li class="uk-width-1-5@m uk-text-center">yearly</li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>1TB OneDrive<br/>cloud storage</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle" uk-accordion>
+                  <li class="uk-width-1-6@m">
+                    <a class="uk-accordion-title" href="#" style="background: transparent; padding: 0;">
+                      <b>Business class email, calendar, and contacts</b>
+                    </a>
+                    <ul class="uk-accordion-content uk-list uk-list-bullet medium-txt" style="padding: 0;">
+                      <p>with a 50 GB inbox per user</p>
+                    </ul>
+                  </li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: minus"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>Unlimited online meetings</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: minus"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>Remote Desktop/Virtualization</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: minus;"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>Intranet site for your teams</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: minus;"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>Corporate social network</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: minus;"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>Professional digital storytelling tools</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>Work management tools</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: minus;"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>Personalized search and discovery</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: minus;"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>Corporate video portal</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: minus;"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>Meeting broadcast</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: minus;"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>Enterprise management of apps</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15;"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: minus;"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>Self-service Business Intelligence</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15;"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: minus;"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>Compliance solutions</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: minus;"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>Information Protection</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: minus;"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li class="uk-width-1-6@m"><b>Multiple languages</b></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                  <li class="uk-width-1-5@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></li>
+                </ul>
+                <hr>
+
+              </div>
+              </div>
+            </li>
+        </ul>
+
+    {% elsif page.handle contains "windows-10-home-vs-pro" %}
+      <div class="uk-overflow-auto">
+
+        <ul uk-accordion>
+          <li class="uk-open uk-margin-medium-top uk-margin-medium-bottom">
+            <a class="uk-accordion-title windows-title" href="#" style="padding: 10px 50px;">
+                <h3 class="font-medium" style="margin-top: 20px;">Windows Security</h3>
+            </a>
+
+            <div class="uk-accordion-content uk-padding-remove-left uk-padding-remove-right">
+              <!-- product info -->
+              <ul class="uk-flex uk-flex-between uk-margin-top">
+                <li class="uk-width-1-6@m"></li>
+                {%- for link in linklists.windows-10.links limit: 2 -%}
+                <li class="uk-width-1-3-1-2@m">
+                  <div class="uk-padding-small-bottom">
+                    <p class="uk-text-center large-txt uk-padding-xsmall-top uk-padding-small-left uk-padding-small-right">
+                      <b>{{ link.object.title | remove: "Microsoft" | remove: "Edition 32 Bit" }}</b>
+                    </p>
+                    <img class="uk-display-block uk-margin-auto" data-src="{{ link.object.featured_image | img_url: '150x' }}" uk-img>
+                    <h4 class="text-center"><b>{{ link.object.price | money_with_currency }}</b></h4>
+                    <form class="product-form" action="/cart/add" data-productid="{{ link.object.id}}"  method="post">
+                      <input type="hidden" name="id" data-productid="{{ link.object.id}}" class="product-select" value="{{ link.object.variants[0].id }}" data-variant-title="{{ link.object.variants[0].title }}" />
+                      <button type="submit" class="add-to-cart uk-text-white uk-margin-top uk-display-block uk-margin-auto">
+                        <span class="btn-white-label"><b>ADD TO CART</b></span>
+                        <span uk-icon="icon: cart" class="uk-margin-small-left"></span>
+                      </button>
+                    </form>
+                  </div>
+                </li>
+                {%- endfor -%}
+              </ul>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Windows Hello</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Device encryption</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Firewall and network protection</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Internet protection</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Parental controls / protection</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Secure Boot</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">BitLocker device encryption</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: minus;"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Windows Information Protection (WIP)</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: minus;"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Windows Defender Antivirus</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: minus;"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+            </div>
+          </li>
+
+          <li class="uk-margin-medium-top uk-margin-medium-bottom">
+            <a class="uk-accordion-title windows-title" href="#" style="padding: 10px 50px;">
+              <h3 class="font-medium" style="margin-top: 20px;">Windows Fundamentals</h3>
+            </a>
+
+            <div class="uk-accordion-content uk-padding-remove-left uk-padding-remove-right">
+              <!-- product info -->
+              <ul class="uk-flex uk-flex-between uk-margin-top">
+                <li class="uk-width-1-6@m"></li>
+                {%- for link in linklists.windows-10.links limit: 2 -%}
+                <li class="uk-width-1-3-1-2@m">
+                  <div class="uk-padding-small-bottom">
+                    <p class="uk-text-center large-txt uk-padding-xsmall-top uk-padding-small-left uk-padding-small-right">
+                      <b>{{ link.object.title | remove: "Microsoft" | remove: "Edition 32 Bit" }}</b>
+                    </p>
+                    <img class="uk-display-block uk-margin-auto" data-src="{{ link.object.featured_image | img_url: '150x' }}" uk-img>
+                    <h4 class="text-center"><b>{{ link.object.price | money_with_currency }}</b></h4>
+                    <form class="product-form" action="/cart/add" data-productid="{{ link.object.id}}"  method="post">
+                      <input type="hidden" name="id" data-productid="{{ link.object.id}}" class="product-select" value="{{ link.object.variants[0].id }}" data-variant-title="{{ link.object.variants[0].title }}" />
+                      <button type="submit" class="add-to-cart uk-text-white uk-margin-top uk-display-block uk-margin-auto">
+                        <span class="btn-white-label"><b>ADD TO CART</b></span>
+                        <span uk-icon="icon: cart" class="uk-margin-small-left"></span>
+                      </button>
+                    </form>
+                  </div>
+                </li>
+                {%- endfor -%}
+              </ul>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Digital pen & touch</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; raito: 1.15"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Microsoft Edge</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; raito: 1.15"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Cortana</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; raito: 1.15"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Battery saver mode</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; raito: 1.15"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Mobile</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; raito: 1.15"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Voice</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; raito: 1.15"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+            </div>
+          </li>
+
+          <li>
+            <a class="uk-accordion-title windows-title" href="#" style="padding: 10px 50px;">
+              <h3 class="font-medium" style="margin-top: 20px;">Business Management and Deployment</h3>
+            </a>
+
+            <div class="uk-accordion-content uk-padding-remove-left uk-padding-remove-right">
+              <!-- product info -->
+              <ul class="uk-flex uk-flex-between uk-margin-top">
+                <li class="uk-width-1-6@m"></li>
+                {%- for link in linklists.windows-10.links limit: 2 -%}
+                <li class="uk-width-1-3-1-2@m">
+                  <div class="uk-padding-small-bottom">
+                    <p class="uk-text-center large-txt uk-padding-xsmall-top uk-padding-small-left uk-padding-small-right">
+                      <b>{{ link.object.title | remove: "Microsoft" | remove: "Edition 32 Bit" }}</b>
+                    </p>
+                    <img class="uk-display-block uk-margin-auto" data-src="{{ link.object.featured_image | img_url: '150x' }}" uk-img>
+                    <h4 class="text-center"><b>{{ link.object.price | money_with_currency }}</b></h4>
+                    <form class="product-form" action="/cart/add" data-productid="{{ link.object.id}}"  method="post">
+                      <input type="hidden" name="id" data-productid="{{ link.object.id}}" class="product-select" value="{{ link.object.variants[0].id }}" data-variant-title="{{ link.object.variants[0].title }}" />
+                      <button type="submit" class="add-to-cart uk-text-white uk-margin-top uk-display-block uk-margin-auto">
+                        <span class="btn-white-label"><b>ADD TO CART</b></span>
+                        <span uk-icon="icon: cart" class="uk-margin-small-left"></span>
+                      </button>
+                    </form>
+                  </div>
+                </li>
+                {%- endfor -%}
+              </ul>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Mobile device management</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: minus;"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Group Policy</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: minus;"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Enterprise State Roaming with Azure</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: minus;"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Microsoft Store for Business</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: minus;"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Assigned Access</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: minus;"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Dynamic Provisioning</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: minus;"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Windows Update for Business</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: minus;"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Kiosk mode setup</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: minus;"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Support for Active Directory</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: minus;"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Support for Azure Active Directory</li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: minus;"></span></li>
+                <li class="uk-width-1-3-1-2@m uk-text-center"><span uk-icon="icon: check; ratio: 1.15"></span></li>
+              </ul>
+              <hr>
+            </div>
+          </li>
+
+      </div>
+
+    {% elsif page.handle contains "windows-server" %}
+      <div class="uk-overflow-auto">
+
+        <ul uk-accordion>
+
+        <li class="uk-open uk-margin-medium-top uk-margin-medium-bottom">
+            <a class="uk-accordion-title windows-title" href="#" style="padding: 40px 50px;">
+              <h3 class="font-medium uk-margin-bottom">Unique hybrid capabilities with Azure</h3>
+              <ul class="uk-width-1-2@m uk-flex uk-flex-between uk-flex-middle">
+                <li><i class="far fa-circle uk-margin-small-right"></i>Not supported</li>
+                <li><i class="fas fa-adjust uk-margin-small-right"></i>Partially supported</li>
+                <li><i class="fas fa-circle uk-margin-small-right"></i>Fully supported</li>
+              </ul>
+            </a>
+
+            <div class="uk-accordion-content uk-padding-remove-left uk-padding-remove-right">
+              <!-- product info -->
+              <ul class="uk-flex uk-flex-between">
+                <li class="uk-width-1-6@m"></li>
+                {%- for link in linklists.windows-server.links -%}
+                <li class="uk-width-1-5@m">
+                  <div class="uk-padding-small-bottom">
+                    <p class="uk-text-center large-txt uk-padding-xsmall-top uk-padding-small-left uk-padding-small-right" style="height: 60px">
+                      <b>{{ link.object.title | remvoe: "Microsoft" }}</b>
+                    </p>
+                    <img class="uk-display-block uk-margin-auto" data-src="{{ link.object.featured_image | img_url: '100x' }}" uk-img>
+                    <h4 class="text-center"><b>{{ link.object.price | money_with_currency }}</b></h4>
+                    <form class="product-form" action="/cart/add" data-productid="{{ link.object.id}}"  method="post">
+                      <input type="hidden" name="id" data-productid="{{ link.object.id}}" class="product-select" value="{{ link.object.variants[0].id }}" data-variant-title="{{ link.object.variants[0].title }}" />
+                      <button type="submit" class="add-to-cart uk-text-white uk-margin-top uk-display-block uk-margin-auto">
+                        <span class="btn-white-label"><b>ADD TO CART</b></span>
+                        <span uk-icon="icon: cart" class="uk-margin-small-left"></span>
+                      </button>
+                    </form>
+                  </div>
+                </li>
+                {%- endfor -%}
+              </ul>
+
+              <ul class="uk-flex uk-flex-between uk-flex-middle">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Storage Migration Service</li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between uk-flex-middle">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Synchronizing file servers to Azure</li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between uk-flex-middle">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">System Insights brings</li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between uk-flex-middle">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">Azure network adaptor</li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+              </ul>
+              <hr>
+
+              <ul class="uk-flex uk-flex-between uk-flex-middle">
+                <li class="uk-width-1-6@m font-medium uk-padding-large-left">VM protection</li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+                <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+              </ul>
+              <hr>
+            </div>
+          </li>
+
+        <li class="uk-margin-top uk-margin-medium-bottom">
+          <a class="uk-accordion-title windows-title" href="#" style="padding: 40px 50px;">
+            <h3 class="font-medium uk-margin-bottom">Unprecedented Hyper-converged Infrastructure</h3>
+            <ul class="uk-width-1-2@m uk-flex uk-flex-between uk-flex-middle">
+              <li><i class="far fa-circle uk-margin-small-right"></i>Not supported</li>
+              <li><i class="fas fa-adjust uk-margin-small-right"></i>Partially supported</li>
+              <li><i class="fas fa-circle uk-margin-small-right"></i>Fully supported</li>
+            </ul>
+          </a>
+
+          <div class="uk-accordion-content uk-padding-remove-left uk-padding-remove-right">
+            <!-- product info -->
+            <ul class="uk-flex uk-flex-between uk-margin-medium-top">
+              <li class="uk-width-1-6@m"></li>
+              {%- for link in linklists.windows-server.links -%}
+              <li class="uk-width-1-5@m">
+                <div class="uk-padding-small-bottom">
+                  <p class="uk-text-center large-txt uk-padding-xsmall-top uk-padding-small-left uk-padding-small-right" style="height: 60px">
+                    <b>{{ link.object.title | remove: "Standard" | remove: "- 16 Core" | remove: "16 Core License" }}</b>
+                  </p>
+                  <img class="uk-display-block uk-margin-auto" data-src="{{ link.object.featured_image | img_url: '100x' }}" uk-img>
+                  <h4 class="text-center"><b>{{ link.object.price | money_with_currency }}</b></h4>
+                  <form class="product-form" action="/cart/add" data-productid="{{ link.object.id}}"  method="post">
+                    <input type="hidden" name="id" data-productid="{{ link.object.id}}" class="product-select" value="{{ link.object.variants[0].id }}" data-variant-title="{{ link.object.variants[0].title }}" />
+                    <button type="submit" class="add-to-cart uk-text-white uk-margin-top uk-display-block uk-margin-auto">
+                      <span class="btn-white-label"><b>ADD TO CART</b></span>
+                      <span uk-icon="icon: cart" class="uk-margin-small-left"></span>
+                    </button>
+                  </form>
+                </div>
+              </li>
+              {%- endfor -%}
+            </ul>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Unified management</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Storage Spaces</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Enhanced Storage Spaces Direct (S2D)</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Mirror-accelerated parity</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Nested Mirror Accelerated parity</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Storage class memory</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">USB thumb drive (as cluster witness)</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Storage Replica</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Storage Quality of Service (QoS)</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Data deduplication</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Deduplication for ReFS</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Virtual machine storage resiliency</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Cloud Witness</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Storage health monitoring</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Cluster-wide monitoring</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Cluster sets</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Cluster OS rolling upgrade</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Mixed OS mode cluster</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Site-aware failover clusters</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Persistent memory</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Linux and FreeBSD workloads</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Hot add and remove for disk, memory, and network</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Network controller</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Virtual networking</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Software load balancer (SLB)</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Virtual network peering</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Distributed firewall and micro-segmentation</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Hybrid SDN gateways</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Improved SDN gateway</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Converged RDM</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Precision Time Protocol (PTP)</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Leap Second</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">HTTP/2</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Latency Optimized Background Transport - LEDBAT</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">IP address management (IPAM) and DNS</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">High-availability RDS connection broker</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Software defined networking (SDN) with IPv4/IPv6</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+          </div>
+        </li>
+
+        <li class="uk-margin-top uk-margin-medium-bottom">
+          <a class="uk-accordion-title windows-title" href="#" style="padding: 40px 50px;">
+            <h3 class="font-medium uk-margin-bottom">Enhanced security capabilities</h3>
+            <ul class="uk-width-1-2@m uk-flex uk-flex-between uk-flex-middle">
+              <li><i class="far fa-circle uk-margin-small-right"></i>Not supported</li>
+              <li><i class="fas fa-adjust uk-margin-small-right"></i>Partially supported</li>
+              <li><i class="fas fa-circle uk-margin-small-right"></i>Fully supported</li>
+            </ul>
+          </a>
+
+            <div class="uk-accordion-content uk-padding-remove-left uk-padding-remove-right">
+            <!-- product info -->
+            <ul class="uk-flex uk-flex-between uk-margin-medium-top">
+              <li class="uk-width-1-6@m"></li>
+              {%- for link in linklists.windows-server.links -%}
+              <li class="uk-width-1-5@m">
+                <div class="uk-padding-small-bottom">
+                  <p class="uk-text-center large-txt uk-padding-xsmall-top uk-padding-small-left uk-padding-small-right" style="height: 60px">
+                    <b>{{ link.object.title | remove: "Standard" | remove: "- 16 Core" | remove: "16 Core License" }}</b>
+                  </p>
+                  <img class="uk-display-block uk-margin-auto" data-src="{{ link.object.featured_image | img_url: '100x' }}" uk-img>
+                  <h4 class="text-center"><b>{{ link.object.price | money_with_currency }}</b></h4>
+                  <form class="product-form" action="/cart/add" data-productid="{{ link.object.id}}"  method="post">
+                    <input type="hidden" name="id" data-productid="{{ link.object.id}}" class="product-select" value="{{ link.object.variants[0].id }}" data-variant-title="{{ link.object.variants[0].title }}" />
+                    <button type="submit" class="add-to-cart uk-text-white uk-margin-top uk-display-block uk-margin-auto">
+                      <span class="btn-white-label"><b>ADD TO CART</b></span>
+                      <span uk-icon="icon: cart" class="uk-margin-small-left"></span>
+                    </button>
+                  </form>
+                </div>
+              </li>
+              {%- endfor -%}
+            </ul>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Enhanced Windows Defender Advanced Threat Protection (ATP)</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Shielded VMs for Windows</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Shielded VMs for Linux</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">HGS offline mode for shielded VMs</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">VM Connect for shielded VMs</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Cluster hardening</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">SDN encrypted subnet</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Just-enough administration</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Just-in-time administration</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Credential guard</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Control flow guard</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Remote credential guard</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Device guard (code integrity)</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Dynamic access control</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">AppLocker</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">BitLocker</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+          </div>
+        </li>
+
+        <li class="uk-margin-top uk-margin-medium-bottom">
+          <a class="uk-accordion-title" href="#" style="padding: 40px 50px;">
+            <h3 class="font-medium uk-margin-bottom">Faster innovation for applications</h3>
+            <ul class="uk-width-1-2@m uk-flex uk-flex-between uk-flex-middle">
+              <li><i class="far fa-circle uk-margin-small-right"></i>Not supported</li>
+              <li><i class="fas fa-adjust uk-margin-small-right"></i>Partially supported</li>
+              <li><i class="fas fa-circle uk-margin-small-right"></i>Fully supported</li>
+            </ul>
+          </a>
+
+          <div class="uk-accordion-content uk-padding-remove-left uk-padding-remove-right">
+            <!-- product info -->
+            <ul class="uk-flex uk-flex-between uk-margin-medium-top">
+              <li class="uk-width-1-6@m"></li>
+              {%- for link in linklists.windows-server.links -%}
+              <li class="uk-width-1-5@m">
+                <div class="uk-padding-small-bottom">
+                  <p class="uk-text-center large-txt uk-padding-xsmall-top uk-padding-small-left uk-padding-small-right" style="height: 60px">
+                    <b>{{ link.object.title | remove: "Microsoft" | remove: "Standard" | remove: "- 16 Core" | remove: "16 Core License" }}</b>
+                  </p>
+                  <img class="uk-display-block uk-margin-auto" data-src="{{ link.object.featured_image | img_url: '100x' }}" uk-img>
+                  <h4 class="text-center"><b>{{ link.object.price | money_with_currency }}</b></h4>
+                  <form class="product-form" action="/cart/add" data-productid="{{ link.object.id}}"  method="post">
+                    <input type="hidden" name="id" data-productid="{{ link.object.id}}" class="product-select" value="{{ link.object.variants[0].id }}" data-variant-title="{{ link.object.variants[0].title }}" />
+                    <button type="submit" class="add-to-cart uk-text-white uk-margin-top uk-display-block uk-margin-auto">
+                      <span class="btn-white-label"><b>ADD TO CART</b></span>
+                      <span uk-icon="icon: cart" class="uk-margin-small-left"></span>
+                    </button>
+                  </form>
+                </div>
+              </li>
+              {%- endfor -%}
+            </ul>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Linux containers</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Windows Server containers</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Server Core base container image</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Nano Server base container image</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Server Core Features on Demand (FoD)</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Kubernetes platform support</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Group Managed Service Accounts (gMSA)</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Windows Subsystem for Linux (WSL)</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Hyper-V isolation</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Azure Service Fabric for Windows Server</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="far fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">PowerShell 5.1</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">PowerShell Desired State Configuration (DSC)</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-adjust"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">Visual Studio Code</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+
+            <ul class="uk-flex uk-flex-between uk-flex-middle">
+              <li class="uk-width-1-6@m font-medium uk-padding-large-left">.NET Core</li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></li>
+              <li class="uk-width-1-5@m uk-text-center"><span class="fas fa-circle"></span></span></li>
+            </ul>
+            <hr>
+          </div>
+        </li>
+
+      </div>
+    {% endif %}
+
+      {% comment %}
+        <!-- typeform -->
+        <div class="uk-background-primary uk-margin-large-top uk-padding uk-margin-bottom">
+          <div class="uk-margin-auto uk-fit-content uk-text-center">
+          <h4><b>Which version of
+            {% if page.handle contains "office-2019" %}
+              {{ linklists.office-2019.title }}
+            {% elsif page.handle contains "office-365" %}
+              {{ linklists.office-365.title }}
+            {% elsif page.handle contains "office-2016" %}
+              {{ linklists.office-2016.title }}
+            {% elsif page.handle contains "windows-home-vs-pro" %}
+              Windows 10
+            {% endif %}
+          do you need?</b></h4>
+          <p class="uk-margin-small-top uk-margin-bottom">Take our questionnaire now to find out</p>
+          <a href="">
+            <button class="uk-text-white uk-padding-small-top uk-padding-small-bottom
+                           uk-padding-large-left uk-padding-large-right large-txt" style="background: #262626">
+              <b><span class="btn-label">START</span></b>
+              <span uk-icon="icon: chevron-right; ratio: 1.15"></span>
+            </button>
+          </a>
+      {% endcomment %}
+      </ul>
+
+    </div>
+{% if page.handle contains "office-2019" %}
+	<div class="landing-page-compare">
+		<div class="buyers-guide">
+		    <div class="text-buyers-guide">
+		        <h2>Microsoft Office 2019 Comparison</h2>
+		        <a class="anchor-table">See Comparison Chart</a>
+		        <p>Office 2019 comes as the latest feature packed version of Microsoft Office suite targeting both home and business users. Unlike the subscription fees required for Office 365, a one-off payment is all you need to get your hands on Office 2019. While many Office users will be considering switching to Office 365, Office 2019 still remains the go-to option for users who don't need cloud-sharing services since they're content having basic Office apps on a single PC.</p>
+		        <p>Once you get a hold of Office 2019, you get access to the most powerful Office apps including PowerPoints, Excel and Word. Each app offers a great level of control and depth that other open source office alternatives fail to deliver. However, Microsoft won't be rolling out any feature improvements (apart from bug and security fixes) to Office 2019 users. Office 365, on the other hand, will continue getting new features regularly since it uses a subscription based model.</p>
+		    </div>
+		    <div class="img-buyers-guide">
+				<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/image-compare-8_61a6b189-9d87-4a84-81f0-7bb7a15769e7.jpg?v=1637066263" alt="" />
+		    </div>
+		</div>
+		<div class="version-need">
+		    <h4>Which version of Office 2019 do you need?</h4>
+		    <p>Take our questionnaire now to find out</p>
+		    <a href="#" target="_blank">Start</a>
+		</div>
+		<ul class="list-product-compare">
+	        <li>
+	            <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/office2019hs_106841ca-60e3-43b8-a4c0-603b6bd9ba00.png?v=1637065219" alt="" />
+	            </div>
+	            <div class="text-list-product-compare">
+	                <h3>Microsoft Office 2019 Home and Student</h3>
+	                <span>$ <strong>$ 89.99</strong></span>
+	                <p>The Home and Student edition targets users who want to maximize their productivity when working at home or in school settings. Apps such as OneNote, PowerPoint, Excel and Word come with the software package to give you intuitive tools for analyzing data, rich authoring features and design controls for creating pixel-perfect layouts.</p>
+	                <p>You also get cloud access to allow you to upload your documents online and work on them remotely. Though Home and Student is designed for use on a single PC, it comes with collaboration tools that allow you to be on the same page as your team.</p>
+	                <div class="actions">
+	                    <a class="white-button" href="/products/office2019hs">
+	                        View more
+	                    </a>
+	                </div>
+	            </div>
+	        </li>
+	        <li>
+	            <div class="text-list-product-compare">
+	                <h3>Microsoft Office 2019 Home and Business</h3>
+	                <span>$ <strong>154.99</strong></span>
+	                <p>The Home and Business edition resembles the Home and Student edition but with Outlook added for small business owners. You'll find all the core Microsoft Office apps in this Office 2019 edition. Home and Business serves as a great link between the professional business and home editions of Microsoft Office. It suits small business owners in need of contact management features plus the basic Office apps.</p>
+	                <div class="actions">
+	                    <a class="white-button" href="/products/office2019hb">
+	                        View more
+	                    </a>
+	                </div>
+	            </div>
+	            <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/office2019hb_f069000f-2e81-4e7c-9f80-8d7522a52fe7.png?v=1637065294" alt="" />
+	            </div>
+	        </li>
+	        <li>
+	            <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/office2019pro_bc3bbaa8-f211-4d75-bace-28cf6243e035.png?v=1637065367" alt="" />
+	            </div>
+	            <div class="text-list-product-compare">
+	                <h3>Microsoft Office 2019 Professional</h3>
+	                <span>$ <strong>248.99</strong></span>
+	                <p>The Professional edition allows you to productively work anywhere, at any time with anyone. Besides featuring the 2019 OneNote, Outlook, PowerPoint, Excel and Word versions, the product comes with new improvements of Access and Publisher. Use it to be more productive and save time when working on the most time-sensitive and professional level tasks. Office 2019 Professional makes it easy to collaborate with teams since it allows you to store documents online.</p>
+	                <div class="actions">
+	                    <a class="white-button" href="/products/office2019pro">
+	                        View more
+	                    </a>
+	                </div>
+	            </div>
+	        </li>
+	        <li>
+	            <div class="text-list-product-compare">
+	                <h3>Microsoft Office 2019 Standard Open License</h3>
+	                <span>$ <strong>468.99</strong></span>
+	                <p>The Standard edition comes packed with Publisher, PowerPoint, Excel, Word and Outlook. It targets businesses that need desktop Office apps for their PCs. With this edition, you can control a virtual machine or a remote computer over a network connection with terminal services. As an administrator, you can even control user accounts and computers with group policy.</p>
+	                <div class="actions">
+	                    <a class="white-button" href="/products/office2019stdol">
+	                        View more
+	                    </a>
+	                </div>
+	            </div>
+	            <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/office2019stdol_bf783fbb-8bbe-49cb-927c-c08c575b7a1d.png?v=1637065422" alt="" />
+	            </div>
+	        </li>
+	        <li>
+	            <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/office2019pp_e7d1adde-4213-4391-a3af-da121f488963.png?v=1637065781" alt="" />
+	            </div>
+	            <div class="text-list-product-compare">
+	                <h3>Microsoft Office 2019 Professional Plus</h3>
+	                <span>$ <strong>599.99</strong></span>
+	                <p>Office 2019 Professional Plus edition comes with more advanced features than those included on the Standard edition. Besides being available through Microsoft's volume licensing channels, the software package includes core apps such as Skype for Business, Access, Publisher and Outlook (which lets you archive emails).</p>
+	                <p>Scan your presentations and spreadsheets for inconsistencies and errors with the Inquire tool in PowerPoint and Excel. Office 2019 Professional Plus features site mailboxes, which allows you to access documents in SharePoint and project-related emails in Exchange from Outlook.</p>
+	                <div class="actions">
+	                    <a class="white-button" href="/products/office2019pp">
+	                        View more
+	                    </a>
+	                </div>
+	            </div>
+	        </li>
+	        <li>
+	            <div class="text-list-product-compare">
+	                <h3>Microsoft Office 2019 Professional Plus Open License</h3>
+	                <span>$ <strong>618.99</strong></span>
+	                <p>For customers who are not yet transitioned to the cloud, Office offers Office Professional Plus 2019 open license. This edition is packed with the essentials for businesses that need desktop Office applications for PC, plus instant messaging and HD video conferencing.</p>
+	                <p>Classic versions of Office apps installed on one PC or Mac include Outlook, Word, Excel, PowerPoint, Publisher, and Access. You will also have access to OneNote and all its features. Equally, you will get web versions of Word, OneNote, Excel and PowerPoint. This version of Office gives system administrators the leverage to centrally control computers and user accounts using group policy. They can deploy software to many users at once with volume activation. You will be able to take control of a remote computer or virtual machine over a network connection with terminal services. IT admins can centrally manage the In-Place Archive and eDiscovery</p>
+	                <div class="actions">
+	                    <a class="white-button" href="/products/office2019ppol">
+	                        View more
+	                    </a>
+	                </div>
+	            </div>
+	            <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/office2019ppol_788679a4-4da1-402d-8787-2829a7c72f2e.png?v=1637065831" alt="" />
+	            </div>
+	        </li>
+		    <li>
+		        <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/image-compare.jpg?v=1637065898" alt="" />
+		        </div>
+		        <div class="text-list-product-compare">
+		            <h3>What Features Do Microsoft Office 2019 Editions Share with Each Other? What Features Set Them Apart?</h3>
+		            <p>While the terms edition and version carry different meanings when associated with software products, most people don't get their differences.The term edition is assigned to a variation of a program with different features and tools targeting a specific audience. On the other hand, the term version is associated with the version number or build number of the product you're using with respect to the manufacturer's order of release.</p>
+		            <p>Understanding these two terms is important especially when you're shopping for a particular edition of a program or when you want to install an update of an existing program.</p>
+		        </div>
+		    </li>
+		    <li>
+		        <div class="text-list-product-compare">
+		            <h3>Comparing the Office 2019 Editions Against Each Other</h3>
+		            <p>When it comes to Microsoft Office 2019, the term version implies that there are variations of Office 2019 targeted at various users (including businesses, corporations and home users).Microsoft released the Professional and Professional Plus editions of Office 2019 for large businesses and corporations respectively. The Professional edition (licensed for commercial and home use) includes desktop versions of Word, Access, Publisher, Outlook, OneNote and Excel 2019. Consequently, the Professional Plus edition comes with all the apps included in Office 2019 Standard plus Skype for Business, Access and Publisher.</p>
+		            <p>Office Professional Plus features essentials for businesses looking for desktop Office apps for their PCs plus HD video and instant messaging. With this edition, you can communicate with friends or family members in different locations or timezones, use Skype for Business client or Lync client to place voice calls and enjoy different views and cute of Excel data. You also get app telemetry that automatically measures and collects data for useful analytics.</p>
+		            <p>Office 2019 Professional only runs on PCs with Windows 10 installed. The Standard edition (also known as the desktop edition) is designed to conveniently serve a diverse set of consumers. It packs all the basic Microsoft Office apps in one place making them easy to use. The edition also comes with Publisher (for enhanced professional desktop designs) and Outlook for communications and email management</p>
+		            <p>Office Standard 2019 gives you access to extra OneNote features, web versions of productivity apps such as PowerPoint, Excel, OneNote and Word and classic versions of Office apps that you can install on a single PC. With administrator privilege, you can deploy software to several users at once with volume activation.</p>
+		        </div>
+		        <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/image-compare-2.jpg?v=1637065929" alt="" />
+		        </div>
+		    </li>
+		    <li>
+		        <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/image-compare-3.jpg?v=1637065974" alt="" />
+		        </div>
+		        <div class="text-list-product-compare">
+		            <h3>What are the Key Differences Between Home and Student and Home and Business?</h3>
+		            <p>The main difference between Office 2019 Home and Student and Office 2019 Home and Business is that the latter comes with Outlook 2019 while the former lacks it. Both editions are available to Windows and Mac users while Office 2019 Professional is only limited to Windows. The Home and Business edition gives you all the tools you need to stay connected with colleagues, family and friends from different parts of the world.</p>
+		            <h3>Is Upgrading from Office 2016 to Office 2019 Worth Your Time and Money?</h3>
+		            <p>With the 2018 release of Office 2019, Microsoft's goal was to move the perpetual versions of the Office Suite to Click-to-Run technology to improve security and minimize costs. The benefits of this approach include an easy upgrade gateway to Office 365 ProPlus, reduction in network consumption (thanks to the Windows 10 download optimization feature) and up-to-date applications.Other benefits include enterprise-oriented management capabilities and predictable security updates released every month. With this approach, Office users can seamlessly move from older Microsoft based products to Office 2019.</p>
+		            <p>Is it worthwhile to upgrade to Office 2019 from Office 2016? The short answer to this question is YES. Microsoft will discontinue cloud support for Office 2016 by October 2020. If you're an Office 2016 user, you won't access Microsoft cloud services including applications such as OneDrive and Exchange when that day comes.</p>
+		        </div>
+		    </li>
+		    <li>
+		        <div class="text-list-product-compare">
+		            <h3>What New Features Does Office 2019 Bring?</h3>
+		            <p>The standout feature on Office 2019 is the text-to-speech functionality, which delivers great narration quality in four different languages (English, German, Spanish and Portuguese). Besides the text-to-speech functionality, PowerPoint also makes a difference when you upgrade to Office 2019.The new PowerPoint features improvements for the itinerant pencil, Morph (an intuitive type of transition) and support for 3D models and vector icons.</p>
+		            <p>Excel on Office 2019 features PowerQuery enhancements, PowerPivot enhancements, Excel connectors, @Mentions and 2D maps, timelines and funnel charts. You'll need an active Office 365 subscription to use Stocks or enjoy the co authoring capabilities on Excel. Outlook comes with travel and delivery summary cards, intelligent input tray, @ Mentions, Office Groups 365 and updated contact cards.</p>
+		            <p>Microsoft replaced the OneNote desktop application with OneNote for Windows 10 on Office 2019.</p>
+		            <p>The Office Deployment Tool comes handy if you still prefer using OneNote 2016 over the new version on Windows. Mac users get the option to manually uninstall OneNote when installed as part of the Microsoft Office 2019 Suite. They can also download the productivity app from Apple's App Store for free.</p>
+		        </div>
+		        <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/image-compare-4.jpg?v=1637066008" alt="" />
+		        </div>
+		    </li>
+		    <li>
+		        <div class="version-need">
+		            <h4>Which version of Office 2019 do you need?</h4>
+		            <p>Take our questionnaire now to find out</p>
+		            <a href={store.quiz} target="_blank">Start</a>
+		        </div>
+		    </li>
+		    <li>
+		        <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/image-compare-5.jpg?v=1637066048" alt="" />
+		        </div>
+		        <div class="text-list-product-compare">
+		            <h3>Microsoft Office 2016: An Overview</h3>
+		            <p>Also referred to as Office 16, Office 2016 is the successor of both Office for Mac 2011 and Office 2013 while still being part of Microsoft Office productivity suite. Microsoft released the macOS version and Windows version (targeted at Office 365 users) back in 2015.</p>
+		            <p>Though the mainstream support period will end on 13th October, 2020, most editions will continue receiving support up to 14th October, 2025. Office 2016 is the last product under the Microsoft Office Suite to. e compati me with Windows 8/8.1, Windows 7, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 R2 and Windows Server 2008 R2.</p>
+		            <p>Upon its release, Office 2016 introduced three themes, which include default, white and dark grey. The default theme, whose color options correspond to the type of application in use, is famed for giving tab headings distinct looks. Office 2016 retained the user interface design of its predecessor. It also retained the flat design that Microsoft introduced along with its Metro design language to match the layout of Microsoft Office Mobile.</p>
+		        </div>
+		    </li>
+		    <li>
+		        <div class="text-list-product-compare">
+		            <h3>Are There Any Differences in the System Requirements?</h3>
+		            <p>Office 2016 and Office 2019 can run on a modest computer without any issues. The operating system requirements change when installing each one of them in your PC. Office 2019 requires a PC that runs on Windows Server 2019 or Windows 10 and a macBook that runs on the three latest versions of OSX. Microsoft tends to discontinue support for older versions of operating systems designed for MacBooks in favor of the new ones.Your Windows PC should have 1GHz or faster x64-bit or x-86-bit processor, 3GB of available disk space, 2GB RAm and a screen resolution of 1280 by 800 pixels to run Office 2016. The PC should also have DirectX 10 graphics card, an installation of .Net 3.5 or higher and the latest operating system. The latest version of browsers such as Microsoft Edge, Firefox, Chrome, Safari and Internet Explorer will also be needed to maximize the features of Office 2016.</p>
+		            <p>The system requirements for a MacBook include an Intel processor, a 1280 x 800 (or higher) monitor, HFS+ hard disk format and 4GB of RAM. You'll also need 6GB of available hard disk space and the latest version of Firefox, Chrome or Safari browsers. The installation will require a DVD drive, a local area network (for installations done over a network) or an active Internet connection.</p>
+		            <p>Office 2019 will run on a Windows PC with a 1.6GHz or faster 2-core processor (2.0GHz processor required for Office 2019 Pro Plus), Windows 10 or Windows Server 2019, 4GB/2GB RAM, a Microsoft account, Internet functionality and 4GB of available disk space. You'll need a touch-enabled device to make use of the multi-touch functionality. The other system requirements are the same as those needed by a Windows PC to install Office 2016. Mac users will need a MacBook with Intel processor, 4GB RAM, 10GB of available disk space (in HFS+ hard disk format), Internet functionality, a Microsoft account and one of the three most recent versions of MacOS to install and use Office 2019.</p>
+		        </div>
+		        <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/image-compare-6.jpg?v=1637066085" alt="" />
+		        </div>
+		    </li>
+		    <li>
+		        <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/image-compare-7.jpg?v=1637066121" alt="" />
+		        </div>
+		        <div class="text-list-product-compare">
+		            <h3>Is Office 365 a Ploy by Microsoft to Get Office 2019 Users to Use its Subscription-based Products?</h3>
+		            <p>Office 365 is more of a subscription service than a version of the Microsoft Office Suite bundled with up-to-date productivity tools. Microsoft designed the service to cater for the needs of home users, non-profits, schools, large enterprises and small and midsized businesses. Office 365 plans geared towards home and personal use come with familiar desktop apps such as Excel, PowerPoint and Word. You also get additional cloud-connected features and online storage to facilitate real-time collaboration.</p>
+		            <p>The good thing about the Office 365 subscription is that it allow you to receive (at no extra cost) the latest security updates, fixes and features with continued Customer Support. You have the option of paying for the subscription every month or every year. If you're using the Office 365 Home Plan, you can allow up to 6 people in your circle to access it and even run the apps on multiple computers, phones, tablets and Macs. In addition to fully installed desktop apps, you get online versions of email, file storage and Office on most of the Office 365 subscriptions.</p>
+		            <p>Unlike Office 365, Office 2019 is available as a one-time purchase (allows you to pay one upfront fee to install Office apps on a single PC). The one-time purchases apply to both MacBooks and PCs. You'll have to purchase the next major release (if there will be any) at a full price since Office 2019 doesn't give you any upgrade options.</p>
+		            <h3>Is Office 2019 worth the hype?</h3>
+		            <p>While providing non-cloud updates and fixes for Office 2016, Office 2019 packages them in a feature-packed product for personal and commercial use. Office 2019 seems to alienate a certain group of consumers who would want to enjoy the capabilities of Microsoft's cloud services. You may get frustrated learning that the Office 2019 program you installed in your PC doesn't allow you to use Office online even when your line of work requires this type of access. Microsoft hasn't made any clear communication whether Office 2019 will be the last product on the Microsoft Office line or not.</p>
+		        </div>
+		    </li>
+		    <li>
+		        <div class="text-list-product-compare">
+		            <h3>What Features Does Office 365 Bring?</h3>
+		            <p>Office 365 has a great edge over Office 2019 since all of its components can be configured and managed through a dedicated online portal. You can add users manually or import them from a CSV file. Office 365 also gives you the option to set it up as a single sign-on or use PowerShell scripts for more advanced setup.</p>
+		            <p>Enterprise and business-oriented Office 365 plans give access to cloud-based versions of Microsoft Office server platforms on a SaaS (software as a service) basis. The platforms include Office Web Apps suite, SharePoint, Skype for Business and Exchange. SharePoint's OneDrive for Business (which is separate from the OneDrive service) gives you 1TB cloud storage.</p>
+		            <p>Enterprise and business Office 365 subscriptions come with Outlook Tasks, Outlook People, Outlook Calendar and Outlook Mail for managing contacts, tasks and emails. They also feature Clutter, which is a tool that saves user's preferences when accessing the email application.</p>
+		            <p>Once you subscribe to Office 365, you get several productivity apps designed to address collaboration needs at team, departmental and organizational levels. The collaboration tools that come with each subscription include Delve boards, Outlook Online, Skype for Business, Yammer, SharePoint Online, OneDrive for Business and Microsoft Teams.</p>
+		            <p>Your employees' preferences, project specifics, team size and communication needs will determine the type of Office 365 collaboration tools you need. Besides these tools, Microsoft designed Office 365 to rely on a rolling release model for updates. With this model, you can get updated to the online components of Office 365 once every quarter.</p>
+		        </div>
+		        <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/image-compare-8.jpg?v=1637066158" alt="" />
+		        </div>
+		    </li>
+		    <li>
+		        <div class="img-list-product-compare">
+					<img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/image-compare-9.jpg?v=1637066207" alt="" />
+		        </div>
+		        <div class="text-list-product-compare">
+		            <h3>Is it Convenient to Choose Office 365 Over Office 2019?</h3>
+		            <p>Office applications used by Office 365 subscribers offer more features than those used by perpetual Office customers. In this case, expect an application such as Word 2019 to have more features and capabilities when operating as an app for Office 365 rather than Office 2019.</p>
+		            <p>Microsoft also adds new features to Office 365 productivity apps across desktop, Mac, online services, web and mobile platforms.</p>
+		            <p>The Office 365 subscription service is geared towards giving Microsoft's customers new intuitive ways of working on their tasks. It reflects Microsoft's ambition of adapting Office to make sure of the latest advances in technology including bugger screens. Office 365 editions, which include Commercial (for businesses of all types and sizes), Home (for families) and Personal (for individuals);give their intended users seamless experiences. The rapid incorporation of newly developed cloud-based features (which make use of Microsoft's AI technology) on Office 365 makes the subscription service stand out from all products Microsoft has ever released. As a subscriber, you get to enjoy routine quality updates with increased security features.</p>
+		            <p>Speculations across the Office community suggest that Office 2019 might be the last non-subscription / on-premises (perpetual license) Office release that will allow Microsoft to focus more on the Office 365 service.</p>
+		            <p>Though the company hasn't given a straight response to this speculation, it's likely that Office 365 will reign supreme on the Microsoft Office suite, eliminating the need for a new Office perpetual license release. The key difference between Office 2019 and Office 365 is that the former is a 'one-time release' while the latter is a service designed to regularly access new features.</p>
+		            <h3>Conclusion</h3>
+		            <p>Microsoft always does a good job when releasing different versions or editions of its wide range of products. Under the Office Suite, Office 2019 appears to stand out from other versions with its perpetual (one-time release) licence. While it seems to qualify as a product under Microsoft Office Suite, Office 365 works as a subscription service for Office users looking for more improved features and capabilities in Office productivity apps. The choice to upgrade to Office 2019 or Office 365 completely depends on your budget, need for Office productivity apps and reliance on Microsoft cloud-based technologies.</p>
+		        </div>
+		    </li>
+		</ul>
+		<div class="version-need">
+		    <h4>Which version of Office 2019 do you need?</h4>
+		    <p>Take our questionnaire now to find out</p>
+		    <a href="#" target="_blank">Start</a>
+		</div>
+	</div>
+{% endif %}
+  </div>
+</div>
+
+<style>
+  .product-switcher.uk-active {
+    background: #666666;
+    color: #ffffff;
+  }
+
+  .uk-accordion-title.windows-title::before {
+    background-size: contain;
+    height: 5em;
+  }
+</style>

@@ -1,0 +1,260 @@
+{% if page.handle == 'privacy-policy' %}
+
+<div class="page-banner mobile-only" style="background-image: url('https://cdn.shopify.com/s/files/1/0086/7932/5753/files/privacy-bg.jpg?2366')">
+  <div class="page-title">
+    <h3>{{ page.title }}</h3>
+  </div>
+</div>
+
+{% endif %}
+
+{% if page.handle == 'orders-and-returns' %}
+
+<div class="page-banner mobile-only" style="background-image: url('https://cdn.shopify.com/s/files/1/0086/7932/5753/files/rnr-bg.jpg?2371')">
+  <div class="page-title">
+    <h3>{{ page.title }}</h3>
+  </div>
+</div>
+
+{% endif %}
+
+{% if page.handle == 'terms-of-service' %}
+
+<div class="page-banner mobile-only" style="background-image: url('https://cdn.shopify.com/s/files/1/0086/7932/5753/files/terms-bg.jpg?2374')">
+  <div class="page-title">
+    <h3>{{ page.title }}</h3>
+  </div>
+</div>
+
+{% endif %}
+
+<div class="container">
+
+  {% if page.handle == 'privacy-policy' %}
+
+  <div class="page-banner desktop-only" style="background-image: url('https://cdn.shopify.com/s/files/1/0086/7932/5753/files/privacy-bg.jpg?2366')">
+    <div class="page-title">
+      <h3>{{ page.title }}</h3>
+    </div>
+  </div>
+
+  {% endif %}
+
+  {% if page.handle == 'orders-and-returns' %}
+
+  <div class="page-banner desktop-only" style="background-image: url('https://cdn.shopify.com/s/files/1/0086/7932/5753/files/rnr-bg.jpg?2371')">
+    <div class="page-title">
+      <h3>{{ page.title }}</h3>
+    </div>
+  </div>
+
+  {% endif %}
+
+  {% if page.handle == 'terms-of-service' %}
+
+  <div class="page-banner desktop-only" style="background-image: url('https://cdn.shopify.com/s/files/1/0086/7932/5753/files/terms-bg.jpg?2374')">
+    <div class="page-title">
+      <h3>{{ page.title }}</h3>
+    </div>
+  </div>
+
+  {% endif %}
+
+  <div class="d-flex space-between policy_container">
+    <div class="policy_filter desktop-only">
+
+      <div class="section-accordion d-flex space-between align-center">
+        <p>Section</p>
+          <span>{% include 'icon-down-arrow' %}</span>
+      </div>
+
+      <div class="section-accordion-container">
+
+        {% if page.handle == 'orders-and-returns' %}
+
+        <div class="d-flex section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 1 - Return Policy</p>
+        </div>
+
+        <div class="d-flex section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 2 - Shipping</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 3 - Electronic Delivery</p>
+        </div>
+
+        {% endif %}
+
+        {% if page.handle == 'privacy-policy' %}
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 1 - Personal Information We Collect</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 2 - How do we use your personal information?</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 3 - Sharing your personal information?</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 4 - Bhavioural Advertising</p>
+        </div>
+
+        <div class="d-flex section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 5 - Do Not Track</p>
+        </div>
+
+        <div class="d-flex section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 6 - Your Rights</p>
+        </div>
+
+        <div class="d-flex section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 7 - Data Retention</p>
+        </div>
+
+        <div class="d-flex section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 8 - Changes</p>
+        </div>
+
+        <div class="d-flex section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 9 - Minors</p>
+        </div>
+
+        <div class="d-flex section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 10 - Contact Us</p>
+        </div>
+
+        {% endif %}
+
+        {% if page.handle == 'terms-of-service' %}
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 1 - Online Store Terms</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 2 - General Conditions</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 3 - Accuracy, Completeness and Timeless of Information</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 4 - Modifications to the Service and Prices</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 5 - Products or Services (if applicable)</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 6 - Accuracy of Billing and Account Information</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 7 - Optional Tools</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 8 - Third-Party Links</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 9 - User Comments, Feedback and Other Submissions</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 10 - Personal Information</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 11 - Errors, Inaccuracies and Omissions</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 12 - Prohibited Uses</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 13 - Disclaimer of Warranties; Limitation of Liability</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 14 - Indemnification</p>
+        </div>
+
+        <div class="d-flex section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 15 - Severability</p>
+        </div>
+
+        <div class="d-flex section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 16 - Termination</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 17 - Entire Agreement</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 18 - Governing Law</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 19 - Changes to Terms of Service</p>
+        </div>
+
+        <div class="d-flex space-between section-accordion-item">
+          <div class="accordion-item-sq desktop-only"></div>
+            <p>Section 20 - Contact Information</p>
+        </div>
+
+        {% endif %}
+
+      </div>
+
+    </div>
+
+    <div class="page_content">
+      <p>{{ page.content }}</p>
+    </div>
+
+  </div>
+
+</div>

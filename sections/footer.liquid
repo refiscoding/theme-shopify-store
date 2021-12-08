@@ -1,0 +1,187 @@
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <img src="{{ section.settings.footer-logo | img_url: "x22" }}">
+
+    <!----- Desktop footer ----->
+
+    <ul class="d-flex space-between desktop-only">
+
+      {% for block in section.blocks %}
+      {% case block.type %}
+
+      {% when 'select' %}
+      <li class="d-flex footer-block-menu">
+        <p class="footer-block-title">{{ block.settings.menu-title }}</p>
+        {% for link in linklists[block.settings.link_list].links %}
+          <a href= "{{ link.url }}" class="footer-menu-link">{{ link.title }}</a>
+        {% endfor %}
+      </li>
+
+      {% when 'url' %}
+      <li class="footer-block">
+        <p class="footer-block-title">CONNECT</p>
+        <div class="d-flex space-between" style="width: 32%;">
+          <a href="{{ block.settings.facebook-link }}">
+            {% include 'icon-facebook' %}
+          </a>
+          <a href="{{ block.setttings.instagram-link }}">
+            {% include 'icon-instagram' %}
+          </a>
+        </div>
+      </li>
+
+      {% when 'textarea' %}
+      <li class="footer-block">
+        <p class="footer-block-title">CONTACT</p>
+        <p>{{ block.settings.contact-info }}</p>
+      </li>
+
+      {% endcase %}
+      {% endfor %}
+    </ul>
+
+    <!----- Mobile footer ----->
+
+    <ul id="accordion" class="mobile-only">
+
+      {% for block in section.blocks %}
+      {% case block.type %}
+
+      {% when 'select' %}
+      <li>
+        <div class="d-flex space-between" style="margin-bottom: 28px;">
+          <p class="footer-block-title">{{ block.settings.menu-title }}</p>
+          {% include 'icon-down-arrow' %}
+        </div>
+
+        <div class="d-flex mobile-linklist acc-item">
+        {% for link in linklists[block.settings.link_list].links %}
+          <a href= "{{ link.url }}" class="footer-menu-link">{{ link.title }}</a>
+          {% endfor %}
+        </div>
+      </li>
+
+      {% when 'url' %}
+
+      <li>
+        <div class="d-flex space-between" style="margin-bottom: 28px;">
+          <p class="footer-block-title">CONNECT</p>
+          {% include 'icon-down-arrow' %}
+        </div>
+
+        <div class="d-flex acc-item space-around" style="width: 100%; padding-bottom: 30px;">
+          <a href="{{ block.settings.facebook-link }}">
+            {% include 'icon-facebook' %}
+          </a>
+          <a href="{{ block.setttings.instagram-link }}">
+            {% include 'icon-instagram' %}
+          </a>
+        </div>
+      </li>
+
+      {% when 'textarea' %}
+      <li>
+        <div class="d-flex space-between" style="margin-bottom: 28px;">
+          <p class="footer-block-title">CONTACT</p>
+          {% include 'icon-down-arrow' %}
+        </div>
+
+        <div class="acc-item">
+          <p style="color: #ffffff; padding-left: 10px; line-height: 320%;">{{ block.settings.contact-info }}</p>
+        </div>
+      </li>
+
+      {% endcase %}
+      {% endfor %}
+
+    </ul>
+
+  </div>
+
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "footer-logo",
+      "label": "Logo image"
+    }
+  ],
+  "max_blocks": 4,
+  "blocks":[
+  {
+    "type": "select",
+    "name": "Footer menu",
+    "settings": [
+    {
+      "type": "text",
+      "id": "menu-title",
+      "label": "Menu title"
+    },
+    {
+      "type": "link_list",
+      "id": "link_list",
+      "label": "Link list"
+    }
+    ]
+  },
+  {
+    "type": "url",
+    "name": "Social media",
+    "settings": [
+    {
+      "type": "url",
+      "id": "facebook-link",
+      "label": "Facebook"
+    },
+    {
+      "type": "url",
+      "id": "instagram-link",
+      "label": "instagram"
+    }
+    ]
+  },
+  {
+    "type": "textarea",
+    "name": "Contact",
+    "settings": [
+    {
+      "type": "textarea",
+      "id": "contact-info",
+      "label": "Contact"
+    }
+    ]
+  }
+  ]
+}
+{% endschema %}
+
+<script src="https://apis.google.com/js/platform.js?onload=renderBadge" async defer></script>
+    <script>
+        window.___gcfg = {
+            lang: 'en_US'
+        };
+        window.renderBadge = function() {
+            var ratingBadgeContainer = document.createElement("div");
+            ratingBadgeContainer.id = "googleOptInBadge";
+            document.body.appendChild(ratingBadgeContainer);
+            window.gapi.load('ratingbadge', function() {
+                window.gapi.ratingbadge.render(
+                    ratingBadgeContainer, {
+                        "merchant_id": 124329740,
+                        "position": "BOTTOM_LEFT"
+                });
+            });
+        }
+    </script>
+    <style type="text/css">
+        #googleOptInBadge {
+            z-index: 1 !important;
+            left: 56px !important;
+        }
+    </style>

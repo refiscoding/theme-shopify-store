@@ -1,0 +1,73 @@
+<section class="purpose-section">
+  <div class="container">
+    <h4>{{ section.settings.section-title }}</h4>
+    <div class="d-flex space-between flex-wrap">
+
+      {% for block in section.blocks %}
+
+      {%- assign collection = collections[block.settings.shop-collection] -%}
+      <div class="purpose-collection-block" style="background-image: url('{{ collection.image | img_url: "master" }}')">
+        <div class="d-flex space-between purpose-collection-block-content">
+          <div>
+            <h5 class="desktop-only">{{ block.settings.collection-title }}</h5>
+            <h5 class="mobile-only">{{ block.settings.mob-collection-title }}</h5>
+            <p class="desktop-only">{{ block.settings.collection-subheading }}</p>
+          </div>
+          <a href="{{ collection.url }}"><button class="btn-second uppercase">shop now</button></a>
+        </div>
+      </div>
+
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Shop by purpose",
+  "settings": [
+  {
+    "type": "text",
+    "id": "section-title",
+    "label": "Title",
+    "default": "Shop by Purpose"
+  }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Collections",
+      "settings": [
+        {
+          "type": "text",
+          "id": "collection-title",
+          "label": "Desktop Title"
+        },
+        {
+          "type": "text",
+          "id": "mob-collection-title",
+          "label": "Mobile Title"
+        },
+        {
+          "type": "text",
+          "id": "collection-subheading",
+          "label": "Subheading"
+        },
+        {
+          "type": "collection",
+          "id": "shop-collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop by purpose",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,54 @@
+{% paginate search.results by 9 %}
+
+<section class="container">
+  <header class="collection-header">
+    <h1>
+      {% if search.performed %}
+        {% if search.results_count == 0 %}
+          {{ 'general.search.no_results_html' | t: terms: search.terms }}
+        {% else %}
+          {{ 'general.search.results_for_html' | t: terms: search.terms }}
+        {% endif %}
+      {% else %}
+        {{ 'general.search.title' | t }}
+      {% endif %}
+    </h1>
+  </header>
+
+  {% if search.performed %}
+  <div class="d-flex flex-wrap search-container">
+      {% for item in search.results %}
+        <div class="search-item">
+          <a href="{{ item.url }}">
+            <img src="{{ item.featured_image | img_url: "master" }}">
+          </a>
+          <p class="product_grid_title">{{ item.title }}</p>
+          <div class="product_grid_price_tag">
+            <p class="product_grid_price">
+              {{ item.price | money_with_currency }}</p>
+          </div>
+          <div class="d-flex space-between icon-container">
+          <div class="d-flex align-center grid-icon-download">
+            {% include 'icon-download' %}<p>Instant Download</p></div>
+            <div class="d-flex align-center grid-icon-insurance">
+              {% include 'icon-insurance' %}<p>Lifetime Insurance</p></div>
+            </div>
+          <a href="{{ item.url }}">
+            <button class="btn-primary uppercase">buy now</button>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+  </div>
+
+  <div class="grid">
+    <div class="grid__item">
+      {% if paginate.pages > 1 %}
+        {% include 'pagination' %}
+      {% endif %}
+    </div>
+  </div>
+
+</section>
+  {% endif %}
+{% endpaginate %}

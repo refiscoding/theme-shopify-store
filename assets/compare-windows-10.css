@@ -1,0 +1,483 @@
+.bg-windows-10 {
+  padding: 0 15px;
+}
+@media (min-width: 1200px) {
+  .bg-windows-10 {
+    padding: 0;
+  }
+}
+.bg-windows-10 .price {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.bg-windows-10 .price .old-price {
+  color: #000;
+  font-size: 26px;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+.bg-windows-10 .price .final-price {
+  color: #046AB5;
+  font-size: 30px;
+  font-weight: 500;
+  margin-right: 15px;
+}
+.bg-windows-10 .content-windows-10 {
+  margin: 0 auto;
+}
+@media (min-width: 1200px) {
+  .bg-windows-10 .content-windows-10 {
+    width: 1200px;
+    padding-bottom: 70px;
+    margin-bottom: 70px;
+    border-bottom: 1px solid #ccc;
+  }
+}
+.bg-windows-10 .content-windows-10 h1 {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  font-size: 30px;
+  color: #142432;
+  line-height: 34px;
+}
+@media (min-width: 1200px) {
+  .bg-windows-10 .content-windows-10 h1 {
+    font-size: 45px;
+    line-height: 52px;
+  }
+}
+.bg-windows-10 .content-windows-10 > p {
+  width: 100%;
+  display: block;
+  margin: 0;
+  text-align: center;
+  font-size: 18px;
+  color: #202020;
+  opacity: 0.8;
+  line-height: 21px;
+}
+@media (min-width: 1200px) {
+  .bg-windows-10 .content-windows-10 > p {
+    font-size: 22px;
+    line-height: 25px;
+  }
+}
+.bg-windows-10 .content-windows-10 .stickPrice {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: sticky;
+  top: 95px;
+  left: 0;
+  background: #fff;
+  padding: 20px 0;
+  z-index: 102;
+}
+.bg-windows-10 .content-windows-10 .stickPrice.show-fixed {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .bg-windows-10 .content-windows-10 .stickPrice.show-fixed {
+    display: flex;
+  }
+}
+.bg-windows-10 .content-windows-10 .stickPrice .windows-cta-price h3 {
+  display: block;
+  margin: 0 0 20px;
+  font-weight: 500;
+  font-size: 24px;
+  color: #142432;
+  text-align: left;
+  line-height: 28px;
+}
+.bg-windows-10 .content-windows-10 .stickPrice .windows-cta-price a {
+  width: 246px;
+  height: 55px;
+  display: block;
+  background: #046AB5;
+  font-weight: 500;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  line-height: 55px;
+}
+.bg-windows-10 .content-windows-10 .products-windows-10 {
+  display: block;
+  width: 100%;
+  list-style: none;
+}
+.bg-windows-10 .content-windows-10 .products-windows-10,
+.bg-windows-10 .content-windows-10 .regular.slider {
+  margin-top: 55px;
+  margin-bottom: 100px;
+}
+@media (min-width: 1200px) {
+  .bg-windows-10 .content-windows-10 .products-windows-10,
+  .bg-windows-10 .content-windows-10 .regular.slider {
+    display: flex;
+    flex-wrap: inherit;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .bg-windows-10 .content-windows-10 .products-windows-10 li,
+  .bg-windows-10 .content-windows-10 .regular.slider li {
+    width: inherit;
+    margin-right: 25px;
+  }
+}
+.bg-windows-10 .content-windows-10 .products-windows-10 li:last-child,
+.bg-windows-10 .content-windows-10 .regular.slider li:last-child {
+  margin-right: 0;
+}
+.bg-windows-10 .content-windows-10 .products-windows-10 .img,
+.bg-windows-10 .content-windows-10 .regular.slider .img {
+  display: flex;
+  align-items: flex-end;
+}
+.bg-windows-10 .content-windows-10 .products-windows-10 .img .bullet-discount,
+.bg-windows-10 .content-windows-10 .regular.slider .img .bullet-discount {
+  width: 91px;
+  height: 91px;
+  background: #FFE494;
+  border-radius: 100%;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.bg-windows-10 .content-windows-10 .products-windows-10 .img .bullet-discount span,
+.bg-windows-10 .content-windows-10 .regular.slider .img .bullet-discount span {
+  width: 100%;
+  display: block;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 32px;
+}
+.bg-windows-10 .content-windows-10 .products-windows-10 .img .bullet-discount span span,
+.bg-windows-10 .content-windows-10 .regular.slider .img .bullet-discount span span {
+  font-size: 14px;
+  color: #000;
+  line-height: 16px;
+  font-weight: 400;
+}
+.bg-windows-10 .content-windows-10 .products-windows-10 .windows-10-name h3,
+.bg-windows-10 .content-windows-10 .regular.slider .windows-10-name h3 {
+  display: block;
+  margin: 0 0 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 24px;
+  color: #142432;
+  line-height: 28px;
+}
+.bg-windows-10 .content-windows-10 .products-windows-10 .windows-10-name a,
+.bg-windows-10 .content-windows-10 .regular.slider .windows-10-name a {
+  width: 246px;
+  height: 55px;
+  display: block;
+  background: #046AB5;
+  font-weight: 500;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  line-height: 55px;
+}
+.bg-windows-10 .content-windows-10 .products-windows-10 .windows-10-license,
+.bg-windows-10 .content-windows-10 .regular.slider .windows-10-license {
+  display: block;
+  margin: 30px 0;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #ccc;
+}
+.bg-windows-10 .content-windows-10 .products-windows-10 .windows-10-license ul li,
+.bg-windows-10 .content-windows-10 .regular.slider .windows-10-license ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #202020;
+  opacity: 0.8;
+}
+.bg-windows-10 .content-windows-10 .products-windows-10 .windows-10-license ul li .img,
+.bg-windows-10 .content-windows-10 .regular.slider .windows-10-license ul li .img {
+  margin-right: 12px;
+}
+.bg-windows-10 .content-windows-10 .products-windows-10 .windows-10-features ul,
+.bg-windows-10 .content-windows-10 .regular.slider .windows-10-features ul {
+  padding-left: 20px;
+}
+.bg-windows-10 .content-windows-10 .products-windows-10 .windows-10-features ul li,
+.bg-windows-10 .content-windows-10 .regular.slider .windows-10-features ul li {
+  margin: 0 0 20px;
+  padding-left: 10px;
+  font-size: 18px;
+  color: #202020;
+  opacity: 0.8;
+  list-style: disc;
+  line-height: 28px;
+}
+.bg-guarantees-windows-10 {
+  background: #F4F4F4;
+  padding: 60px 0;
+  margin-bottom: 60px;
+}
+.bg-guarantees-windows-10 .new-bg-guarantees {
+  margin: 0;
+}
+.bg-guarantees-windows-10 .new-bg-guarantees .new-guarantees-content ul li {
+  background: #fff;
+}
+.requirements-windows-10 {
+  background: #F4F4F4;
+  padding: 60px 0;
+}
+.requirements-windows-10 .content-requirements-windows-10 {
+  margin: 0 auto;
+  display: block;
+  padding: 0 15px;
+}
+@media screen and (min-width: 1200px) {
+  .requirements-windows-10 .content-requirements-windows-10 {
+    width: 1200px;
+    padding: 0;
+  }
+}
+.requirements-windows-10 .content-requirements-windows-10 h3 {
+  margin-bottom: 30px;
+}
+.requirements-windows-10 .content-requirements-windows-10 .system-reqs-accor {
+  padding: 10px 20px;
+  border: 1px solid #CCC;
+  margin-bottom: 10px;
+}
+.requirements-windows-10 .content-requirements-windows-10 .system-reqs-accor .system-reqs-accor-header {
+  display: flex;
+  width: 100%;
+  font-weight: bold;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.requirements-windows-10 .content-requirements-windows-10 .system-reqs-accor .system-reqs-accor-header .arrow-up {
+  display: none;
+}
+.requirements-windows-10 .content-requirements-windows-10 .system-reqs-accor .system-reqs-accord-content {
+  box-sizing: border-box;
+  height: 0;
+  max-height: 0;
+  overflow: auto;
+  transform: all 0.7s ease;
+}
+.requirements-windows-10 .content-requirements-windows-10 .system-reqs-accor.expanded .system-reqs-accor-header .arrow-up {
+  display: flex;
+}
+.requirements-windows-10 .content-requirements-windows-10 .system-reqs-accor.expanded .system-reqs-accor-header .arrow-down {
+  display: none;
+}
+.requirements-windows-10 .content-requirements-windows-10 .system-reqs-accor.expanded .system-reqs-accord-content {
+  box-sizing: border-box;
+  height: 0;
+  max-height: 0;
+  overflow: auto;
+  height: auto;
+  max-height: inherit;
+}
+.requirements-windows-10 .content-requirements-windows-10 ul {
+  padding-left: 30px;
+}
+.requirements-windows-10 .content-requirements-windows-10 ul li {
+  margin-bottom: 30px;
+  font-size: 22px;
+  color: #202020;
+  opacity: 0.8;
+  list-style: disc;
+  line-height: 25px;
+}
+.requirements-windows-10 .MuiAccordion-rounded {
+  border: 1px solid #c5c5c5;
+  margin-bottom: 10px;
+  box-shadow: none;
+  padding: 0 10px;
+  background: none;
+}
+.requirements-windows-10 .MuiAccordion-rounded .MuiAccordionSummary-root .MuiAccordionSummary-content {
+  justify-content: space-between;
+  align-items: center;
+}
+.requirements-windows-10 .MuiAccordion-rounded .MuiAccordionSummary-root .MuiAccordionSummary-content .MuiTypography-root {
+  font-weight: 700;
+  font-size: 16px;
+  color: #142432;
+}
+.we-trust-windows-10 {
+  display: block;
+  margin: 70px auto 60px;
+  padding: 0 15px;
+}
+@media screen and (min-width: 1200px) {
+  .we-trust-windows-10 {
+    width: 1200px;
+    padding: 0;
+  }
+}
+.we-trust-windows-10 h4 {
+  width: 100%;
+  display: block;
+  margin: 0 0 40px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 34px;
+  color: #000;
+  line-height: 39px;
+}
+.we-trust-windows-10 ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 1200px) {
+  .we-trust-windows-10 ul {
+    flex-wrap: inherit;
+  }
+}
+.we-trust-windows-10 ul li {
+  width: 47%;
+  height: 86px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+}
+@media screen and (min-width: 1200px) {
+  .we-trust-windows-10 ul li {
+    width: 252px;
+    margin-bottom: 0;
+  }
+}
+.we-trust-windows-10 ul li:first-child {
+  margin-right: 20px;
+}
+@media screen and (min-width: 1200px) {
+  .we-trust-windows-10 ul li:first-child {
+    margin-right: 0;
+  }
+}
+.we-trust-windows-10 p {
+  width: 100%;
+  display: block;
+  margin: 0 0 30px;
+  font-size: 22px;
+  text-align: center;
+  color: #000;
+  opacity: 0.9;
+  line-height: 30px;
+}
+.we-trust-windows-10 a {
+  width: 295px;
+  height: 66px;
+  display: block;
+  margin: 0 auto;
+  background: #046AB5;
+  font-weight: 500;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-align: center;
+  text-decoration: none;
+  line-height: 66px;
+}
+.why-upgrade-windows-10 {
+  padding: 0 15px;
+  display: block;
+  margin: 0 auto 60px;
+}
+@media screen and (min-width: 1200px) {
+  .why-upgrade-windows-10 {
+    width: 1200px;
+    padding: 0;
+  }
+}
+.why-upgrade-windows-10 h4 {
+  width: 100%;
+  display: block;
+  margin-bottom: 60px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 45px;
+  color: #046AB5;
+  line-height: 52px;
+}
+.why-upgrade-windows-10 .icons-why-upgrade-windows-10 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 40px;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 1200px) {
+  .why-upgrade-windows-10 .icons-why-upgrade-windows-10 {
+    width: 925px;
+    flex-wrap: inherit;
+  }
+}
+.why-upgrade-windows-10 .icons-why-upgrade-windows-10 .icon-why-upgrade {
+  width: 100%;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 1200px) {
+  .why-upgrade-windows-10 .icons-why-upgrade-windows-10 .icon-why-upgrade {
+    width: 440px;
+    margin-bottom: 0;
+  }
+}
+.why-upgrade-windows-10 .icons-why-upgrade-windows-10 .icon-why-upgrade .img {
+  width: 100%;
+  height: 226px;
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #046AB5;
+}
+@media screen and (min-width: 1200px) {
+  .why-upgrade-windows-10 .icons-why-upgrade-windows-10 .icon-why-upgrade .img {
+    width: 402px;
+  }
+}
+.why-upgrade-windows-10 .icons-why-upgrade-windows-10 .icon-why-upgrade strong {
+  display: block;
+  margin: 0 0 15px;
+  font-weight: 500;
+  font-size: 24px;
+  color: #202020;
+  line-height: 28px;
+}
+.why-upgrade-windows-10 .icons-why-upgrade-windows-10 .icon-why-upgrade p {
+  display: block;
+  margin: 0;
+  font-size: 16px;
+  color: #202020;
+  opacity: 0.9;
+  line-height: 18px;
+}
+.why-upgrade-windows-10 .text-why-upgrade-windows-10 p {
+  width: 100%;
+  display: block;
+  margin: 0 0 40px;
+  font-size: 18px;
+  color: #202020;
+  opacity: 0.9;
+  line-height: 28px;
+}

@@ -1,0 +1,13 @@
+{% assign retailSkus = "office2019hs,mac2019hs,office20219hb,mac2019hb,win10home32,wind10home64,win10pro32,win10pro64" | split : ',' %}
+{% assign canDisplayRetail = false %}
+{% if product.variants and product.variants.size > 0 %}
+    {% for retailSku in retailSkus %}
+        {% if product.variants.first.sku == retailSku %}
+            {% assign canDisplayRetail = true %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+    {% if canDisplayRetail %}
+	   {{ 'MSRP' }}
+    {% endif %}
+{% endif %}

@@ -1,0 +1,46 @@
+<div class="container">
+<section class="promise">
+  <div class="d-flex align-center promise-container">
+
+    <div class="d-flex promise-icon-flex">
+      <div class="d-flex space-between align-center promise-icon">
+        {% include 'icon-download' %}
+        <p class="uppercase">instant<br>download</p>
+      </div>
+
+      <div class="d-flex space-between align-center promise-icon">
+        {% include 'icon-tech-support' %}
+        <p class="uppercase">24/7 customer<br>support</p>
+      </div>
+    </div>
+
+    <div class="d-flex promise-icon-flex">
+      <div class="d-flex space-between align-center promise-icon">
+        {% include 'icon-insurance' %}
+        <p class="uppercase">lifetime<br>guarantee</p>
+      </div>
+
+      <div class="d-flex space-between align-center promise-icon">
+        {% include 'icon-refund' %}
+        <p class="uppercase">60 days<br>money back</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Banner",
+    "settings": [
+    ],
+    "presets": [
+      {
+        "name": "Promise",
+        "category": "Others"
+      }
+    ]
+  }
+{% endschema %}

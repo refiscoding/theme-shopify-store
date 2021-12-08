@@ -1,0 +1,220 @@
+            <div class="bg-banner-bf bg-banner-cm">
+                <div class="content-bf">
+                    <div class="text-banner-bf">
+                        <span class="tag-date-bf">From Now until Nov 31.</span>
+                        <span class="title-off-bf">20% OFF</span>
+                        <h1>CYBER MONDAY OFFER</h1>
+                        <h3>Use Promo <strong>CYBER20</strong> at checkout</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-guarantee-bf">
+                <div class="content-bf">
+                    <ul>
+                        <li>
+                            <div class="img">
+                                <img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/icon-delivery.png?v=1636030289" alt="" />
+                            </div>
+                            <div class="text-guarantee-bf">
+                                <strong>INSTANT DOWNLOAD</strong>
+                                <p>Est. Delivery 15 minutes or less</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/icon-money.png?v=1636030323" alt="" />
+                            </div>
+                            <div class="text-guarantee-bf">
+                                <strong>MONEY GUARANTEE</strong>
+                                <p>90 day money back</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/icon-lifetime.png?v=1636030364" alt="" />
+                            </div>
+                            <div class="text-guarantee-bf">
+                                <strong>24/7 LIFETIME</strong>
+                                <p>Support at no extra cost</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="list-products-bf">
+                <div class="content-bf">
+                    <h4>Best Sellers</h4>
+                    {%- assign collection = collections[section.settings.collection-1] -%}
+                  <section class="deals-of-the-week">
+  					<div class="container">
+                      <div class="d-flex space-between deals-collection">
+                        {% for product in collection.products limit: 12 %}
+                          <div class="deals-collection-product">
+                            {% include 'product_grid' %}
+                          </div>
+                        {% endfor %}
+                      </div>
+                	</div>
+				</section>
+                <a href="/collections/best-sellers">View All</a>
+            </div>
+            <div class="bg-shop-category-bf">
+                <div class="content-bf">
+                    <h2>Shop By Categories</h2>
+                    <ul>
+                        <li>
+                            <div class="img">
+                                <img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/mfoffice.png?v=1636030404" alt="" />
+                            </div>
+                            <strong>MS Office</strong>
+                            <a href="/collections/microsoft-office-2019">Shop</a>
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/office-apps.png?v=1636030555" alt="" />
+                            </div>
+                            <strong>Office Apps</strong>
+                            <a href="/collections/office-apps">Shop</a>
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/windows.png?v=1636030822" alt="" />
+                            </div>
+                            <strong>Windows</strong>
+                            <a href="/collections/windows-10">Shop</a>
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img src="https://cdn.shopify.com/s/files/1/0244/3614/6228/files/windows-server.png?v=1636030852" alt="" />
+                            </div>
+                            <strong>Windows Server</strong>
+                            <a href="/collections/windows-server-2022">Shop</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="list-products-bf">
+                <div class="content-bf">
+                    <h4>MS Office</h4>
+                    {%- assign collection = collections[section.settings.collection-2] -%}
+                  <section class="deals-of-the-week">
+  					<div class="container">
+                      <div class="d-flex space-between deals-collection">
+                        {% for product in collection.products limit: 4 %}
+                          <div class="deals-collection-product">
+                            {% include 'product_grid' %}
+                          </div>
+                        {% endfor %}
+                      </div>
+                	</div>
+				</section>
+                    <a href="/collections/microsoft-office-2019">View All</a>
+                </div>
+            </div>
+            <div class="list-products-bf">
+                <div class="content-bf">
+                    <h4>Windows</h4>
+                    {%- assign collection = collections[section.settings.collection-3] -%}
+                  <section class="deals-of-the-week">
+  					<div class="container">
+                      <div class="d-flex space-between deals-collection">
+                        {% for product in collection.products limit: 4 %}
+                          <div class="deals-collection-product">
+                            {% include 'product_grid' %}
+                          </div>
+                        {% endfor %}
+                      </div>
+                	</div>
+				</section>
+                    <a href="/collections/windows-10">View All</a>    
+                </div>
+            </div>
+            <div class="list-products-bf">
+                <div class="content-bf">
+                    <h4>Windows Server</h4>
+                    {%- assign collection = collections[section.settings.collection-4] -%}
+                  <section class="deals-of-the-week">
+  					<div class="container">
+                      <div class="d-flex space-between deals-collection">
+                        {% for product in collection.products limit: 4 %}
+                          <div class="deals-collection-product">
+                            {% include 'product_grid' %}
+                          </div>
+                        {% endfor %}
+                      </div>
+                	</div>
+				</section>
+                    <a href="/collections/windows-server-2022">View All</a>
+                </div>
+            </div>
+            <div class="list-products-bf">
+                <div class="content-bf">
+                    <h4>Office Apps</h4>
+                    {%- assign collection = collections[section.settings.collection-5] -%}
+                  <section class="deals-of-the-week">
+  					<div class="container">
+                      <div class="d-flex space-between deals-collection">
+                        {% for product in collection.products limit: 4 %}
+                          <div class="deals-collection-product">
+                            {% include 'product_grid' %}
+                          </div>
+                        {% endfor %}
+                      </div>
+                	</div>
+				</section>
+                    <a href="/collections/office-apps">View All</a>
+                </div>
+            </div>
+
+<style>
+.promo-title-banner {
+  background: #F79432;
+  padding-top: 75px;
+  color: white;
+}
+.promo-title-banner > h1{
+  font-size: 60px;
+}
+.half-circle {
+  border-bottom: 75px solid #F79432;
+  border-radius: 0 0 100% 100%;
+}
+</style>
+
+{% schema %}
+{
+  "name": "BF content",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Promo title"
+    },
+    {
+      "type": "collection",
+      "id": "collection-1",
+      "label": "Collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection-2",
+      "label": "Collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection-3",
+      "label": "Collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection-4",
+      "label": "Collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection-5",
+      "label": "Collection"
+    }
+  ]
+}
+{% endschema %}

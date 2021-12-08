@@ -1,0 +1,34 @@
+<div class="d-flex space-between promo-banner-blocks">
+  {% for block in section.blocks %}
+  <a href="{{ block.settings.banner-url }}">
+    <img src="{{ block.settings.banner-image | img_url: "master" }}">
+  </a>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Promo Banner Blocks",
+  "settings": [
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Banner image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "banner-image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "banner-url",
+          "label": "Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,40 @@
+  {% assign variant = product.selected_or_first_available_variant %}
+
+{%- if variant.compare_at_price != blank -%}
+<div class="sale-tag">
+  <p><b>SALE</b></p>
+</div>
+{% else %}
+<div style="height: 30px;"></div>
+{%- endif -%}
+<div style="position: relative;">
+<a href="{{ product.url }}">
+  <img src="{{ product.featured_image | img_url: "master" }}">
+</a>
+{% if variant.compare_at_price != blank %}
+  <div style="position: absolute;
+    bottom: -10px;
+    right: 0;">{% include 'icon-stock-count' %}</div>
+{% endif %}
+</div>
+<p class="product_grid_title">{{ product.title }}</p>
+<div class="product_grid_price_tag">
+  {% if variant.compare_at_price == blank %}
+  <div style="height: 21px;"></div>
+  <p class="product_grid_price">
+    {{ product.price | money_with_currency }}</p>
+  {% else %}
+  <p class="compare_at_price">{{ variant.compare_at_price | money_with_currency }}</p>
+  <p class="product_grid_price">
+    {{ product.price | money_with_currency }}</p>
+  {% endif %}
+</div>
+<div class="d-flex space-between icon-container">
+<div class="d-flex align-center grid-icon-download">
+  {% include 'icon-download' %}<p>Instant Download</p></div>
+  <div class="d-flex align-center grid-icon-insurance">
+    {% include 'icon-insurance' %}<p>Lifetime Insurance</p></div>
+  </div>
+<a href="{{ product.url }}">
+  <button class="btn-primary uppercase">buy now</button>
+</a>

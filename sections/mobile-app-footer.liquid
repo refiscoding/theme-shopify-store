@@ -1,0 +1,33 @@
+<section class="mobile-only app-footer">
+  <div class="app-footer-container d-flex space-between align-center">
+    <a href="/">
+      <div class="app-footer-item">
+          {% include 'icon-home' %}
+          <p>Home</p>
+      </div>
+    </a>
+
+    <a href="/collections">
+      <div class="app-footer-item">
+        {% include 'icon-shop' %}
+        <p>Shop</p>
+      </div>
+    </a>
+
+    <a href="/cart">
+      <div class="app-footer-item">
+        <div class="app-footer-cart">
+          {% include 'icon-cart' %}
+          <span class="counter">{{ cart.item_count }}</span>
+        </div>
+        <p>Cart</p>
+      </div>
+    </a>
+
+      <div class="app-footer-item" id="menu-btn">
+        <div id="icon-menu">{% include 'icon-menu' %}</div>
+        <p style="margin-top: 12px;">Menu</p>
+      </div>
+
+  </div>
+</section>

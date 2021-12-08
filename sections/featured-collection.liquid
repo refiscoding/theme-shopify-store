@@ -1,0 +1,55 @@
+<section class="featured-collection">
+  <div class="container">
+    {% assign collection = collections[section.settings.featured-collection] %}
+    <h4>{{ collection.title }} Collection</h4>
+
+    <div class="d-flex featured-collection-banner">
+      <div class="featured-collection-content">
+        <h2>{{ section.settings.collection-heading }}</h2>
+        <p>{{ section.settings.collection-content }}</p>
+        <a href="{{ collection.url }}">
+          <button class="btn-second uppercase">shop now</button>
+        </a>
+      </div>
+      <div class="featured-collection-image"
+           style="background-image: url('{{ section.settings.featured-image | img_url: "master" }}')">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+      {
+        "type": "image_picker",
+        "id": "featured-image",
+        "label": "Collection image"
+      },
+      {
+        "type": "text",
+        "id": "collection-heading",
+        "label": "Heading",
+        "default": "Get Work Done with Office 2019"
+      },
+      {
+        "type": "textarea",
+        "id": "collection-content",
+        "label": "Text"
+      },
+      {
+        "type": "collection",
+        "id": "featured-collection",
+        "label": "Collection"
+      }
+  ],
+  "presets": [
+    {
+      "name": "Featured Collection",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

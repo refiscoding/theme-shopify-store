@@ -1,0 +1,23 @@
+{% unless extraClass %}{% assign extraClass = '' %}{% endunless %}
+{% unless image %}{% assign image = '#' %}{% endunless %}
+{% unless imageHeight %}{% assign imageHeight = '0px' %}{% endunless %}
+{% unless content %}{% assign content = '' %}{% endunless %}
+{% unless title %}{% assign title = '' %}{% endunless %}
+{% if isRight %}
+    {% assign positionClass = 'right' %}
+{% else %}
+    {% assign positionClass = 'left' %}
+{% endif %}
+
+<section class="ui-text-image-v2-wrap {{ extraClass }}">
+    <span class="background-placeholder {{ positionClass }}" style="min-height: {{imageHeight}}; background-image: url('{{image}}');"></span>
+    <div class="ui-text-image-v2 {{ positionClass}}" style="min-height: {{imageHeight}}; background-image: url('{{image}}');">
+        <div class="ui-text-content">
+            <div class="ui-text-inner">
+                <h3>{{title}}</h3>
+                {{ content }}
+            </div>
+        </div>
+    </div>
+</section>
+{% comment %} Remember to include style 'text-image.css' {% endcomment %}

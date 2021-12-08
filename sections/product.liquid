@@ -1,0 +1,369 @@
+<div data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true" itemscope itemtype="http://schema.org/Product">
+
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+
+  <meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
+  <meta itemprop="url" content="{{ shop.url }}{{ current_variant.url }}">
+  <meta itemprop="brand" content="{{ product.vendor }}">
+  <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
+  <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+  {% include 'product-fixed-bar' %}
+
+  <section class="product">
+
+    <div class="container">
+
+      <!----- Product info ----->
+
+      <div class="product-info-flex d-flex">
+        <div class="product-image-flex">
+
+          <div class="d-flex space-between">
+
+            {% if product.images.size > 1 %}
+
+            <ul class="product-thumbnail d-flex">
+              {% for image in product.images %}
+              <li>
+                <img src="{{ image.src | img_url: '80x80', crop: 'center' }}" alt="{{ image.alt | escape }}">
+              </li>
+              {% endfor %}
+            </ul>
+
+            {% endif %}
+
+
+          <div>
+            {% if product.compare_at_price != blank %}
+            <div class="sale-tag">
+              <p><b>SALE</b></p>
+            </div>
+            {% endif %}
+            {% if product.handle contains 'office' %}
+            <div class="d-flex icon-container">
+              <img src="{{ 'icon-access.svg' | asset_url }}" loading="lazy">
+              <img src="{{ 'icon-ppt.svg' | asset_url }}" loading="lazy">
+              <img src="{{ 'icon-outlook.svg' | asset_url }}" loading="lazy">
+              <img src="{{ 'icon-excel.svg' | asset_url }}" loading="lazy">
+              <img src="{{ 'icon-word.svg' | asset_url }}" loading="lazy">
+            </div>
+            {% endif %}
+            <img src="{{ featured_image | img_url: "400x400" }}" loading="lazy">
+          </div>
+
+        </div>
+
+        </div>
+
+        <div class="product-info">
+          <div>
+            <h4 >{{ product.title }}</h4>
+            
+  			<!-- Verified Reviews -->
+			{{ product.metafields.netreviews.stars }}
+  			<!-- Verified Reviews -->
+
+            <div class="d-flex space-between align-center product-brand-star">
+              <p>Brand: {{ product.vendor }}</p>
+              <div class="d-flex align-center">
+                <p style="margin-right: 12px;">4.5</p>
+                <div class="small-star">{% include 'icon-star'%}</div>
+                <div class="small-star">{% include 'icon-star'%}</div>
+                <div class="small-star">{% include 'icon-star'%}</div>
+                <div class="small-star">{% include 'icon-star'%}</div>
+                <div>{% include 'icon-half-star' %}</div>
+              </div>
+            </div>
+          </div>
+
+          {% comment %}<p></p>{% endcomment %}
+
+          <div class="d-flex space-between" style="align-items: baseline;">
+
+          <div>
+            {% comment %}
+            <div class="desktop-only">
+              <p><b>Microsoft Partner:</b></p>
+              <div class="d-flex space-between align-center partner-logo-container">
+                <a href="https://www.microsoft.com/en-us/solution-providers/partnerdetails/save-on-it_d1cc0317-35e0-4ed7-8f0e-5dbcd21b6204/909dc587-deae-4019-9001-65e07e257029">
+                  <img src="{{ 'mcp-grey.png' | asset_img_url: "x45" }}">
+                </a>
+                <a href="https://www.microsoft.com/en-us/solution-providers/partnerdetails/save-on-it_d1cc0317-35e0-4ed7-8f0e-5dbcd21b6204/909dc587-deae-4019-9001-65e07e257029">
+                <img src="{{ 'msp-grey.png' | asset_img_url: "master" }}">
+              </a>
+              </div>
+            </div>
+            {% endcomment %}
+
+            <div class="product-operate-container desktop-only">
+            {{ product.description }}
+            </div>
+
+          <div class="product-price-cta desktop-only">
+            {% assign variant = product.selected_or_first_available_variant %}
+            {% if variant.compare_at_price != blank %}            	
+            	<p class="compare_at_price">
+                  {% include 'retail-price', product: product %}
+                  {{ variant.compare_at_price | money_with_currency }}
+            	</p>
+            {% endif %}
+            <h1>{{ product.price | money_with_currency }}</h1>
+
+            <form action="/cart/add" method="post">
+              <select name="id" style="display: none;">
+              {% for variant in product.variants %}
+                <option {% if variant == product.selected_or_first_available_variant %}
+                selected="selected"
+                {% endif %}
+                value="{{ variant.id }}">
+                {{ variant.title }} - {{ variant.price | money }}
+              </option>
+              {% endfor %}
+              </select>
+              <input type="text" value="1" name="quantity" style="display: none;">
+              <button class="d-flex space-around align-center btn-primary btn-glare"
+              type="submit"
+              style="width: 320px; padding: 7px 20px;">
+                {% include 'icon-download' %} Buy and Download Now
+              </button>
+            </form>
+            {% assign current_variant = product.selected_or_first_available_variant %}
+                  {% if current_variant.sku != "software-backup" %}
+            <p style="font-size: 12px;color:#02303F;display:block;margin:20px 0;">You will get your product in your inbox in 15-30 mins after checkout</p>
+            {% endif %}  
+          </div>
+        </div>
+
+          <ul class="tick-text desktop-only" style="list-style: none; margin: 0; padding: 0;">
+            <li class="d-flex"><span>{% include 'icon-tick' %}</span><p>Installation Guarantee or your money back!</p></li>
+            <li class="d-flex"><span>{% include 'icon-tick' %}</span><p>If you find an identical product cheaper than us, we'll beat it by 5%</p></li>
+            <li class="d-flex"><span>{% include 'icon-tick' %}</span><p>100% Geniune Software Downloads</p>
+          </ul>
+
+        </div>
+
+        </div>
+
+      </div>
+
+      <div class="product-price-cta mobile-only">
+        {% assign variant = product.selected_or_first_available_variant %}
+        <p>
+          {% include 'retail-price', product: product %}
+          {{ variant.compare_at_price | money_with_currency }}
+        </p>
+        <h1>{{ product.price | money_with_currency }}</h1>
+
+        {% form "product", product %}
+          <select name="id" style="display: none;">
+          {% for variant in product.variants %}
+            <option {% if variant == product.selected_or_first_available_variant %}
+            selected="selected"
+            {% endif %}
+            value="{{ variant.id }}">
+            {{ variant.title }} - {{ variant.price | money }}
+          </option>
+          {% endfor %}
+          </select>
+          <input type="text" value="1" name="quantity" style="display: none;">
+          <input class="btn-primary" type="submit" value="Buy and Download Now" />
+        {% endform %}
+      </div>
+
+      <!----- Reviews ----->
+
+      <iframe id='AV_widget_iframe' frameBorder="0" width="100%" height="100%" src="//cl.avis-verifies.com/us/cache/4/0/6/4064d719-fae0-b584-5d8c-831fb92e1fdc/widget4/4064d719-fae0-b584-5d8c-831fb92e1fdchorizontal_index.html"></iframe>
+
+      <!--<div class="product-reviews-block">
+
+          <div>
+            <div class="d-flex space-between align-center flex-wrap">
+              <h4 class="uppercase desktop-only">customer reviews</h4>
+              <h4 class="uppercase mobile-only" style="font-size: 26px;">reviews</h4>
+
+              <div class="d-flex space-between align-center product-review-score">
+                <div class="d-flex align-center">
+                  <div class="d-flex" style="align-items: baseline;">
+                    <h1 class="big-score">4.5</h1>
+                    <h6 class="small-score">/5</h6>
+                  </div>
+                  <div class="big-star">{% include 'icon-star' %}</div>
+                </div>
+
+                  <div class="d-flex" style="align-items: baseline;">
+                    <h1 class="big-score">8.94</h1>
+                    <h6 class="small-score">/10</h6>
+                  </div>
+
+            </div>
+
+          </div>
+
+          <div class="d-flex align-center product-badges desktop-only">
+            <img src="{{ 'reseller.png' | asset_img_url: "x27" }}">
+            <img src="{{ 'jabber.png' | asset_img_url: "x36" }}">
+          </div>
+
+          <div class="d-flex space-between product-reviews-container">
+
+            <div class="product-review">
+              <div class="d-flex space-between align-center product-review-top">
+                <p class="reviewer">Walker M.</p>
+                <div class="d-flex product-review-stars">
+                  <span class="small-star">{% include 'icon-star'%}</span>
+                  <span class="small-star">{% include 'icon-star'%}</span>
+                  <span class="small-star">{% include 'icon-star'%}</span>
+                  <span class="small-star">{% include 'icon-star'%}</span>
+                  <span class="small-star">{% include 'icon-star'%}</span>
+              </div>
+              </div>
+              <p>I had trouble setting up my Microsoft word -
+                I called the helpline which helped me install the program - stress free on my end.
+                Amazing job and impressed  with the support I received. thank you</p>
+            </div>
+
+            <div class="product-review">
+              <div class="d-flex space-between align-center product-review-top">
+                <p class="reviewer">Vanisha K.</p>
+                <div class="d-flex product-review-stars">
+                  <span class="small-star">{% include 'icon-star'%}</span>
+                  <span class="small-star">{% include 'icon-star'%}</span>
+                  <span class="small-star">{% include 'icon-star'%}</span>
+                  <span class="small-star">{% include 'icon-star'%}</span>
+                  <span class="small-star">{% include 'icon-star'%}</span>
+              </div>
+              </div>
+              <p>Amazing price! Very good service.
+                I had some issues installing but spoke to the live chat and they did it all for me remotely.
+                Great staff. Very helpful!</p>
+            </div>
+
+            <div class="product-review">
+              <div class="d-flex space-between align-center product-review-top">
+                <p class="reviewer">Stephan K.</p>
+                <div class="d-flex product-review-stars">
+                  <span class="small-star">{% include 'icon-star'%}</span>
+                  <span class="small-star">{% include 'icon-star'%}</span>
+                  <span class="small-star">{% include 'icon-star'%}</span>
+                  <span class="small-star">{% include 'icon-star'%}</span>
+                  <span class="small-star">{% include 'icon-star'%}</span>
+              </div>
+              </div>
+              <p>Great service at resolving a product key issue,
+                and helping with the software installation for a seamless process. Thanks!</p>
+            </div>
+
+          </div>
+
+          <div class="d-flex space-between" style="margin-top: 34px">
+            <div></div>
+            {% comment %}<a href="">View on ResellerRatings.com</a>{% endcomment %}
+          </div>
+
+        </div>
+
+      </div>-->
+
+      <!----- Promise icons----->
+
+      {% include 'product-promise' %}
+
+
+    <!----- Global clients ----->
+
+    <div class="global-clients-container">
+      <h4>Trusted by Global Clients</h4>
+      <div class="d-flex space-around align-center global-logo">
+        <img src="{{ 'logo-uber.png' | asset_img_url: 'master' }}">
+        <img src="{{ 'logo-siemens.png' | asset_img_url: 'master' }}">
+        <img src="{{ 'logo-lyft.png' | asset_img_url: 'master' }}">
+        <img src="{{ 'logo-w.png' | asset_img_url: 'master' }}">
+        <img src="{{ 'logo-toyota.png' | asset_img_url: 'master' }}">
+      </div>
+    </div>
+
+    <!----- Product details ----->
+
+    <div class="product-banner">
+
+      <div class="product-detail-banner">
+        <h3>{{ product.title }}</h3>
+        <div class="crop-product-img desktop-only"
+             style="background-image: url('{{ featured_image | img_url: '719x' }}')">
+        </div>
+        <div class="mob-crop-product-img mobile-only"
+             style="background-image: url('{{ featured_image | img_url: '344x' }}');">
+        </div>
+      </div>
+
+      <div id="#tabs">
+
+      <ul class="product-banner-filter d-flex">
+        <li class="banner-filter">
+          <a href="#tabs-1">Description</a>
+        </li>
+        <li class="banner-filter">
+          <a href="#tabs-2">Features</a></li>
+        <li class="banner-filter">
+          <a href="#tabs-3">System Requirements</a>
+        </li>
+        <li class="banner-filter">
+          <a href="#tabs-4">FAQs</a>
+        </li>
+      </ul>
+
+      <div class="tab-stage">
+      <div id="tabs-1" class="product-detail-content pd-container">
+        {{ product.description }}
+      </div>
+
+      <div id="tabs-2" class="product-detail-content pf-container">
+        {{ product.description }}
+      </div>
+
+      <div id="tabs-3" class="product-detail-content psr-container">
+        {{ product.description }}
+      </div>
+
+      <div id="tabs-4" class="product-detail-content product-faq">
+        {% include 'FAQs' %}
+        <button class="btn-second read-more">Read More</button>
+        <button class="btn-second read-less">Read Less</button>
+      </div>
+
+      </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  {% unless product == empty %}
+    <script type="application/json" data-product-json>
+      {{ product | json }}
+    </script>
+  {% endunless %}
+
+</div>
+
+<section>
+</section>
+  
+<script>
+$("#buy-windows-11-home-today-catsoft .product-info .btn-primary").text("Pre Order");
+</script>
+
+<!-- SEO Data -->
+<script type="text/javascript">
+    let ecommData = {
+        ecomm_pagetype: 'product',
+      ecomm_prodid: "{{ current_variant.sku }}",
+      ecomm_totalvalue: {{ product.price | times: 0.01 }}
+    }
+
+    dataLayer.push(ecommData);
+</script>
+<!-- /SEO Data -->

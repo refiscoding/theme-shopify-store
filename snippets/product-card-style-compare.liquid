@@ -1,0 +1,47 @@
+{% if product %}
+    <div class="shared-card-product-item">
+        <div class="product-title">
+            <span class="title">{{product.title}}</span>
+        </div>
+        <div class="product-image">
+            <img src="{{ product | img_url: 'small' }}" alt="Product Image" title="{{product.title}}"/>
+        </div>
+        <div class="product-price">
+            {% if macVersion %}
+                <div class="for-price">
+                    <span>For Mac:</span>
+                    <span>{{ macVersion.price | money }}</span>
+                </div>
+                <div class="for-price">
+                    <span>For Pc:</span>
+                    <span>{{ product.price | money }}</span>
+                </div>
+            {% else %}
+                <span class="price">{{ product.price | money }}</span>
+            {% endif %}
+        </div>
+        <div class="action">
+            <a href={{product.url}}>Shop Now</a>
+        </div>
+        {% if apps %}
+            {% assign officeApps = apps | split: ',' %}
+            <ul class="office-apps">
+                {% for app in officeApps %}
+                    <li>
+                        <span class="icon">
+                            <img src="{{ app | downcase | append: '.svg' | file_url }}" />
+                        </span>
+                        <span class="label">{{ app | downcase | capitalize }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if extraContent %}
+            <div class="extra-content">
+                {{ extraContent }}
+            </div>
+        {% endif %}
+    </div>
+{% endif %}
+
+{% comment %}Remember to add 'product-card-style.compare.css' {% endcomment %}

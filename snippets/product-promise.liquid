@@ -1,0 +1,36 @@
+<section class="product-promise">
+  <div class="promise-flex flex-wrap d-flex space-between">
+{% assign current_variant = product.selected_or_first_available_variant %}
+                  {% if current_variant.sku != "software-backup" %}
+    <div class="promise-icon-block">
+      <img src="{{ 'icon-download-round.svg' | asset_url }}" loading="lazy">
+      <p class="uppercase text-center title"><b>instant download</b></p>
+      <p class="text-center">Receive the download link in your mailbox in minutes after checkout.</p>
+    </div>
+{% endif %} 
+    <div class="promise-icon-block">
+      <img src="{{ 'icon-tech-support-round.svg' | asset_url }}" loading="lazy">
+      <p class="uppercase text-center title"><b>24/7 customer support</b></p>
+      <p class="text-center">Chat with us anytime of the day.<br/>Our support team stand by 24 hours, 7 days a week.</p>
+    </div>
+
+  </div>
+
+
+  <div class="promise-flex flex-wrap d-flex space-between">
+
+    <div class="promise-icon-block">
+      <img src="{{ 'icon-insurance-round.svg' | asset_url }}" loading="lazy">
+      <p class="uppercase text-center title"><b>lifetime guarantee</b></p>
+      <p class="text-center">Your downloaded license is guaranteed for life on 1 PC or Mac.</p>
+    </div>
+
+    <div class="promise-icon-block">
+      <img src="{{ 'icon-refund-round.svg' | asset_url }}" loading="lazy">
+      <p class="uppercase text-center title"><b>60 days money back</b></p>
+      <p class="text-center">If you aren’t 100% satisfied with your product, return your purchase for a full refund.</p>
+    </div>
+
+  </div>
+
+</section>

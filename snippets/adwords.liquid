@@ -1,0 +1,53 @@
+<!-- ADWORDS KEEP CUSTOM CODE -->
+{% assign google_ads_audience_tag_id = '796390363' %}
+{% assign currentProduct = product.selected_or_first_available_variant %}
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-{{ google_ads_audience_tag_id }}"></script>
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-{{ google_ads_audience_tag_id }}');
+</script>
+
+{% if template contains 'collection' %}
+	{% assign ad_event_type = 'view_item_list' %}
+{% elsif template contains 'product' %}
+	{% assign ad_event_type = 'view_item' %}
+{% elsif template contains 'search' %}
+	{% assign ad_event_type = 'view_search_results' %}
+{% elsif template contains 'cart' %}
+	{% assign ad_event_type = 'add_to_cart' %}
+{% elsif template contains 'index' %}
+	{% assign ad_event_type = 'home' %}
+{% else %}
+	{% assign ad_event_type = 'other' %}
+{% endif %}
+
+<script>
+    gtag('event', '{{ ad_event_type }}', {
+        'send_to': 'AW-{{ google_ads_audience_tag_id }}',
+        {% if template contains 'product' %}
+        	'value': {{ currentProduct.price | money_without_currency | remove: ',' }},
+        {% elsif template contains 'cart' %}
+            'value': {{ cart.total_price | money_without_currency | remove: ',' }},
+        {% endif %}
+        {% if template contains 'product' %}
+            'items': [{
+                'id': '{{ currentProduct.id }}',
+                'google_business_vertical': 'retail'
+            }]
+        {% elsif template contains 'cart' %}
+            'items': [
+                {% for item in cart.items %}
+                  {
+                      'id': '{{ item.variant_id }}',
+                      'google_business_vertical': 'retail'
+                  },
+                {% endfor %}
+            ]
+        {% endif %}
+    });
+</script>
+<!-- /ADWORDS KEEP CUSTOM CODE -->

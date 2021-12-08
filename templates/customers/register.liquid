@@ -1,0 +1,72 @@
+<div class="registration-page grid">
+  <div class="registration-form grid__item medium-up--eight-twelfths medium-up--push-two-twelfths">
+    <div class="registration-form__container">
+      <h1 class="registration-form__title">{{ 'customer.register.title' | t }}</h1>
+      <p class="registration-form__subtitle">Please enter the following information to create your account.</p>
+      {% form 'create_customer' %}
+        {{ form.errors | default_errors }}
+
+        <div class="grid">
+          <div class="grid__item medium-up--one-half">
+            <label for="FirstName" class="label-hidden">
+              {{ 'customer.register.first_name' | t }}
+            </label>
+            <input type="text"
+              class="registration-form__input"
+              name="customer[first_name]"
+              id="FirstName"
+              placeholder="{{ 'customer.register.first_name' | t }}"
+              autofocus
+              {% if form.first_name %}value="{{ form.first_name }}"{% endif %}>
+          </div>
+          <div class="grid__item medium-up--one-half">
+            <label for="LastName" class="label-hidden">
+                {{ 'customer.register.last_name' | t }}
+              </label>
+              <input type="text"
+                class="registration-form__input"
+                name="customer[last_name]"
+                id="LastName"
+                placeholder="{{ 'customer.register.last_name' | t }}"
+                {% if form.last_name %}value="{{ form.last_name }}"{% endif %}>
+          </div>
+          <div class="grid__item medium-up--one-half">
+            <label for="Email" class="label-hidden">
+              {{ 'customer.register.email' | t }}
+            </label>
+            <input type="email"
+              name="customer[email]"
+              id="Email"
+              class="registration-form__input {% if form.errors contains 'email' %}input-error{% endif %}"
+              placeholder="{{ 'customer.register.email' | t }}"
+              value="{% if form.email %}{{ form.email }}{% endif %}"
+              spellcheck="false"
+              autocomplete="off"
+              autocapitalize="off">
+          </div>
+          <div class="grid__item medium-up--one-half">
+            <label for="CreatePassword" class="label-hidden">
+              {{ 'customer.register.password' | t }}
+            </label>
+            <input type="password"
+              name="customer[password]"
+              id="CreatePassword"
+              class="registration-form__input {% if form.errors contains 'password' %}input-error{% endif %}"
+              placeholder="{{ 'customer.register.password' | t }}"> 
+          </div>  
+          <div class="grid__item">
+            <div class="registration-form__optin">
+              <div class="checkbox">
+                <input type="hidden" name="customer[accepts_marketing]" value="" />
+                <input type="checkbox" id="optin" name="customer[accepts_marketing]" />
+                <label for="optin"></label>
+              </div>
+              <span class="label">{{ 'customer.register.optin' | t }}</span>
+            </div>
+          </div>    
+        </div>       
+        <input type="submit" value="{{ 'customer.register.submit' | t }}" class="btn btn-primary btn-full">
+      {% endform %}
+    </div>
+  </div>
+</div>

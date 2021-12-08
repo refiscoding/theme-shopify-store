@@ -1,0 +1,371 @@
+{{ 'compare-windows-10.css' | asset_url | stylesheet_tag }}
+{% assign win10home = all_products['windows-10-home-64-bit'] %}
+{% assign win10pro = all_products['windows-10-pro-edition-64-bit'] %}
+{% assign win10work = all_products['windows-10-pro-for-workstation'] %}
+<div class="bg-windows-10">
+    <div class="content-windows-10">
+        <h1>Upgrade to Windows 10 & Save Big</h1>
+        <p>Buy Windows 10 Today at Discounted Prices. Our Offer comes With an Enhanced Support.</p>
+            <div class="stickPrice">
+                <div class="windows-cta-price">
+                    <h3>Windows 10 Home</h3>
+                    <div class="price">
+                        <span class="final-price">{{ win10home.price | money }}</span>
+                        <span class="old-price">{{ win10home.compare_at_price | money }}</span>
+                    </div>
+                    <a href="/products/{{ win10home.handle }}">Shop Now</a>
+                </div>
+                <div class="windows-cta-price">
+                    <h3>Windows 10 Pro</h3>
+                    <div class="price">
+                        <span class="final-price">{{ win10pro.price | money }}</span>
+                        <span class="old-price">{{ win10pro.compare_at_price | money }}</span>
+                    </div>
+                    <a href="/products/{{ win10pro.handle }}">Shop Now</a>
+                </div>
+                <div class="windows-cta-price">
+                    <h3>Windows 10 Pro for Workstation</h3>
+                    <div class="price">
+                        <span class="final-price">{{ win10work.price | money }}</span>
+                        <span class="old-price">{{ win10work.compare_at_price | money }}</span>
+                    </div>
+                    <a href="/products/{{ win10work.handle }}">Shop Now</a>
+                </div>
+            </div>
+        <ul class="products-windows-10 compare-windows-page-10-products-slider">
+            <li>
+                <div class="img">
+                    <img src="{{ win10home | img_url: 'small' }}" alt="Windows 10" />
+                    <div class="bullet-discount">
+                        {% assign discount = win10home.compare_at_price | minus: win10home.price | times: 100.0 | divided_by: win10home.compare_at_price | round %}
+                        <span>{{discount}}%<span>Off Retail</span></span>
+                    </div>
+                </div>
+                <div class="windows-10-name">
+                    <h3>Windows 10 Home</h3>
+                    <div class="price">
+                        <span class="final-price">{{ win10home.price | money }}</span>
+                        <span class="old-price">{{ win10home.compare_at_price | money }}</span>
+                    </div>
+                    <a href="/products/{{ win10home.handle }}">Shop Now</a>
+                </div>
+                <div class="windows-10-license">
+                    <ul>
+                        <li>
+                            Best for personal or household use.
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img
+                                    src="{{'compare-windows-10_icon-windows-pc.png' | file_url }}"
+                                    alt="Windows 10"
+                                    title="Windows 10"
+                                />
+                            </div>
+                            Licensed for 1 PC.
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img
+                                    src="{{'compare-windows-10_icon-download-windows.svg' | file_url }}"
+                                    alt="Windows 10"
+                                    title="Windows 10"
+                                />
+                            </div>
+                            Digital Download
+                        </li>
+                    </ul>
+                </div>
+                <div class="windows-10-features">
+                    <ul>
+                        <li>Fast start-up and Windows Hello for password free sign-ins [1]</li>
+                        <li>Windows Mixed Reality for exploring new worlds, going to top destinations, and playing immersive games [2]</li>
+                        <li>My People for easy access to key contacts, drag and drop sharing and sending animated emojis</li>
+                        <li>Windows Ink for creating lists, sticky notes and drawings, writing directly on your screen, and working smarter on Office documents [3][4]</li>
+                        <li>4K gaming, DirectX 12 graphics, and a more intuitive Game mode</li>
+                        <li>Paint 3D and Remix 3D for seeing 3D creations in your world, or enhancing photos, videos and Office documents [5]</li>
+                        <li>Microsoft Edge for longer battery life, 4K Ultra HD and Dolby Audio, and organizing the web your way</li>
+                        <li>Cortana, your personal digital assistant [6]</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="img">
+                    <img src="{{ win10pro | img_url: 'small' }}" alt="Windows 10" />
+                    <div class="bullet-discount">
+                        {% assign discount = win10pro.compare_at_price | minus: win10pro.price | times: 100.0 | divided_by: win10pro.compare_at_price | round %}
+                        <span>{{discount}}%<span>Off Retail</span></span>
+                    </div>
+                </div>
+                <div class="windows-10-name">
+                    <h3>Windows 10 Pro</h3>
+                    <div class="price">
+                        <span class="final-price">{{ win10pro.price | money }}</span>
+                        <span class="old-price">{{ win10pro.compare_at_price | money }}</span>
+                    </div>
+                    <a href="/products/{{ win10pro.handle }}">Shop Now</a>
+                </div>
+                <div class="windows-10-license">
+                    <ul>
+                        <li>
+                            Best for personal or household use.
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img
+                                    src="{{'compare-windows-10_icon-windows-pc.png' | file_url }}"
+                                    alt="Windows 10"
+                                    title="Windows 10"
+                                />
+                            </div>
+                            Licensed for 1 PC.
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img
+                                    src="{{'compare-windows-10_icon-download-windows.svg' | file_url }}"
+                                    alt="Windows 10"
+                                    title="Windows 10"
+                                />
+                            </div>
+                            Digital Download
+                        </li>
+                    </ul>
+                </div>
+                <div class="windows-10-features">
+                    <ul>
+                        <li>Fast start-up and Windows Hello for password free sign-ins [1]</li>
+                        <li>Windows Mixed Reality for exploring new worlds, going to top destinations, and playing immersive games [2]</li>
+                        <li>My People for easy access to key contacts, drag and drop sharing and sending animated emojis</li>
+                        <li>Windows Ink for creating lists, sticky notes and drawings, writing directly on your screen, and working smarter on Office documents [3][4]</li>
+                        <li>4K gaming, DirectX 12 graphics, and a more intuitive Game mode</li>
+                        <li>Paint 3D and Remix 3D for seeing 3D creations in your world, or enhancing photos, videos and Office documents [5]</li>
+                        <li>Microsoft Edge for longer battery life, 4K Ultra HD and Dolby Audio, and organizing the web your way</li>
+                        <li>Cortana, your personal digital assistant [6]</li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="img">
+                    <img src="{{ win10home | img_url: 'small' }}" alt="Windows 10" />
+                    <div class="bullet-discount">
+                        {% assign discount = win10work.compare_at_price | minus: win10work.price | times: 100.0 | divided_by: win10work.compare_at_price | round %}
+                        <span>{{discount}}%<span>Off Retail</span></span>
+                    </div>
+                </div>
+                <div class="windows-10-name">
+                    <h3>Windows 10 Pro for Workstation</h3>
+                    <div class="price">
+                        <span class="final-price">{{ win10work.price | money }}</span>
+                        <span class="old-price">{{ win10work.compare_at_price | money }}</span>
+                    </div>
+                    <a href="/products/{{ win10work.handle }}">Shop Now</a>
+                </div>
+                <div class="windows-10-license">
+                    <ul>
+                        <li>
+                            Best for personal or household use.
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img
+                                    src="{{'compare-windows-10_icon-windows-pc.png' | file_url }}"
+                                    alt="Windows 10"
+                                    title="Windows 10"
+                                />
+                            </div>
+                            Licensed for 1 PC.
+                        </li>
+                        <li>
+                            <div class="img">
+                                <img
+                                    src="{{'compare-windows-10_icon-download-windows.svg' | file_url }}"
+                                    alt="Windows 10"
+                                    title="Windows 10"
+                                />
+                            </div>
+                            Digital Download
+                        </li>
+                    </ul>
+                </div>
+                <div class="windows-10-features">
+                    <ul>
+                        <li>Fast start-up and Windows Hello for password free sign-ins [1]</li>
+                        <li>Windows Mixed Reality for exploring new worlds, going to top destinations, and playing immersive games [2]</li>
+                        <li>My People for easy access to key contacts, drag and drop sharing and sending animated emojis</li>
+                        <li>Windows Ink for creating lists, sticky notes and drawings, writing directly on your screen, and working smarter on Office documents [3][4]</li>
+                        <li>4K gaming, DirectX 12 graphics, and a more intuitive Game mode</li>
+                        <li>Paint 3D and Remix 3D for seeing 3D creations in your world, or enhancing photos, videos and Office documents [5]</li>
+                        <li>Microsoft Edge for longer battery life, 4K Ultra HD and Dolby Audio, and organizing the web your way</li>
+                        <li>Cortana, your personal digital assistant [6]</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="we-trust-windows-10">
+    <h4>We are Trusted Sellers</h4>
+    <ul>
+        <li>
+            <div class="img">
+                <img
+                    src="{{'compare-windows-10_seal-mp-gold.png' | file_url }}"
+                    alt="Windows 10"
+                    title="Windows 10"
+                />
+            </div>
+        </li>
+        <li>
+            <div class="img">
+                <img
+                    src="{{'compare-windows-10_seal-norton.png' | file_url }}"
+                    alt="Windows 10"
+                    title="Windows 10"
+                />
+            </div>
+        </li>
+        <li>
+            <div class="img">
+                <img
+                    src="{{'compare-windows-10_seal-bbb-a.png' | file_url }}"
+                    alt="Windows 10"
+                    title="Windows 10"
+                />
+            </div>
+        </li>
+    </ul>
+    <p>We are a name of Trust. Our Customers need to have peace of mind that they are buying a Genuine Microsft Product that comes with the Norton Shopping Guarantee. Our Business is also accredited by BBB which ensures the highest standards of best business practices.</p>
+    <a href="/collections/windows-10">Shop Windows 10</a>
+</div>
+<div class="requirements-windows-10">
+    <div class="content-requirements-windows-10">
+        <h3>System Requirements</h3>
+        <div class="system-reqs-accor">
+            <div class="system-reqs-accor-header">
+                Windows 10 Home
+                <span class="arrow-down">
+                    <i class="fas fa-angle-down"></i>
+                </span>
+                <span class="arrow-up">
+                    <i class="fas fa-angle-up"></i>
+                </span>
+            </div>
+            <div class="system-reqs-accord-content">
+                <ul>
+                    <li>Processor: 1GHz or faster</li>
+                    <li>Available hard disk space: Up to 20 GB</li>
+                    <li>RAM: 1 GB for 32-bit; 2 GB for 64-bit</li>
+                    <li>800 x 600 screen resolution or greater. DirectX® 9 graphics processor with WDDM driver</li>
+                    <li>Internet access</li>
+                    <li>Microsoft account needed for some features. Also, watching DVDs requires separate playback software</li>
+                </ul>
+            </div>
+        </div>
+        <div class="system-reqs-accor">
+            <div class="system-reqs-accor-header">
+                Windows 10 Pro
+                <span class="arrow-down">
+                    <i class="fas fa-angle-down"></i>
+                </span>
+                <span class="arrow-up">
+                    <i class="fas fa-angle-up"></i>
+                </span>
+            </div>
+            <div class="system-reqs-accord-content">
+                <ul>
+                    <li>Processor: 1GHz or faster</li>
+                    <li>Available hard disk space: 16 Gigabytes for the 32-bit and 20 Gigabytes for the 64-bit</li>
+                    <li>RAM: 1 Gigabyte for the 32-bit version and 2 Gigabytes for the 64-bit version</li>
+                    <li>1024x600 screen resolution or greater. DirectX9 or later with a WDDM 1.0 drive (some games and apps may require an upgraded graphics card for optimal performance and graphics)</li>
+                    <li>Internet access</li>
+                    <li>Microsoft account needed for some features. Also, watching DVDs requires separate playback software</li>
+                </ul>
+            </div>
+        </div>
+        <div class="system-reqs-accor">
+            <div class="system-reqs-accor-header">
+                Windows 10 Pro for Workstation
+                <span class="arrow-down">
+                    <i class="fas fa-angle-down"></i>
+                </span>
+                <span class="arrow-up">
+                    <i class="fas fa-angle-up"></i>
+                </span>
+            </div>
+            <div class="system-reqs-accord-content">
+                <ul>
+                    <li>Processor: 1GHz or faster</li>
+                    <li>Available hard disk space: Up to 20 GB</li>
+                    <li>RAM: 1 GB for 32-bit; 2 GB for 64-bit</li>
+                    <li>800 x 600 screen resolution or greater. DirectX® 9 graphics processor with WDDM driver</li>
+                    <li>Internet access</li>
+                    <li>Microsoft account needed for some features. Also, watching DVDs requires separate playback software</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="why-upgrade-windows-10">
+    <h4>Why Upgrade to Windows 10?</h4>
+    <div class="icons-why-upgrade-windows-10">
+        <div class="icon-why-upgrade">
+            <div class="img">
+                <img
+                    src="{{'compare-windows-10_icon-secure.svg' | file_url }}"
+                    alt="Windows 10"
+                    title="Windows 10"
+                />
+            </div>
+            <strong>Safer and more secure</strong>
+            <p>Windows 10 provides virus and real-time protection against threats from malicious apps and ransomware. And you get ongoing updates from the cloud, so you'll always be up-to-date to fight the latest threats.</p>
+        </div>
+        <div class="icon-why-upgrade">
+            <div class="img">
+                <img
+                    src="{{'compare-windows-10_icon-creative.svg' | file_url }}"
+                    alt="Windows 10"
+                    title="Windows 10"
+                />
+            </div>
+            <strong>More creative, more productive</strong>
+            <p>Whether it's creating in Paint 3D, sketching in Windows Ink, or using the reimagined Photos app, Windows 10 helps unleash your creativity.</p>
+        </div>
+    </div>
+    <div class="text-why-upgrade-windows-10">
+        <p>Get the new and improved Windows when you upgrade to Windows 10. You'll soon discover that it is familiar to Windows users, but a more personalized experience that takes everything you already love about prior versions like Windows 7 and 8 to the next level.</p>
+        <p>Windows 10 delivers an even better Start Menu, expanding the possibilities and bringing over your favorite apps and pins so they're easily accessible. Not only does it make multitasking easier than ever, it also interoperates well with software and hardware you already have, allowing you to stay productive whenever you need to get to work. Specifically, you can view up to four apps and all open tasks at one time.</p>
+        <p>When you upgrade to Windows 10, your apps will work great in all modes, on all Windows enabled devices. Browse Microsoft Store and you'll find plenty of amazing devices that are designed to work perfectly with the latest version of Windows.</p>
+        <p>Whether you want to work or play, Windows 10 helps you interact with your devices in the perfect way. Amazing apps like Mail, Calendar, Music, Video, Maps, and more come standard with Windows 10 and can use OneDrive to back up your information. And the gamer in you will love how your Windows 10 device can sync with Xbox Live, letting you record gameplay in seconds, stream games from your Xbox One console to your device anywhere at home, and more. Buy Windows 10 and you'll get more flexibility than ever before.</p>
+        <p>If you're already a Windows user, download a Windows 10 upgrade so you can experience the latest in Windows technology.</p>
+        <p>If you work with big data, create large graphics, edit video, or need CAD (Computer Aided Design), Windows 10 Pro for Workstations is for you. It's designed for researchers, engineers, video editors, graphic artists, and teams that work with big data. It stores and transfers files faster, and even finds and repairs data faults, plus has the speed, resilience, and power to run on the next generation of PC hardware for server-grade data protection and performance.</p>
+        <p>With Cortana, you can do web searches by simply typing a query like “Latest Surface Products” or “Where can I buy local honey?” You can use Cortana to conveniently set up reminders, add to your personal or work calendar, and more.</p>
+        <p>Included with Windows 10 is the ultimate browser, Microsoft Edge which gives you the ability to annotate webpages and articles, and even has Cortana integration.</p>
+        <p>Put simply, there are so many wonderful features available with Windows 10, you've got to see it to believe it!</p>
+        <p>[1] Requires specialized hardware, including fingerprint reader, illuminated IR sensor or other biometric sensors and capable devices.</p>
+        <p>[2] Windows Mixed Reality requires a compatible Windows 10 PC and headset, plus the Windows 10 Fall Creators Update; PC hardware requirements may vary for available apps, features and content.</p>
+        <p>[3] Touch-capable PC required, pen accessory may be sold separately.</p>
+        <p>[4] 4K hardware and supported games required.</p>
+        <p>[5] Office sold separately.</p>
+        <p>[6] Cortana available in select markets; experience may vary by region and device.</p>
+        <p>[7] Client Hyper-V requires a 64-bit system with second-level address translation (SLAT) capabilities and an additional 2GB of RAM.</p>
+    </div>
+</div>
+
+<script type="text/javascript">
+    let accordionTabs = document.querySelectorAll('.system-reqs-accor-header');
+    for (let i = 0; i < accordionTabs.length; i++) {
+        accordionTabs[i].addEventListener('click', function(event) {
+            event.currentTarget.parentNode.classList.toggle('expanded');
+        });
+    }
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 600) {
+            document.querySelector('.stickPrice').classList.add('show-fixed');
+        }
+        if (window.scrollY < 600) {
+            document.querySelector('.stickPrice').classList.remove('show-fixed');
+        }
+    });
+</script>

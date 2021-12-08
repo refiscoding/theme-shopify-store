@@ -1,0 +1,347 @@
+{% paginate collection.products by 50 %}
+
+<section class="collection-page">
+
+<!----- Mobile banner ----->
+
+  {% if collection.handle contains "promo" %}
+
+  <div class="mobile-only">
+    <img src="{{ section.settings.mobile_landing | img_url: "master" }}" alt="promo banner">
+  </div>
+
+  {% else %}
+
+  <div class="collection-banner mobile-only"
+  style="background-image: url('{{ collection.image | img_url: "master" }}')">
+    <div class="collection-banner-content">
+      <h1>{{ collection.title }}</h1>
+    </div>
+  </div>
+
+  {% endif %}
+
+  <!----- Desktop ----->
+
+  <div class="container">
+
+    {% if collection.handle contains "promo" %}
+
+
+    <img class="desktop-only" src="{{ collection.image | img_url: "master" }}" alt="promo banner">
+
+    <div>{{ collection.description }}</div>
+
+    <!-- Countdown Timer -->
+<div style="background: #000000; padding: 14px 50px; width: fit-content; margin: 0 auto; border-radius: 10px; margin-top: 40px;">
+  <p class="text-center" style="letter-spacing: 0.08em; line-height: 200%; color: white;">THIS ONE TIME OFFER WILL EXPIRE IN EXACTLY<p>
+</div>
+
+<div class="countDownTimer" id="countDownTimer">
+	<ul id="countDownTimerList">
+		<li>
+			<div class="glow" id="days"></div>
+			<div class="digitWrapper">
+				<div class="days"><span class="glow white-font">DAYS</span></div>
+			</div>
+		</li>
+    <div class="colon">:</div>
+		<li class="countDownListItem">
+			<div class="glow" id="hours"></div>
+			<div class="digitWrapper">
+				<div class="hrs"><span class="glow">HOURS</span></div>
+			</div>
+		</li>
+    <div class="colon">:</div>
+		<li class="countDownListItem">
+			<div class="glow" id="minutes"></div>
+			<div class="digitWrapper">
+				<div class="mins"><span class="glow">MINUTES</span></div>
+			</div>
+		</li>
+    <div class="colon">:</div>
+		<li class="countDownListItem">
+			<div class="glow" id="seconds"></div>
+			<div class="digitWrapper">
+				<div class="secs"><span class="glow">SECONDS</span></div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<!-- Disclaimer -->
+<div style="margin-bottom: 100px;">
+  <p class="plus-two-font black-font text-center">Disclaimer</p>
+  <div style="border: 0.5px solid #999999; margin: 10px auto; margin: 10px auto; width: calc(100% - 15%);"></div>
+  <p class="black-font text-center" style="line-height: 160%;">️
+    I should also warn you that if you wait any longer, you risk the limited stocks being sold out<br>
+     ( which will probably happen within the next few hours ).</p>
+ </div>
+
+ <!-- Deal explaination -->
+
+ <h3 class="text-center black-font font-medium">
+   {{ section.settings.deal_title }}
+ </h3>
+ <div class="d-flex align-center deal-explain-container">
+   <img src="{{ "BF30_softwarebox.png" | asset_img_url: "master" }}" alt="30% off software">
+   <div class="relative mobile-only">
+     <img src="{{ "coupon_yellow.png" | asset_img_url: "x100" }}" alt="You get 30% off everything">
+     <p class="absolute plus-two-font black-font font-medium" style="width: fit-content; top: 45%; left: 50%; transform: translate(-50%, -55%)">
+       You get<b style="color: #00ACD2;"> 30% OFF</b> of <b style="color: #00ACD2;">EVERYTHING</b></p>
+   </div>
+   <h1 style="font-size: 100px; color: #00ACD2; margin: 0 40px;"><b>+</b></h1>
+
+   <div class="relative">
+     <div class="absolute question_mark_icon desktop-only" style="top: -5px; right: 0;">
+       {% include 'question_mark_icon' %}
+       <div class="absolute tooltiptext">
+         <p class="black-font plus-two-font">Free USB Backup<br>
+           <span class="smallest-font">a physical copy of your software<br>( $34.99 value )</span></p>
+       </div>
+     </div>
+     <img src="{{ "BF30_usb.png" | asset_img_url: "270x270" }}" style="display: block; margin: 0 auto" alt="Free USB Backup">
+     <div class="tooltiptext mobile-only">
+       <p class="black-font plus-two-font">Free USB Backup<br>
+         <span class="smallest-font">a physical copy of your software<br>( $34.99 value )</span></p>
+     </div>
+   </div>
+
+   <h4 class="or-divider"><b>or</b></h4>
+
+   <div class="relative">
+     <div class="absolute question_mark_icon desktop-only" style="top: -34px; right: 0;">
+       {% include 'question_mark_icon' %}
+       <div class="absolute tooltiptext">
+         <p class="black-font plus-two-font">Free Software Installation<br>
+           <span class="smallest-font">1 time consult<br>( $44.99 value )</span></p>
+       </div>
+     </div>
+     <img src="{{ "BF30_install.png" | asset_img_url: "master" }}" style="display: block; margin: 0 auto" alt="Free Software Installation">
+     <div class="tooltiptext mobile-only">
+       <p class="black-font plus-two-font text-center mobile-only">Free Software Installation<br>
+         <span class="smallest-font">1 time consult<br>( $44.99 value )</span></p>
+     </div>
+   </div>
+
+   <h4 class="or-divider"><b>or</b></h4>
+
+   <div class="relative">
+     <div class="absolute question_mark_icon desktop-only" style="top: -5px; right: 0;">
+       {% include 'question_mark_icon' %}
+       <div class="absolute tooltiptext" style="right: 0;">
+         <p class="black-font plus-two-font">Free Software Insurance<br>
+           <span class="smallest-font">1 year coverage<br>( $49.99 value )</span></p>
+       </div>
+     </div>
+     <img src="{{ "BF30_insurance.png" | asset_img_url: "master" }}" style="display: block; margin: 0 auto" alt="Free Software Insurance">
+     <div class="tooltiptext mobile-only">
+       <p class="black-font plus-two-font">Free Software Insurance<br>
+         <span class="smallest-font">1 year coverage<br>( $49.99 value )</span></p>
+     </div>
+   </div>
+ </div>
+
+ <div class="d-flex flex-wrap" style="margin: 20px 0 100px;">
+   <div class="relative desktop-only">
+     <img src="{{ "coupon_yellow.png" | asset_img_url: "x100" }}" alt="You get 30% off everything">
+     <p class="absolute plus-two-font black-font font-medium" style="width: fit-content; top: 45%; left: 50%; transform: translate(-50%, -55%)">
+       You get<b style="color: #00ACD2;"> 30% OFF</b> of <b style="color: #00ACD2;">EVERYTHING</b></p>
+   </div>
+
+   <div class="relative blue-coupon">
+     <img src="{{ "coupon_blue.png" | asset_img_url: "x100" }}" alt="choose 1 freebie at checkout">
+     <p class="absolute plus-two-font white-font font-medium"
+     style="top: 45%;
+     left: 49.5%;
+     transform: translate(-52.5%, -55%);
+     width: fit-content;">Choose 1
+       <b style="color: #FEF200;">FREEBIE</b> at checkout
+     </p>
+   </div>
+ </div>
+
+    {% else %}
+
+    <div class="collection-header desktop-only">
+
+      <div class="collection-banner">
+        <div class="collection-banner-content">
+          <h1>{{ collection.title }}</h1>
+        </div>
+      </div>
+
+    </div>
+
+    {% endif %}
+
+    {% if collection.handle contains "promo" %}
+
+      <h3 class="text-center black-font font-medium" style="margin-bottom: 60px; line-height: 150%;">
+        Check out our Best Sellers in store now!<br>Happy Shopping!
+      </h3>
+
+    {% endif %}
+
+    <div class="d-flex space-between collection-flex">
+
+      <div id="filter-accordion" class="collection-filter desktop-only">
+
+          <div class="collection-filter-item">
+            <h6>Category</h6>
+          </div>
+
+          <ul id="tag-container" class="category-filter-items">
+          </ul>
+
+          {% comment %}
+          <div class="d-flex space-between align-center collection-filter-item">
+            <h6>Offers</h6>
+            {% include 'icon-down-arrow' %}
+          </div>
+
+          <ul id="tag-container">
+          </ul>
+
+          <div class="collection-filter-item">
+            <h6>Price</h6>
+          </div>
+
+          <ul id="tag-container" class="price-filter-items">
+          </ul>
+
+          {% endcomment %}
+
+          <div class="collection-filter-item">
+            <h6>Year</h6>
+          </div>
+
+          <ul id="tag-container" class="year-filter-items">
+          </ul>
+
+          <div class="collection-filter-item">
+            <h6>Device</h6>
+          </div>
+
+          <ul id="tag-container" class="device-filter-items">
+          </ul>
+
+      </div>
+
+      <div class="d-flex collection-product-flex">
+
+          {%- for product in collection.products -%}
+
+            <div class="collection-product" data-item-tags="{{ product.tags | join: ', ' }}">
+              {% include 'product_grid' %}
+            </div>
+
+          {%- endfor -%}
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+{% endpaginate %}
+
+
+{% if collection.handle == 'office-2019' %}
+    <div class="bg-quiz">
+        <div class="content-quiz">
+            <div>
+                <h5>Aren’t sure which Office version is right for you</h5><br>
+                <p>Take our quiz to find out now.</p>
+            </div>
+            <a href="https://admin.typeform.com/login/oauth?client_id=2eETnEYTMtQ7BwY29JJiwoQufiQ9bE4yaMuTZpHv3gAv&redirect_uri=https%3A%2F%2Fwww.klaviyo.com%2Fintegrations%2Fauth%2Ftypeform&response_type=&scope=forms%3Aread+responses%3Aread+webhooks%3Aread+webhooks%3Awrite&state=" target="_blank">Start</a>
+        </div>
+        <span class="close-content-quiz"><i class="fas fa-times"></i></span>
+    </div>
+{% endif %}
+<script>
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 500) {
+        $(".bg-quiz").slideDown();
+    } else {
+        $(".bg-quiz").slideUp();
+    }
+});
+
+$(".close-content-quiz").unbind().on("click", function() {
+    $(".bg-quiz").addClass("remove");
+});
+</script>
+<script>
+// Math stuff
+const second = 1000,
+  minute = second * 60,
+  hour = minute * 60,
+  day = hour * 24;
+// Set the date we're counting down to
+var futureDate = new Date('Dec 15, 2019 23:59:59').getTime();
+// Update the count down every 1 second
+var countdownTimer = setInterval(function () {
+  // Get todays date and time
+  var currentDate = new Date().getTime();
+  // Find the countdown between now an the count down date
+  var bdayCountdown = futureDate - currentDate;
+  // Time calculations for hours, minutes and seconds
+  var days = Math.floor(bdayCountdown / (second * 60 * 60 * 24));
+  var hours = Math.floor((bdayCountdown % (day)) / (hour));
+  var minutes = Math.floor((bdayCountdown % (hour)) / (minute));
+  var seconds = Math.floor((bdayCountdown % (minute)) / second);
+  // Output the result
+  document.getElementById('days').innerHTML = days;
+  document.getElementById('hours').innerHTML = hours;
+  document.getElementById('minutes').innerHTML = minutes;
+  document.getElementById('seconds').innerHTML = seconds;
+
+  function doubleDigits() {
+    if (document.getElementById('days').innerHTML.length < 2) {
+      document.getElementById('days').innerHTML = "0" + days;
+    }
+    if (document.getElementById('hours').innerHTML.length < 2) {
+      document.getElementById('hours').innerHTML = "0" + hours;
+    }
+    if (document.getElementById('minutes').innerHTML.length < 2) {
+      document.getElementById('minutes').innerHTML = "0" + minutes;
+    }
+    if (document.getElementById('seconds').innerHTML.length < 2) {
+      document.getElementById('seconds').innerHTML = "0" + seconds;
+    }
+  }
+  doubleDigits();
+  // If the count down is over, write some text
+  if (bdayCountdown < 0) {
+    document.getElementById('days').innerHTML = "00";
+  document.getElementById('hours').innerHTML = "00";
+  document.getElementById('minutes').innerHTML = "00";
+  document.getElementById('seconds').innerHTML = "00";
+  }
+}, 1000);
+</script>
+
+{% schema %}
+{
+  "name": "Section Collection",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "mobile_landing",
+      "label": "Mobile Banner"
+    },
+    {
+      "type": "text",
+      "id": "deal_title",
+      "label": "Title",
+      "default": "How the Cyber Monday Deal works?"
+    }
+  ]
+}
+{% endschema %}

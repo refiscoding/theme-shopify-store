@@ -1,0 +1,613 @@
+.compare-windows-server {
+	 display: block;
+	 width: 100%;
+}
+.compare-windows-server ul { list-style: none; }
+ .compare-windows-server .for-desktop {
+	 display: none;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .for-desktop {
+		 display: block;
+	}
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .for-mobile {
+		 display: none;
+	}
+}
+ .compare-windows-server .centered {
+	 width: 1200px;
+	 max-width: 100%;
+	 margin-left: auto;
+	 margin-right: auto;
+}
+ .compare-windows-server .banner {
+	 position: relative;
+	 display: flex;
+	 flex-flow: row nowrap;
+	 justify-content: flex-start;
+	 align-items: center;
+	 min-height: 372px;
+	 margin-bottom: 23px;
+	 z-index: 1;
+     background-image: url({{'compare-windows-server-banner.png' | asset_url }});
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+}
+ .compare-windows-server .banner span {
+	 font-size: 40px;
+	 font-weight: 300;
+	 padding-top: 40px;
+	 padding-left: 53px;
+	 z-index: 2;
+}
+ .compare-windows-server .banner-mobile {
+	 display: block;
+	 width: 100%;
+	 background-color: #F3F3F3;
+}
+ .compare-windows-server .banner-mobile .top-logo {
+	 display: block;
+	 width: 100%;
+	 padding: 18px 0;
+	 mix-blend-mode: darken;
+}
+ .compare-windows-server .banner-mobile span {
+	 display: block;
+	 width: 360px;
+	 max-width: 100%;
+	 font-size: 30px;
+	 font-weight: 300;
+	 margin: 0 0 18px;
+	 padding: 0 12px;
+	 text-align: left;
+	 box-sizing: border-box;
+}
+ .compare-windows-server .banner-mobile .server-logo {
+	 display: block;
+	 margin: 0 auto;
+	 width: 308px;
+	 height: 204px;
+}
+ .compare-windows-server .custom-table {
+	 display: flex;
+	 flex-flow: row nowrap;
+	 justify-content: flex-start;
+	 padding: 16px 60px;
+     list-style: none;
+}
+ .compare-windows-server .custom-table li {
+	 width: 16%;
+	 margin: 0 2%;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .custom-table.for-desktop {
+		 display: flex;
+	}
+}
+ .compare-windows-server .custom-table-info {
+	 display: none;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .custom-table-info {
+		 display: flex;
+		 margin: 6px 0;
+		 background-color: #F7F9FD;
+	}
+	 .compare-windows-server .custom-table-info li {
+		 font-size: 16px;
+		 font-weight: 400;
+		 color: #767676;
+	}
+	 .compare-windows-server .custom-table-info li:first-child {
+		 color: #1D1D1F;
+	}
+}
+ .compare-windows-server .mobile-custom-table {
+	 display: block;
+	 width: 100%;
+}
+ .compare-windows-server .mobile-custom-table li {
+	 display: flex;
+	 flex-flow: row nowrap;
+	 justify-content: space-between;
+	 align-items: center;
+	 font-size: 16px;
+	 font-weight: 400;
+	 color: #1D1D1F;
+	 background-color: #F7F9FD;
+	 padding: 10px 16px;
+	 box-sizing: border-box;
+	 margin: 5px 0;
+}
+ .compare-windows-server .mobile-custom-table li:first-child {
+	 padding: 30px 15px;
+	 background-color: #F3F3F3;
+	 font-weight: 600;
+}
+ .compare-windows-server .mobile-custom-table li span:last-child {
+	 color: #767676;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .mobile-custom-table {
+		 display: none;
+	}
+}
+ .compare-windows-server .product-list {
+	 display: block;
+	 padding: 20px 0;
+	 background-color: #0146BD;
+}
+ .compare-windows-server .product-list.no-mobile {
+	 display: none;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .product-list.no-mobile {
+		 display: block;
+	}
+}
+ .compare-windows-server .product-list ul {
+	 flex-flow: row wrap;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .product-list ul {
+		 flex-flow: row nowrap;
+	}
+}
+ .compare-windows-server .product-list ul li {
+	 width: 46%;
+	 margin-bottom: 10px;
+}
+ .compare-windows-server .product-list ul li:first-child {
+	 display: none;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .product-list ul li {
+		 width: 16%;
+		 margin-bottom: 0;
+	}
+	 .compare-windows-server .product-list ul li:first-child {
+		 display: flex;
+	}
+}
+ .compare-windows-server .product-list ul li .image-box {
+	 display: flex;
+	 flex-flow: row nowrap;
+	 justify-content: center;
+	 align-items: center;
+	 width: 100px;
+	 height: 100px;
+}
+ .compare-windows-server .product-list ul li .title {
+	 display: block;
+	 margin: 12px 0;
+	 font-size: 16px;
+	 color: #FFF;
+	 font-weight: 700;
+	 min-height: 40px;
+}
+ .compare-windows-server .product-list ul li .price-box {
+	 display: block;
+	 margin: 12px 0;
+}
+ .compare-windows-server .product-list ul li .price-box .from-price {
+	 display: block;
+	 width: 100%;
+	 color: #FEF04F;
+	 font-size: 18px;
+	 font-weight: 700;
+}
+.compare-windows-server .product-list ul li .price-box .from-price span {
+     color: #FEF04F;
+}
+ .compare-windows-server .product-list ul li .shop-now {
+	 display: block;
+	 border: none;
+	 background-color: #FFF;
+	 color: #046AB5;
+	 font-size: 18px;
+	 font-weight: 700;
+	 text-align: center;
+	 width: 100%;
+	 margin-top: 14px;
+	 padding: 12px 15px;
+	 box-sizing: border-box;
+	 text-decoration: none;
+}
+ .compare-windows-server .collapsible {
+	 margin: 5px 0;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .collapsible {
+		 margin: 30px 0;
+	}
+}
+ .compare-windows-server .collapsible .content {
+	 display: none;
+}
+ .compare-windows-server .collapsible.expanded .content {
+	 display: block;
+}
+ .compare-windows-server .collapsible .collapsible-header {
+     display: flex;
+     flex-flow: row nowrap;
+     justify-content: flex-start;
+     align-items: center;
+     width: 100%;
+	 background-color: #F3F3F3;
+	 padding: 20px 60px;
+	 box-sizing: border-box;
+	 cursor: pointer;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .collapsible .collapsible-header {
+		 margin: 0 0 20px;
+	}
+}
+ .compare-windows-server .collapsible .collapsible-header .icon {
+	 position: relative;
+	 display: flex;
+     flex-flow: row nowrap;
+     justify-content: center;
+     align-items: center;
+	 margin-right: 15px;
+	 width: 20px;
+	 height: 20px;
+	 cursor: pointer;
+}
+.compare-windows-server .collapsible .collapsible-header .icon .minus {
+    display: none;
+}
+.compare-windows-server .collapsible.expanded .collapsible-header .icon .minus {
+    display: block;
+}
+.compare-windows-server .collapsible .collapsible-header .icon .plus {
+    display: block;
+}
+.compare-windows-server .collapsible.expanded .collapsible-header .icon .plus {
+    display: none;
+}
+ .compare-windows-server .collapsible .collapsible-header .title {
+	 font-size: 24px;
+	 font-weight: 300;
+	 text-align: justify;
+	 color: #202020;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .collapsible .collapsible-header .title {
+		 font-size: 32px;
+		 font-weight: 500;
+	}
+}
+ .compare-windows-server .collapsible .tags {
+	 display: block;
+	 width: 100%;
+	 margin: 20px 0;
+}
+ .compare-windows-server .collapsible .tags ul {
+	 display: flex;
+	 flex-flow: row nowrap;
+	 justify-content: flex-start;
+	 align-items: center;
+	 margin-left: 60px;
+}
+ .compare-windows-server .tag {
+	 padding: 5px 10px;
+	 box-sizing: border-box;
+	 margin-right: 13px;
+	 border-radius: 5px;
+	 font-size: 14px;
+	 font-weight: 400;
+}
+ .compare-windows-server .tag.tag-fs {
+	 color: #2E6434;
+	 background-color: #A8D6AD;
+}
+ .compare-windows-server .tag.tag-ls {
+	 color: #F0B738;
+	 background-color: #FFF1D1;
+}
+ .compare-windows-server .tag.tag-ns {
+	 color: #F44336;
+	 background-color: #FFECEB;
+}
+ .compare-windows-server .card-links {
+	 margin: 30px 0;
+	 background-color: #046AB5;
+}
+ .compare-windows-server .card-links ul {
+	 display: flex;
+	 flex-flow: row wrap;
+	 justify-content: center;
+	 align-items: center;
+	 padding: 36px 0;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .card-links ul {
+		 flex-flow: row nowrap;
+	}
+}
+ .compare-windows-server .card-links ul li {
+	 position: relative;
+	 display: block;
+	 width: 190px;
+	 margin: 20px auto;
+	 max-width: 100%;
+	 background-color: #FFF;
+	 padding: 30px 35px;
+	 box-sizing: border-box;
+	 transition: top 0.4s ease;
+	 top: 0;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .card-links ul li {
+		 display: flex;
+		 flex-flow: row wrap;
+		 justify-content: center;
+		 align-items: center;
+		 margin: 0 40px 0 0;
+	}
+	 .compare-windows-server .card-links ul li:last-child {
+		 margin-right: 0;
+	}
+}
+ .compare-windows-server .card-links ul li:hover {
+	 top: -5px;
+	 box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+}
+ .compare-windows-server .card-links ul li .card-title {
+	 display: block;
+	 width: 100%;
+	 text-align: center;
+	 font-size: 25px;
+	 font-weight: 700;
+	 color: #046AB5;
+	 margin-bottom: 20px;
+}
+ .compare-windows-server .card-links ul li .action {
+	 width: 100%;
+	 background-color: #046AB5;
+	 color: #FFF;
+	 font-size: 18px;
+	 font-weight: 400;
+	 text-align: center;
+	 text-decoration: none;
+	 padding: 15px;
+	 cursor: pointer;
+}
+ .compare-windows-server .contact {
+	 background-color: #F3F3F3;
+	 padding: 28px 0 56px;
+	 margin: 20px 0 60px;
+	 display: flex;
+	 flex-flow: row wrap;
+	 justify-content: center;
+	 align-items: center;
+}
+ .compare-windows-server .contact h3 {
+	 display: block;
+	 width: 100%;
+	 text-align: center;
+	 font-size: 30px;
+	 margin: 0;
+	 padding: 0;
+	 color: #1E1E1E;
+	 margin-bottom: 20px;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .contact h3 {
+		 font-size: 40px;
+	}
+}
+ .compare-windows-server .contact h5 {
+	 display: block;
+	 width: 100%;
+	 color: #767676;
+	 font-size: 18px;
+	 font-weight: 400;
+	 margin-bottom: 44px;
+	 text-align: center;
+	 padding: 0 19px;
+	 box-sizing: border-box;
+}
+ .compare-windows-server .contact .boxes {
+	 display: block;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .contact .boxes {
+		 display: flex;
+		 flex-flow: row wrap;
+		 justify-content: center;
+		 align-items: center;
+	}
+}
+ .compare-windows-server .contact .boxes li {
+	 position: relative;
+	 display: block;
+	 width: 296px;
+	 margin: 14px auto;
+	 padding: 35px;
+	 border: 1px solid #0146BD;
+	 box-sizing: border-box;
+	 top: 0;
+	 transition: top 0.4s ease, box-shadow 0.4s ease;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .contact .boxes li {
+		 margin: 0 42px 0 0;
+	}
+	 .compare-windows-server .contact .boxes li:last-child {
+		 margin-right: 0;
+	}
+}
+ .compare-windows-server .contact .boxes li:hover {
+	 top: -5px;
+	 box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+}
+ .compare-windows-server .contact .boxes li .icon {
+	 position: relative;
+     display: block;
+	 width: 35px;
+	 height: 35px;
+	 margin: 0 auto;
+}
+ .compare-windows-server .contact .boxes li h6 {
+	 display: block;
+	 width: 100%;
+	 font-size: 24px;
+	 font-weight: 400;
+	 margin: 5px 0 13px;
+	 padding: 0;
+	 text-align: center;
+	 color: #046AB5;
+}
+ .compare-windows-server .contact .boxes li span {
+	 display: block;
+	 width: 100%;
+	 color: #000;
+	 font-size: 18px;
+	 font-weight: 400;
+	 text-align: center;
+	 margin-bottom: 23px;
+}
+ .compare-windows-server .contact .boxes li .action {
+	 display: block;
+	 width: 100%;
+	 border: none;
+	 background-color: #046AB5;
+	 border: 2px solid #046AB5;
+	 color: #FFF;
+	 text-align: center;
+	 text-decoration: none;
+	 padding: 16px 0;
+	 box-sizing: border-box;
+	 font-size: 14px;
+	 transition: all 0.4s ease;
+	 cursor: pointer;
+}
+ .compare-windows-server .contact .boxes li .action:hover {
+	 color: #046AB5;
+	 background-color: #F3F3F3;
+}
+ .compare-windows-server .gray {
+	 display: block;
+	 width: 100%;
+	 background-color: #F3F3F3;
+	 margin: 0 0 50px;
+}
+ .compare-windows-server .wrapper-reviews {
+	 padding: 40px 0 50px;
+	 box-sizing: border-box;
+}
+ .compare-windows-server .wrapper-reviews .title {
+	 font-size: 45px;
+	 font-weight: 500;
+	 display: block;
+	 width: 100%;
+	 margin: 0;
+	 padding: 0;
+	 margin-bottom: 50px;
+	 color: #046AB5;
+}
+ .compare-windows-server .wrapper-reviews .title-reviews {
+	 color: #142432;
+	 font-size: 34px;
+}
+ .compare-windows-server .wrapper-guarantees {
+	 padding: 62px 0 78px;
+	 box-sizing: border-box;
+}
+ .compare-windows-server .wrapper-guarantees > h3 {
+	 display: block;
+	 width: 100%;
+	 font-size: 34px;
+	 font-weight: 500;
+	 color: #000;
+	 text-align: center;
+	 padding: 0;
+	 margin: 0 0 40px;
+}
+ .compare-windows-server .wrapper-guarantees .new-guarantees-content .new-guarantees .subtitle-guarantees, .compare-windows-server .wrapper-guarantees .new-guarantees-content .new-guarantees h3 {
+	 display: none;
+}
+ .compare-windows-server .trusted-seller {
+	 padding: 42px 0 80px;
+	 box-sizing: border-box;
+}
+ .compare-windows-server .trusted-seller h3 {
+	 display: block;
+	 width: 100%;
+	 text-align: center;
+	 margin: 0 0 40px;
+	 padding: 0;
+	 font-size: 34px;
+	 font-weight: 500;
+	 color: #000;
+}
+ .compare-windows-server .trusted-seller p {
+	 display: block;
+	 width: 100%;
+	 font-size: 22px;
+	 font-weight: 400;
+	 text-align: center;
+	 margin: 40px 0 30px;
+	 padding: 0 10px;
+	 box-sizing: border-box;
+}
+ .compare-windows-server .trusted-seller a {
+	 border: none;
+	 display: block;
+	 width: 300px;
+	 max-width: 100%;
+	 margin: 0 auto;
+	 padding: 22px 57px;
+	 background-color: #046AB5;
+	 border: 2px solid #046AB5;
+	 color: #FFF;
+	 font-size: 18px;
+	 font-weight: 500;
+	 text-align: center;
+	 text-decoration: none;
+	 cursor: pointer;
+	 transition: all 0.4s ease;
+	 box-sizing: border-box;
+}
+ .compare-windows-server .trusted-seller a:hover {
+	 color: #046AB5;
+	 background-color: #F3F3F3;
+}
+ .compare-windows-server .trusted-seller .seals {
+	 display: flex;
+	 flex-flow: row wrap;
+	 justify-content: center;
+	 align-items: center;
+	 width: 756px;
+	 max-width: 100%;
+	 margin: 0 auto;
+	 box-sizing: border-box;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .trusted-seller .seals {
+		 flex-flow: row nowrap;
+	}
+}
+ .compare-windows-server .trusted-seller .seals li {
+	 display: flex;
+	 flex-flow: row nowrap;
+	 justify-content: center;
+	 align-items: center;
+	 width: 160px;
+	 border: 1px solid #BBB;
+	 height: 86px;
+	 margin: 15px 20px;
+	 padding: 10px;
+	 box-sizing: border-box;
+}
+ @media screen and (min-width: 1200px) {
+	 .compare-windows-server .trusted-seller .seals li {
+		 width: 30%;
+		 margin: 0;
+	}
+}

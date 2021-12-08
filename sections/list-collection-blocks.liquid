@@ -1,0 +1,36 @@
+{% for block in section.blocks %}
+
+      {%- assign collection = collections[block.settings.collection-block] -%}
+
+    <div class="collection-banner" style="background-image: url('{{ collection.image | img_url: "master" }}'); margin-top: 34px;">
+      <div class="collection-banner-content d-flex space-between align-center" style="padding: 38px 28px;">
+          <h1 style="flex: 0 0 56%;">{{ collection.title }}</h1>
+        <a href="{{ collection.url }}"><button class="btn-second uppercase" style="width: 120px;">shop now</button></a>
+      </div>
+    </div>
+
+
+  {% endfor %}
+
+
+  {% schema %}
+  {
+    "name": "List Collection Block",
+    "settings": [
+    ],
+    "max_blocks": 6,
+    "blocks": [
+      {
+        "type": "select",
+        "name": "Collections",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection-block",
+            "label": "Collection"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}

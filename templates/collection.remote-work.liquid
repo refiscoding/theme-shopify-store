@@ -1,0 +1,63 @@
+<section class="large-margin">
+  <div style="margin: 0 250px;">
+    <h2 class="text-center" style="color: #1A3665"><b>{{ collection.title }}</b></h2>
+    <br/>
+
+    <div class="text-center" style="max-width: 640px; display: block; margin: 0 auto;">
+      {{ collection.description }}
+      <br/>
+      <p class="plus-two-font">Use promocode
+        <span class="white-font" style="background: #1266CC; font-size: 24px;padding: 12px 25px;"><b class="white-font">HOMEOFFICE</b></span></p>
+      <p class="smallest-font" style="margin-top: 15px; margin-left: -50px;">active from Apr 15 to Apr 30 only</p>
+    </div>
+
+    <img src="{{ 'remote_work_divider.png' | asset_img_url: "master" }}" style="display: block; margin: -150px auto 0;">
+
+    <ul class="d-flex space-between flex-wrap" style="list-style: none; padding: 0;">
+      {% for product in collection.products %}
+      <li class="relative" style="background: #F2F5F7; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px; width: 218px; margin-top: 45px;">
+        <span class="absolute white-font" style="margin-left: auto; font-size: 10px; background: #1A3665; border-radius: 2px; padding: 5px 15px; top: -10px; right: -20px">Remote work essentials</span>
+        <div style="padding: 24px 20px;">
+          <p style="color: #1480C8; font-size: 10px;">Expires in 10 days</p>
+          <p class="plus-two-font font-medium" style="line-height: 25px; height: 50px;">{{ product.title }}</p>
+          <progress class="sb-progress" value="15" max="100"></progress>
+          <p class="font-medium" style="font-size: 10px;">34% sold</p>
+          <ul class="d-flex align-center" style="list-style: none; padding: 0; height: 135px;">
+            <li style="flex: 0 0 45%;">
+              {% if product.compare_at_price != blank %}
+              <span class="white-font" style="background: #FF8300; font-size: 10px; padding: 4px 8px;">Save
+                {% if product.compare_at_price_max > product.price %}{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}%{% endif %}
+              </span>
+              {% endif %}
+              <p class="smallest-font" style="text-decoration: line-through; color: #999999; margin-top: 10px;">{{ product.compare_at_price | money_with_currency}}</p>
+              <p style="width: 135%;"><b>{{ product.price | money_with_currency }}</b></p>
+            </li>
+            <li>
+              <img src="{{ product.featured_image | img_url: "125x125" }}">
+            </li>
+          </ul>
+        </div>
+        <a href="{{ product.url }}">
+          <button class="white-font"
+        style="background: #29C27F; padding: 16px; width: 100%; font-size: 16px; border-radius: 0px 0px 10px 10px;">Buy and download now</button>
+      </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <!-- promocode banner -->
+
+    <ul class="d-flex space-between align-center" style="list-style: none; padding: 0; margin-top: 50px; background: #1A3665; padding: 50px 70px;">
+      <li>
+        <h4 class="white-font"><b class="white-font">Ahhhhhmazing Sales for work from home days</b></h4>
+        <p class="plus-two-font white-font">Use promocode at checkout for
+          <span class="font-medium" style="color: #FEF200; font-size: 24px;">12% off</span>
+          storewide</p>
+      </li>
+      <li>
+        <div style="background: #FEF200; color: #1A3665; font-size: 24px; padding: 14px 28px; text-align: center;"><b>HOMEOFFCE</b></div>
+        <p class="smallest-font white-font" style="margin-top: 10px;">active from April 15 to April 30 only</p>
+      </li>
+    </ul>
+  </div>
+</section>

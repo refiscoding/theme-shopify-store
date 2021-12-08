@@ -1,0 +1,874 @@
+{{ 'compare-office-2019-editions.css' | asset_url | stylesheet_tag }}
+{% assign office2019hs  = all_products['microsoft-office-2019-home-and-student'] %}
+{% assign mac2019hs     = all_products['microsoft-office-2019-home-and-student-for-mac'] %}
+{% assign office2019hb  = all_products['microsoft-office-2019-home-and-business'] %}
+{% assign mac2019hb     = all_products['microsoft-office-2019-home-and-business-for-mac']%}
+{% assign office2019pro = all_products['microsoft-office-2019-professional'] %}
+
+<div class="page-compare-office-2019-editions">
+    <div class="bg bg-banners-tabs">
+        <div class="tab-1 tab-content current" data-target="tab-1">
+            <img src="{{ 'page-compare-office-2019-editions_tabs-banner-home-student.png' | file_url }}" alt="Tab Image" />
+        </div>
+        <div class="tab-2 tab-content" data-target="tab-2">
+            <img src="{{ 'page-compare-office-2019-editions_tabs-banner-home-bussiness.png' | file_url }}" alt="Tab Image" />
+        </div>
+        <div class="tab-3 tab-content" data-target="tab-3">
+            <img src="{{ 'page-compare-office-2019-editions_tabs-banner-professional.png' | file_url }}" alt="Tab Image" />
+        </div>
+    </div>
+    <div class="container-tabs">
+        <div class="tab-1 tab-content current" data-target="tab-1">
+            <h2>Microsoft Office 2019 Home and Student</h2>
+        </div>
+        <div class="tab-2 tab-content" data-target="tab-2">
+            <h2>Microsoft Office 2019 Home and Business</h2>
+        </div>
+        <div class="tab-3 tab-content" data-target="tab-3">
+            <h2>Microsoft Office 2019 Professional</h2>
+        </div>
+        <span>Choose your Edition</span>
+        <ul class="tabs">
+            <li class="tab-link current" data-target="tab-1">Home and Student</li>
+            <li class="tab-link" data-target="tab-2">Home and Business</li>
+            <li class="tab-link" data-target="tab-3">Professionial</li>
+        </ul>
+    </div>
+    <div class="tab-1 tab-content current" data-target="tab-1">
+        <div class="bg bg-texts-works">
+            <div class="content">
+                <p>Microsoft Office 2019 Home and Student is the newest and most powerful version of Microsoft's popular office suite. It offers a complete, premium experience that will help you create anything from presentations to home projects with ease, on any device. With this tool in your arsenal, there are no limits!</p>
+                <ul class="office-applications">
+                    <li>
+                        <div class="img-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-word.png' | file_url }}" alt="office apps icon" />
+                        </div>
+                        <span>Word</span>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-excel.png' | file_url }}" alt="office apps icon" />
+                        </div>
+                        <span>Excel</span>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-powerpoint.png' | file_url }}" alt="office apps icon" />
+                        </div>
+                        <span>Powerpoint</span>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-onenote.png' | file_url }}" alt="office apps icon" />
+                        </div>
+                        <span>OneNote</span>
+                    </li>
+                </ul>
+                <p>Microsoft's latest iteration of their famous productivity applications bring some exciting changes including more collaboration features as well as an impressive range of new templates for every situation imaginable - both school-related or personal projects alike!</p>
+            </div>
+        </div>
+        <div class="bg bg-box-info-product">
+            <div class="content">
+                <div class="actions-info-product">
+                    <div class="price-info-product">
+                        <div class="choose-os">
+                            <span>Choose your Operating System</span>
+                            <ul>
+                                <li class="current" data-target="pc">PC</li>
+                                <li data-target="mac">Mac</li>
+                            </ul>
+                        </div>
+                        <div class="pc-prices current">
+                            <span class="prices">
+                                <span class="retail-price">Retail Price:</span>
+                                <span class="old-price">{{ office2019hs.compare_at_price | money }}</span>
+                                {% assign discount = 0.0 %}
+                                {% assign discount = office2019hs.compare_at_price | minus: office2019hs.price | times: 100.0 | divided_by: office2019hs.compare_at_price | round %}
+                                <span class="tag-discount">Save {{ discount }}%</span>
+                            </span>
+                            <strong>{{ office2019hs.price | money }}</strong>
+                            <a href="/products/{{ office2019hs.handle }}">Add to Cart</a>
+                        </div>
+                        <div class="mac-prices">
+                            <span class="prices">
+                                <span class="retail-price">Retail Price:</span>
+                                <span class="old-price">{{ mac2019hs.compare_at_price | money }}</span>
+                                {% assign discount = 0.0 %}
+                                {% assign discount = mac2019hs.compare_at_price | minus: mac2019hs.price | times: 100.0 | divided_by: mac2019hs.compare_at_price | round %}
+                                <span class="tag-discount">Save {{ discount }}%</span>
+                            </span>
+                            <strong>{{ mac2019hs.price | money }}</strong>
+                            <a href="/products/{{ mac2019hs.handle }}">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-actions-products">
+                    <div class="lists">
+                        <ul>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-device.svg' | file_url }}" alt="icon" />For 1 Device</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" alt="icon" />Buy now use forever</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" alt="icon" />24/7 support at no extra cost</li>
+                        </ul>
+                        <ul>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-delivery.svg' | file_url }}" alt="icon" />Delivery Via Email</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" alt="icon" />Digital download</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" alt="icon" />Genuine Return Policy</li>
+                        </ul>
+                    </div>
+                    <div class="seals-info-product">
+                        <img src="{{ 'page-compare-office-2019-editions_seals.png' | file_url }}" alt="seals" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-title-comparison">
+            <div class="content">
+                <div class="first-section first-section-student">
+                    <div class="image-first-section">
+                        <img src="{{ 'page-compare-office-2019-editions_image-1-student.png' | file_url }}" alt="Image Student" />
+                    </div>
+                    <div class="text-first-section">
+                        <h2>Microsoft Office can help you with your projects</h2>
+                        <p>The newest Office suite will help you ace any class or help you with personal projects! Every application in the suite has gotten an overhaul, both visually and feature-wise. They all function  together seamlessly so you can jump from one application to another without having to worry about compatibility.</p>
+                        <p>If being stationary isn't your cup of tea, head to Office.com for online applications that are available from any browser. Files created or edited with Office Online are compatible with Office 2019 apps too.</p>
+                    </div>
+                </div>
+                <div class="first-section">
+                    <div class="text-first-section">
+                        <h2>The #1 most installed Office suite worldwide</h2>
+                        <p>Office 2019 Home and Student is perfect if you're a student. The apps help you when you're typing up essays, taking notes in class, creating presentations or keeping track of your life. Office 2019 Home and Student has everything that a student needs to do these things effortlessly with the right tools!</p>
+                        <p>Office 2019 Home and Student is also perfect for those who want to get personal projects done, or start a business from home. It gives you all the right tools to tackle budgeting, household inventory, planning, pitching ideas, and personal notes as well.</p>
+                        <p>If you require anything of this sort, Office 2019 Home and Student is perfect for you — just as it is perfect for millions of other people who've purchased this excellent suite.</p>
+                    </div>
+                    <div class="image-first-section">
+                        <img src="{{ 'page-compare-office-2019-editions_image-2-student.png' | file_url }}" alt="Image Student" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg bg-second-content">
+            <div class="content">
+                <h2>Get the latest Office 2019 apps — and keep them forever!</h2>
+                <p>Office 2019 is the next best thing to costly subscription-based services. It's available for purchase now and once you buy it, you get an Office suite that'll be yours to keep, with all the latest apps.</p>
+            </div>
+        </div>
+        <div class="bg-info-white bg-info-works-on">
+            <div class="text-info-white">
+                <h3>Microsoft Word 2019</h3>
+                <p>Get work done easier with a new and improved inking feature, the roaming pencil case. A pressure sensitive pen will allow you to create more natural looking sketches without giving up any of your favorite drawing tools - all included inside Word 2019.</p>
+                <ul>
+                    <li>
+                        <p><strong>Get more done faster than ever before.</strong> Create, edit, and share your documents with the best word processor on the planet.</p>
+                    </li>
+                    <li>
+                        <p><strong>New and improved inking.</strong> Draw lines and shapes with a pressure sensitive pen. Create more natural looking sketches without giving up any of your favorite drawing tools.</p>
+                    </li>
+                    <li>
+                        <p><strong>A new dark theme for Word 2019</strong> Use the new black theme to focus on what matters most. The dark theme makes it easier to read text and see content while saving battery life.</p>
+                    </li>
+                    <li>
+                        <p><strong>New learning tools.</strong> Make your documents more accessible than ever before with new tools such as text-to-speech, captions and audio descriptions, and more.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="img-info-white">
+                <img src="{{ 'page-compare-office-2019-editions_image-2.png' | file_url }}" alt="Laptop Image" />
+            </div>
+        </div>
+        <div class="bg-info-gray bg-info-works-on">
+            <div class="img-info-gray">
+                <img src="{{ 'page-compare-office-2019-editions_image-3.png' | file_url }}" alt="Laptop Image" />
+            </div>
+            <div class="text-info-gray">
+                <h3>Microsoft Excel 2019</h3>
+                <p>Microsoft Excel 2019 comes with a slew of new features, including formulas and charts. These tools are designed to make data analysis easier than ever before by making it practically effortless for anyone without experience in the field.</p>
+                <ul>
+                    <li>
+                        <p><strong>Use your data to your advantage.</strong> Thanks to its enhancements that help you analyze information quickly and easily, you can make better decisions based on your findings.</p>
+                    </li>
+                    <li>
+                        <p><strong>New functions.</strong> Use the power of many new functions to better sort and create data sets.</p>
+                    </li>
+                    <li>
+                        <p><strong>New feature: Funnel chart.</strong> Funnel charts are a new chart type that shows the progress of your data over time.</p>
+                    </li>
+                    <li>
+                        <p><strong>New Timeline view.</strong> Timelines make it easy to visualize and analyze historical events, trends, and patterns.</p>
+                    </li>
+                    <li>
+                        <p><strong>PowerBI and PowerPivot, and PowerQuery.</strong> Enjoy the improved features to take data analysis to the next level in your business.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg-info-white bg-info-works-on">
+            <div class="text-info-white">
+                <h3>Microsoft PowerPoint 2019</h3>
+                <p>PowerPoint 2019 is perfect for people who want to create engaging presentations. Morph and Zoom make it easy to turn a simple presentation into an exciting cinematic experience!</p>
+                <ul>
+                    <li>
+                        <p><strong>Zoom transition.</strong> Add cinematic impact to your presentations with the Zoom transition. It lets you create complex slide orders and dynamic presentations.</p>
+                    </li>
+                    <li>
+                        <p><strong>Morph animation.</strong> The Morph transition is an animation that changes shapes on your slides into other shapes, like turning a square into a circle or triangle. You can also morph text from one font into another.</p>
+                    </li>
+                    <li>
+                        <p><strong>Insert icons and 3D models.</strong> Work with SVG icons and 3D models to make your work look more professional and polished. Choose from thousands of professionally designed icons available in PowerPoint 2019, or upload your own.</p>
+                    </li>
+                    <li>
+                        <p><strong>Improved roaming pencil case.</strong> Take advantage of the new digital inking features to add extra visual impact to your presentation's slides.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="img-info-white">
+                <img src="{{ 'page-compare-office-2019-editions_image-4.png' | file_url }}" alt="Laptop Image" />
+            </div>
+        </div>
+        <div class="bg-info-gray bg-info-works-on">
+            <div class="img-info-gray">
+                <img src="{{ 'page-compare-office-2019-editions_image-5-onenote.png' | file_url }}" alt="Latop Image" />
+            </div>
+            <div class="text-info-gray">
+                <h3>Microsoft OneNote</h3>
+                <p>Take notes anytime, from anywhere. Organize your thoughts with groups, pages, and more. Use the included tools to take your notes to the next level.</p>
+                <ul>
+                    <li>
+                        <p><strong>Layered organization.</strong> OneNote allows you to sort your notes better than any other service. Create groups, books, pages, and navigate your OneNote with ease.</p>
+                    </li>
+                    <li>
+                        <p><strong>Improved digital inking.</strong> OneNote has a way to help you take notes. You can quickly jot them down on a touch-enabled device, or you can use a roaming pencil case. This will let you draw, highlight, underline, and more!</p>
+                    </li>
+                    <li>
+                        <p><strong>Insert media.</strong> Add your own pictures, links, and videos to your OneNote notes. Keep everything in one place, with no need for external sources.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg-up-cloud">
+            <div class="content">
+                <div class="text-up-cloud">
+                    <h4>Get set up for the cloud</h4>
+                    <p>Worried about getting caught up while working remotely? No problem! Microsoft is ready to make your work easier and more accessible by bringing the power of the cloud within your reach.</p>
+                    <p>Office 2019 Professional allows you to save documents directly in the cloud on OneDrive or SharePoint, and have instant access to them when you're not at work. You can now make minor edits and additions even while overseas.</p>
+                    <p>Imagine being able to work from anywhere you choose. With Office 2019, it can be a reality! The Microsoft Web Apps (available in any browser) are online versions of the classic Microsoft Office apps that let you make edits and additions even when not seated at your desk.</p>
+                </div>
+                <div class="image-up-cloud">
+                    <img src="{{ 'page-compare-office-2019-editions_image-cloud.png' | file_url }}" alt="Cloud Image" />
+                </div>
+            </div>
+        </div>
+        <div class="box-title-comparison">
+            <div class="content content-center">
+                <h2>Choose the best Office for your business</h2>
+                <p>Microsoft Office 2019 Professional is the best way to get an edge over your competitors. You're already starting out with a leg up on everyone else — don't give that advantage away by using free, open-source software like LibreOffice or Google Docs!</p>
+                <p>With Microsoft Office 2019 Pro you can access all of the latest features and keep control of everything for as long as you need it without having to pay more than what's necessary. With access to all new features as well as getting a lifetime license, why wouldn't you invest?</p>
+            </div>
+        </div>
+        <div class="bg bg-box-info-product bg-box-info-product-bottom">
+            <div class="content">
+                <div class="actions-info-product">
+                    <div class="price-info-product">
+                        <div class="choose-os">
+                            <span>Choose your Operating System</span>
+                            <ul>
+                                <li class="current" data-target="pc">PC</li>
+                                <li data-target="mac">Mac</li>
+                            </ul>
+                        </div>
+                        <div class="pc-prices current">
+                            <span class="prices">
+                                <span class="retail-price">Retail Price:</span>
+                                <span class="old-price">{{ office2019hs.compare_at_price | money }}</span>
+                                {% assign discount = 0.0 %}
+                                {% assign discount = office2019hs.compare_at_price | minus: office2019hs.price | times: 100.0 | divided_by: office2019hs.compare_at_price | round %}
+                                <span class="tag-discount">Save {{ discount }}%</span>
+                            </span>
+                            <strong>{{ office2019hs.price | money }}</strong>
+                            <a href="/products/{{ office2019hs.handle }}">Add to Cart</a>
+                        </div>
+                        <div class="mac-prices">
+                            <span class="prices">
+                                <span class="retail-price">Retail Price:</span>
+                                <span class="old-price">{{ mac2019hs.compare_at_price | money }}</span>
+                                {% assign discount = 0.0 %}
+                                {% assign discount = mac2019hs.compare_at_price | minus: mac2019hs.price | times: 100.0 | divided_by: mac2019hs.compare_at_price | round %}
+                                <span class="tag-discount">Save {{ discount }}%</span>
+                            </span>
+                            <strong>{{ mac2019hs.price | money }}</strong>
+                            <a href="/products/{{ mac2019hs.handle }}">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-actions-products">
+                    <div class="lists">
+                        <ul>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-device.svg' | file_url }}" />For 1 Device</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Buy now use forever</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />24/7 support at no extra cost</li>
+                        </ul>
+                        <ul>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-delivery.svg' | file_url }}" />Delivery Via Email</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Digital download</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Genuine Return Policy</li>
+                        </ul>
+                    </div>
+                    <div class="seals-info-product">
+                        <img src="{{ 'page-compare-office-2019-editions_seals.png' | file_url }}" alt="Seals" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-2 tab-content" data-target="tab-2">
+        <div class="bg bg-texts-works">
+            <div class="content">
+                <p>Discover the full-featured power of the latest Microsoft Office. Create and collaborate with others seamlessly across your devices. The suite includes powerful apps like Word, Excel, PowerPoint, Outlook and more! Order today for instant digital delivery.</p>
+                <ul class="office-applications">
+                    <li>
+                        <div class="img-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-word.png' | file_url }}" alt="office apps icon" />
+                        </div>
+                        <span>Word</span>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-excel.png' | file_url }}" alt="office apps icon" />
+                        </div>
+                        <span>Excel</span>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-powerpoint.png' | file_url }}" alt="office apps icon" />
+                        </div>
+                        <span>Powerpoint</span>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-outlook.png' | file_url }}" alt="office apps icon" />
+                        </div>
+                        <span>Outlook</span>
+                    </li>
+                </ul>
+                <p>Microsoft Office 2019 Home and Business is the complete, cross-platform, cross-device solution for the modern workplace, with smart tools for individuals, teams, and businesses. It's built for the technology you already use to get more done from virtually anywhere.</p>
+                <ul class="features">
+                    <li>
+                        <div class="icon-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-rocket.png' | file_url }}" alt="icon features" />
+                        </div>
+                        <span>Get instant access to the latest Microsoft Office applications, and some more.</span>
+                    </li>
+                    <li>
+                        <div class="icon-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-global.png' | file_url }}" alt="icon features" />
+                        </div>
+                        <span>Using powerful collaboration tools help you work together on documents at the same time with others in real time - whether they are in the next office or a different continent.</span>
+                    </li>
+                    <li>
+                        <div class="icon-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-calendar.png' | file_url }}" alt="icon features" />
+                        </div>
+                        <span>Juggle both work and personal schedules in Outlook's powerful system. Make your own calendars, meetings, and enjoy automated reminders for all tasks.</span>
+                    </li>
+                    <li>
+                        <div class="icon-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-money.png' | file_url }}" alt="icon features" />
+                        </div>
+                        <span>Keep your Office software forever. Just pay once, and keep using your favorite productivity tools 'til the end of time.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg bg-box-info-product">
+            <div class="content">
+                <div class="actions-info-product">
+                    <div class="price-info-product">
+                        <div class="choose-os">
+                            <span>Choose your Operating System</span>
+                            <ul>
+                                <li class="current" data-target="pc">PC</li>
+                                <li data-target="mac">Mac</li>
+                            </ul>
+                        </div>
+                        <div class="pc-prices current">
+                            <span class="prices">
+                                <span class="retail-price">Retail Price:</span>
+                                <span class="old-price">{{ office2019hb.compare_at_price | money }}</span>
+                                {% assign discount = 0.0 %}
+                                {% assign discount = office2019hb.compare_at_price | minus: office2019hb.price | times: 100.0 | divided_by: office2019hb.compare_at_price | round %}
+                                <span class="tag-discount">Save {{ discount }}%</span>
+                            </span>
+                            <strong>{{ office2019hb.price | money }}</strong>
+                            <a href="/products/{{ office2019hb.handle }}">Add to Cart</a>
+                        </div>
+                        <div class="mac-prices">
+                            <span class="prices">
+                                <span class="retail-price">Retail Price:</span>
+                                <span class="old-price">{{ mac2019hb.compare_at_price | money }}</span>
+                                {% assign discount = 0.0 %}
+                                {% assign discount = mac2019hb.compare_at_price | minus: mac2019hb.price | times: 100.0 | divided_by: mac2019hb.compare_at_price | round %}
+                                <span class="tag-discount">Save {{ discount }}%</span>
+                            </span>
+                            <strong>{{ mac2019hb.price | money }}</strong>
+                            <a href="/products/{{ mac2019hb.handle }}">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-actions-products">
+                    <div class="lists">
+                        <ul>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-device.svg' | file_url }}" />For 1 Device</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Buy now use forever</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />24/7 support at no extra cost</li>
+                        </ul>
+                        <ul>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-delivery.svg' | file_url }}" />Delivery Via Email</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Digital download</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Genuine Return Policy</li>
+                        </ul>
+                    </div>
+                    <div class="seals-info-product">
+                        <img src="{{ 'page-compare-office-2019-editions_seals.png' | file_url }}" alt="Seal" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-title-comparison">
+            <div class="content">
+                <div class="first-section">
+                    <div class="image-first-section">
+                        <img src="{{ 'page-compare-office-2019-editions_image-2-student.png' | file_url }}" alt="Woman and Lapto" />
+                    </div>
+                    <div class="text-first-section">
+                        <h2>The #1 most installed Office suite worldwide</h2>
+                        <p>Office 2019 Home and Business is designed for people who want to take things to a professional level.</p>
+                        <p>Productivity boosters like Tell Me help you write and edit with more ease using natural-language question prompts that anticipate what you want to do. The Office app smartly suggests commands based on the actions you take, empowering you to get your work done your way.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg bg-second-content">
+            <div class="content">
+                <h2>Get the latest Office 2019 apps — and keep them forever!</h2>
+                <p>Office 2019 is the next best thing to costly subscription-based services. It's available for purchase now and once you buy it, you get an Office suite that'll be yours to keep, with all the latest apps.</p>
+            </div>
+        </div>
+        <div class="bg-info-white bg-info-works-on">
+            <div class="text-info-white">
+                <h3>Microsoft Word 2019</h3>
+                <p>Get work done easier with a new and improved inking feature, the roaming pencil case. A pressure sensitive pen will allow you to create more natural looking sketches without giving up any of your favorite drawing tools - all included inside Word 2019.</p>
+                <ul>
+                    <li>
+                        <p><strong>Get more done faster than ever before.</strong> Create, edit, and share your documents with the best word processor on the planet.</p>
+                    </li>
+                    <li>
+                        <p><strong>New and improved inking.</strong> Draw lines and shapes with a pressure sensitive pen. Create more natural looking sketches without giving up any of your favorite drawing tools.</p>
+                    </li>
+                    <li>
+                        <p><strong>A new dark theme for Word 2019</strong> Use the new black theme to focus on what matters most. The dark theme makes it easier to read text and see content while saving battery life.</p>
+                    </li>
+                    <li>
+                        <p><strong>New learning tools.</strong> Make your documents more accessible than ever before with new tools such as text-to-speech, captions and audio descriptions, and more.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="img-info-white">
+                <img src="{{ 'page-compare-office-2019-editions_image-2.png' | file_url }}" alt="Laptop Image" />
+            </div>
+        </div>
+        <div class="bg-info-gray bg-info-works-on">
+            <div class="img-info-gray">
+                <img src="{{ 'page-compare-office-2019-editions_image-3.png' | file_url }}" alt="Laptop Image" />
+            </div>
+            <div class="text-info-gray">
+                <h3>Microsoft Excel 2019</h3>
+                <p>Microsoft Excel 2019 comes with a slew of new features, including formulas and charts. These tools are designed to make data analysis easier than ever before by making it practically effortless for anyone without experience in the field.</p>
+                <ul>
+                    <li>
+                        <p><strong>Use your data to your advantage.</strong> Thanks to its enhancements that help you analyze information quickly and easily, you can make better decisions based on your findings.</p>
+                    </li>
+                    <li>
+                        <p><strong>New functions.</strong> Use the power of many new functions to better sort and create data sets.</p>
+                    </li>
+                    <li>
+                        <p><strong>New feature: Funnel chart.</strong> Funnel charts are a new chart type that shows the progress of your data over time.</p>
+                    </li>
+                    <li>
+                        <p><strong>New Timeline view.</strong> Timelines make it easy to visualize and analyze historical events, trends, and patterns.</p>
+                    </li>
+                    <li>
+                        <p><strong>PowerBI and PowerPivot, and PowerQuery.</strong> Enjoy the improved features to take data analysis to the next level in your business.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg-info-white bg-info-works-on">
+            <div class="text-info-white">
+                <h3>Microsoft PowerPoint 2019</h3>
+                <p>PowerPoint 2019 is perfect for people who want to create engaging presentations. Morph and Zoom make it easy to turn a simple presentation into an exciting cinematic experience!</p>
+                <ul>
+                    <li>
+                        <p><strong>Zoom transition.</strong> Add cinematic impact to your presentations with the Zoom transition. It lets you create complex slide orders and dynamic presentations.</p>
+                    </li>
+                    <li>
+                        <p><strong>Morph animation.</strong> The Morph transition is an animation that changes shapes on your slides into other shapes, like turning a square into a circle or triangle. You can also morph text from one font into another.</p>
+                    </li>
+                    <li>
+                        <p><strong>Insert icons and 3D models.</strong> Work with SVG icons and 3D models to make your work look more professional and polished. Choose from thousands of professionally designed icons available in PowerPoint 2019, or upload your own.</p>
+                    </li>
+                    <li>
+                        <p><strong>Improved roaming pencil case.</strong> Take advantage of the new digital inking features to add extra visual impact to your presentation's slides.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="img-info-white">
+                <img src="{{ 'page-compare-office-2019-editions_image-4.png' | file_url }}" alt="Laptop Image" />
+            </div>
+        </div>
+        <div class="bg-info-gray bg-info-works-on">
+            <div class="img-info-gray">
+                <img src="{{ 'page-compare-office-2019-editions_image-5.png' | file_url }}" alt="Laptop Image" />
+            </div>
+            <div class="text-info-gray">
+                <h3>Microsoft Outlook 2019</h3>
+                <p>Manage your email more efficiently. Use the new Focus Mode to block out distractions, the Focused Inbox for putting forth more important emails, and many features to organize your life.</p>
+                <ul>
+                    <li>
+                        <p><strong>Manage your emails more efficiently.</strong> Stay on top of your inbox with the new Focus Mode. Quickly organize and manage emails with the Focused Inbox.</p>
+                    </li>
+                    <li>
+                        <p><strong>Use the new focus mode to block out distractions.</strong> Get more done by blocking out distractions! Focus mode will hide all social media notifications, allowing you to focus only on what's important.</p>
+                    </li>
+                    <li>
+                        <p><strong>Reworked contact cards.</strong> Create a contact card for any person or company that you communicate with frequently, including their photo, phone number, and email address.</p>
+                    </li>
+                    <li>
+                        <p><strong>@mentions.</strong> Easily get someone's attention in an email by typing "@" followed by their name or email address. They'll receive an alert so they know exactly what you're referring to.</p>
+                    </li>
+                    <li>
+                        <p><strong>Plan personal events.</strong> Set up a reminder for your next vacation with travel summary cards that show recent flight details and hotel reservations. See package delivery information right from your inbox without having to open multiple emails</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg-up-cloud">
+            <div class="content">
+                <div class="text-up-cloud">
+                    <h4>Get set up for the cloud</h4>
+                    <p>Worried about getting caught up while working remotely? No problem! Microsoft is ready to make your work easier and more accessible by bringing the power of the cloud within your reach.</p>
+                    <p>Office 2019 Professional allows you to save documents directly in the cloud on OneDrive or SharePoint, and have instant access to them when you're not at work. You can now make minor edits and additions even while overseas.</p>
+                    <p>Imagine being able to work from anywhere you choose. With Office 2019, it can be a reality! The Microsoft Web Apps (available in any browser) are online versions of the classic Microsoft Office apps that let you make edits and additions even when not seated at your desk.</p>
+                </div>
+                <div class="image-up-cloud">
+                    <img src="{{ 'page-compare-office-2019-editions_image-cloud.png' | file_url }}" alt="Cloud Image" />
+                </div>
+            </div>
+        </div>
+        <div class="box-title-comparison">
+            <div class="content content-center">
+                <h2>Choose the best Office for your business</h2>
+                <p>Microsoft Office 2019 Professional is the best way to get an edge over your competitors. You're already starting out with a leg up on everyone else — don't give that advantage away by using free, open-source software like LibreOffice or Google Docs!</p>
+                <p>With Microsoft Office 2019 Pro you can access all of the latest features and keep control of everything for as long as you need it without having to pay more than what's necessary. With access to all new features as well as getting a lifetime license, why wouldn't you invest?</p>
+            </div>
+        </div>
+        <div class="bg bg-box-info-product bg-box-info-product-bottom">
+            <div class="content">
+                <div class="actions-info-product">
+                    <div class="price-info-product">
+                        <div class="choose-os">
+                            <span>Choose your Operating System</span>
+                            <ul>
+                                <li class="current" data-target="pc">PC</li>
+                                <li data-target="mac">Mac</li>
+                            </ul>
+                        </div>
+                        <div class="pc-prices current">
+                            <span class="prices">
+                                <span class="retail-price">Retail Price:</span>
+                                <span class="old-price">{{ office2019hb.compare_at_price | money }}</span>
+                                {% assign discount = 0.0 %}
+                                {% assign discount = office2019hb.compare_at_price | minus: office2019hb.price | times: 100.0 | divided_by: office2019hb.compare_at_price | round %}
+                                <span class="tag-discount">Save {{ discount }}%</span>
+                            </span>
+                            <strong>{{ office2019hb.price | money }}</strong>
+                            <a href="/products/{{ office2019hb.handle }}">Add to Cart</a>
+                        </div>
+                        <div class="mac-prices">
+                            <span class="prices">
+                                <span class="retail-price">Retail Price:</span>
+                                <span class="old-price">{{ mac2019hb.compare_at_price | money }}</span>
+                                {% assign discount = 0.0 %}
+                                {% assign discount = mac2019hb.compare_at_price | minus: mac2019hb.price | times: 100.0 | divided_by: mac2019hb.compare_at_price | round %}
+                                <span class="tag-discount">Save {{ discount }}%</span>
+                            </span>
+                            <strong>{{ mac2019hb.price | money }}</strong>
+                            <a href="/products/{{ mac2019hb.handle }}">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-actions-products">
+                    <div class="lists">
+                        <ul>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-device.svg' | file_url }}" />For 1 Device</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Buy now use forever</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />24/7 support at no extra cost</li>
+                        </ul>
+                        <ul>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-delivery.svg' | file_url }}" />Delivery Via Email</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Digital download</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Genuine Return Policy</li>
+                        </ul>
+                    </div>
+                    <div class="seals-info-product">
+                        <img src="{{ 'page-compare-office-2019-editions_seals.png' | file_url }}" alt="Seals" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-3 tab-content" data-target="tab-3">
+        <div class="bg bg-texts-works">
+            <div class="content">
+                <p>Microsoft Office 2019 Home and Student is the newest and most powerful version of Microsoft's popular office suite. It offers a complete, premium experience that will help you create anything from presentations to home projects with ease, on any device. With this tool in your arsenal, there are no limits!</p>
+                <ul class="office-applications">
+                    <li>
+                        <div class="img-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-word.png' | file_url }}" alt="office apps icon" />
+                        </div>
+                        <span>Word</span>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-excel.png' | file_url }}" alt="office apps icon" />
+                        </div>
+                        <span>Excel</span>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-powerpoint.png' | file_url }}" alt="office apps icon" />
+                        </div>
+                        <span>Powerpoint</span>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-outlook.png' | file_url }}" alt="office apps icon" />
+                        </div>
+                        <span>Outlook</span>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-publisher.png' | file_url }}" alt="office apps icon" />
+                        </div>
+                        <span>Publisher</span>
+                    </li>
+                    <li>
+                        <div class="img-box">
+                            <img src="{{ 'page-compare-office-2019-editions_icon-access.png' | file_url }}" alt="office apps icon" />
+                        </div>
+                        <span>Access</span>
+                    </li>
+                </ul>
+                <p>Microsoft's latest iteration of their famous productivity applications bring some exciting changes including more collaboration features as well as an impressive range of new templates for every situation imaginable - both school-related or personal projects alike!</p>
+            </div>
+        </div>
+        <div class="bg bg-box-info-product">
+            <div class="content">
+                <div class="actions-info-product">
+                    <div class="price-info-product">
+                        <span class="prices">
+                            <span class="retail-price">Retail Price:</span>
+                            <span class="old-price">{{ office2019pro.compare_at_price | money }}</span>
+                            {% assign discount = 0.0 %}
+                            {% assign discount = office2019pro.compare_at_price | minus: office2019pro.price | times: 100.0 | divided_by: office2019pro.compare_at_price | round %}
+                            <span class="tag-discount">Save {{ discount }}%</span>
+                        </span>
+                        <strong>{{ office2019pro.price | money }}</strong>
+                        <a href="/products/{{ office2019pro.handle }}">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="list-actions-products">
+                    <div class="lists">
+                        <ul>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-device.svg' | file_url }}" />For 1 Device</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Buy now use forever</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />24/7 support at no extra cost</li>
+                        </ul>
+                        <ul>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-delivery.svg' | file_url }}" />Delivery Via Email</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Digital download</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Genuine Return Policy</li>
+                        </ul>
+                    </div>
+                    <div class="seals-info-product">
+                        <img src="{{ 'page-compare-office-2019-editions_seals.png' | file_url }}" alt="Seals" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-title-comparison">
+            <div class="content">
+                <div class="first-section">
+                    <div class="image-first-section">
+                        <img src="{{ 'page-compare-office-2019-editions_image-1.png' | file_url }}" alt="Woman sofa" />
+                    </div>
+                    <div class="text-first-section">
+                        <h2>The new ways to get work done</h2>
+                        <p>One of the biggest benefits of using Microsoft Office 2019 Professional in your business is the ability to work from anywhere. Take your job with you on the go and stay on top of the flow even while out of the office.</p>
+                        <p>The Office 2019 Professional suite is a productivity powerhouse, with features designed to be touch-enabled for easy editing on any device. You don't need an expensive new Apple product or high-end Android - the latest version of this software will make your apps run as smoothly and efficiently as you would want it to!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg bg-second-content">
+            <div class="content">
+                <h2>Meet the ultimate productivity suite</h2>
+                <p>Office 2019 Professional is packed with powerful apps that help you to increase productivity. From Microsoft Word and Excel, through PowerPoint and Outlook right up until Access and Publisher — the perfect bundle for any business looking for an edge in today's competitive marketplace!</p>
+            </div>
+        </div>
+        <div class="bg-info-white bg-info-works-on">
+            <div class="text-info-white">
+                <h3>Microsoft Word 2019</h3>
+                <p>With Word, it's easy to create and share professional documents with state-of-the art editing, reviewing, and sharing tools. Get quick access to a variety of features for any document types such as business proposals, letters, content, and more.</p>
+                <p>Features like the Smart Lookup lets you find relevant contextual information from the web directly inside word without having to leave your work space.</p>
+            </div>
+            <div class="img-info-white">
+                <img src="{{ 'page-compare-office-2019-editions_image-2.png' | file_url }}" alt="Laptop" />
+            </div>
+        </div>
+        <div class="bg-info-gray bg-info-works-on">
+            <div class="img-info-gray">
+                <img src="{{ 'page-compare-office-2019-editions_image-3.png' | file_url }}" alt="Laptop" />
+            </div>
+            <div class="text-info-gray">
+                <h3>Microsoft Excel 2019</h3>
+                <p>Analyze and visualize your data in new ways with a new, modern user interface. Take advantage of keyboard shortcuts to save time and focus on insights while Excel handles the math. New features like Analysis Toolpak, Slicers, and Formula Builder will give you the analytical advantage over every other marketer out there.</p>
+            </div>
+        </div>
+        <div class="bg-info-white bg-info-works-on">
+            <div class="text-info-white">
+                <h3>Microsoft PowerPoint 2019</h3>
+                <p>With the new PowerPoint, you can create polished presentations that will engage your audience. Keep audiences engaged with interactive slides and a wide range of animations to maintain attention.</p>
+                <p>Working in a team? Threaded comments allow users to receive feedback on any slide in real-time from other collaborators.</p>
+                <p>When you're done, PowerPoint gives you the option to maximize your presentation's accessibility by exporting in a number of different formats, including video and image.</p>
+            </div>
+            <div class="img-info-white">
+                <img src="{{ 'page-compare-office-2019-editions_image-4.png' | file_url }}" alt="Laptop" />
+            </div>
+        </div>
+        <div class="bg-info-gray bg-info-works-on">
+            <div class="img-info-gray">
+                <img src="{{ 'page-compare-office-2019-editions_image-5.png' | file_url }}" alt="Laptop" />
+            </div>
+            <div class="text-info-gray">
+                <h3>Microsoft Outlook 2019</h3>
+                <p>Communication is the heart of your business, and it should be a seamless process. Outlook 2019 will make sure that you never miss an important email again! You can stay connected with coworkers and clients easily by staying on top of all communication through one app.</p>
+                <p>Outlook's simplified interface makes staying in touch possible for any size team with unlimited possibilities. Send messages, plan meetings, fill important events into your calendar, and much more, all in one app.</p>
+            </div>
+        </div>
+        <div class="bg-info-white bg-info-works-on">
+            <div class="text-info-white">
+                <h3>Microsoft Access 2019</h3>
+                <p>Microsoft Access is the perfect PC tool for analyzing your data store, querying and visualizing it as part of Office 2019 Professional. With Access' advanced features you can connect to multiple databases, customize templates, and work in an all-encompassing environment where anyone can thrive.</p>
+            </div>
+            <div class="img-info-white">
+                <img src="{{ 'page-compare-office-2019-editions_image-6.png' | file_url }}" alt="Laptop" />
+            </div>
+        </div>
+        <div class="bg-info-gray bg-info-works-on">
+            <div class="img-info-gray">
+                <img src="{{ 'page-compare-office-2019-editions_image-7.png' | file_url }}" alt="Laptop" />
+            </div>
+            <div class="text-info-gray">
+                <h3>Microsoft Publisher 2019</h3>
+                <p>Microsoft Publisher 2019 is a great and beneficial tool to express your creativity. With the latest design and editing tools from Microsoft, you can make professional graphics with ease. With access to over 100 templates, your business will always have creative freedom.</p>
+                <p>Alongside content swapping capabilities, you also get powerful features like adding effects or sharing projects easily all in one complete application! Publisher 2019 makes it easy to create posters, invitations, business cards, and much more on your PC.</p>
+            </div>
+        </div>
+        <div class="bg-up-cloud">
+            <div class="content">
+                <div class="text-up-cloud">
+                    <h4>Get set up for the cloud</h4>
+                    <p>Worried about getting caught up while working remotely? No problem! Microsoft is ready to make your work easier and more accessible by bringing the power of the cloud within your reach.</p>
+                    <p>Office 2019 Professional allows you to save documents directly in the cloud on OneDrive or SharePoint, and have instant access to them when you're not at work. You can now make minor edits and additions even while overseas.</p>
+                    <p>Imagine being able to work from anywhere you choose. With Office 2019, it can be a reality! The Microsoft Web Apps (available in any browser) are online versions of the classic Microsoft Office apps that let you make edits and additions even when not seated at your desk.</p>
+                </div>
+                <div class="image-up-cloud">
+                    <img src="{{ 'page-compare-office-2019-editions_image-cloud.png' | file_url }}" alt="Cloud Image" />
+                </div>
+            </div>
+        </div>
+        <div class="box-title-comparison">
+            <div class="content content-center">
+                <h2>Choose the best Office for your business</h2>
+                <p>Microsoft Office 2019 Professional is the best way to get an edge over your competitors. You're already starting out with a leg up on everyone else — don't give that advantage away by using free, open-source software like LibreOffice or Google Docs!</p>
+                <p>With Microsoft Office 2019 Pro you can access all of the latest features and keep control of everything for as long as you need it without having to pay more than what's necessary. With access to all new features as well as getting a lifetime license, why wouldn't you invest?</p>
+            </div>
+        </div>
+        <div class="bg bg-box-info-product bg-box-info-product-bottom">
+            <div class="content">
+                <div class="actions-info-product">
+                    <div class="price-info-product">
+                        <span class="prices">
+                            <span class="retail-price">Retail Price:</span>
+                            <span class="old-price">{{ office2019pro.compare_at_price | money }}</span>
+                            {% assign discount = 0.0 %}
+                            {% assign discount = office2019pro.compare_at_price | minus: office2019pro.price | times: 100.0 | divided_by: office2019pro.compare_at_price | round %}
+                            <span class="tag-discount">Save {{ discount }}%</span>
+                        </span>
+                        <strong>{{ office2019pro.price | money }}</strong>
+                        <a href="/products/{{ office2019pro.handle }}">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="list-actions-products">
+                    <div class="lists">
+                        <ul>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-device.svg' | file_url }}" />For 1 Device</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Buy now use forever</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />24/7 support at no extra cost</li>
+                        </ul>
+                        <ul>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-delivery.svg' | file_url }}" />Delivery Via Email</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Digital download</li>
+                            <li><img src="{{ 'page-compare-office-2019-editions_icon-check.svg' | file_url }}" />Genuine Return Policy</li>
+                        </ul>
+                    </div>
+                    <div class="seals-info-product">
+                        <img src="{{ 'page-compare-office-2019-editions_seals.png' | file_url }}" alt="Seals" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    let waitJQueryInit = setInterval(function() {
+        if (typeof $ === "function") {
+            clearInterval(waitJQueryInit);
+
+            $('.tabs .tab-link').on('click', function(e) {
+                $('.tabs .tab-link').removeClass('current');
+                $(e.currentTarget).addClass('current');
+                let target = $(e.currentTarget).attr('data-target');
+                $('.tab-content').removeClass('current');
+                $(`.tab-content[data-target="${target}"]`).addClass('current');
+            });
+
+            $('.choose-os ul li').unbind('click').on('click', function(e) {
+                $('.choose-os ul li').removeClass('current');
+                let target = $(e.currentTarget).attr('data-target');
+                $('.pc-prices').removeClass('current');
+                $('.mac-prices').removeClass('current');
+                if (target == 'pc') {
+                    $('.pc-prices').addClass('current');
+                    $(`.choose-os ul li[data-target="${target}"]`).addClass('current');
+                }
+                if (target == 'mac') {
+                    $('.mac-prices').addClass('current');
+                    $(`.choose-os ul li[data-target="${target}"]`).addClass('current');
+                }
+            });
+        }
+    }, 300);
+</script>

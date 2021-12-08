@@ -1,0 +1,65 @@
+<section class="trusted-seller">
+  <div class="container">
+    <h4>{{ section.settings.section-title }}</h4>
+
+    <div class="d-flex trusted-banner">
+      <div class="trusted-bg-image"
+           style="background-image: url('{{ section.settings.banner-image | img_url: "master" }}')"></div>
+
+      <div class="trusted-content">
+        <h3>{{ section.settings.heading }}</h3>
+        <p>{{ section.settings.content }}</p>
+        <div class="d-flex space-between align-center">
+          <a href="{{ section.settings.badge-link }}">
+            <img id="icon-mcp" src="{{ 'mcp.png' | asset_img_url: "master" }}">
+          </a>
+          <a href="{{ section.settings.badge-link }}">
+            <img id="icon-msp" src="{{ 'msp.png' | asset_img_url: "master" }}">
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trusted Seller",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section-title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner-image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "badge-link",
+      "label": "Link",
+      "info": "Microsoft Certified / Solution Partner"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trusted seller",
+      "category": "Others"
+    }
+  ]
+}
+{% endschema %}

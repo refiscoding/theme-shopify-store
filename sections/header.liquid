@@ -1,0 +1,250 @@
+<!-- Mobile topbanner 
+<a href="{{ section.settings.link }}">
+  <img src="{{ section.settings.mobile_topbanner | img_url: "master" }}" class="mobile-only" style="width: 100%;">
+</a>-->
+
+<!-- Desktop topbanner
+<a href="{{ section.settings.link }}">
+  <img class="desktop-only" src="{{ section.settings.topbanner | img_url: "master" }}">
+</a>-->
+
+<div class="container">
+ <div class=="phone-header" style="padding-top:20px;text-align:right;">
+   <a href="tel:+17788039975">Call +1 778-803-9975</a>
+  </div>
+<div class="site-header" data-section-id="{{ section.id }}" data-section-type="header-section">
+
+  <a href="/" itemprop="url">
+    <img class="mobile-only"  style="display: block; margin: 0 auto 15px;" src="{{ section.settings.logo | img_url: "x26" }}"
+      srcset="{{ section.settings.logo | img_url: "x26" }} 1x, {{ section.settings.logo | img_url: "x26", scale: 2 }} 2x"
+      alt="{{ section.settings.logo.alt | default: shop.name }}"
+      itemprop="logo">
+    </a>
+
+  <header role="banner">
+    <div class="header__main desktop-only">
+      <a class="header__hamburger" data-menu-open href="#">
+        {% include 'icon-menu' %}
+      </a>
+      {% if template.name == 'index' %}
+        <h1 itemscope itemtype="http://schema.org/Organization">
+      {% else %}
+        <div class="h1" itemscope itemtype="http://schema.org/Organization">
+      {% endif %}
+          <a href="/" itemprop="url" class="site-logo{% if section.settings.logo != blank %} site-header__logo-image{% endif %}">
+            {% if section.settings.logo != blank %}
+              {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
+              <img src="{{ section.settings.logo | img_url: "150x" }}"
+                  srcset="{{ section.settings.logo | img_url: "150x" }} 1x, {{ section.settings.logo | img_url: "150x", scale: 2 }} 2x"
+                  alt="{{ section.settings.logo.alt | default: shop.name }}"
+                  itemprop="logo">
+            {% else %}
+              {{ shop.name }}
+            {% endif %}
+          </a>
+      {% if template.name == 'index' %}
+        </h1>
+      {% else %}
+        </div>
+      {% endif %}
+
+      <form action="/search" class="header__search small--hide" method="get" role="search">
+        <label for="Search" class="label-hidden">
+          {{ 'general.search.placeholder' | t }}
+        </label>
+        <input type="search"
+              name="q"
+              id="Search"
+              value="{{ search.terms | escape }}"
+              placeholder="{{ 'general.search.placeholder' | t }}">
+        <button type="submit" class="btn">
+          {% include 'icon-search' %}
+          <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
+        </button>
+      </form>
+
+      <div class="header__nav">
+
+        {% comment %}
+        {% if shop.customer_accounts_enabled %}
+          {% if customer  %}
+            <ul class="header__session-links">
+                <li>
+                  <a href="/account">{% include 'icon-user' %}{{ 'layout.customer.my_account' | t }}{{ customer.first_name }}</a>
+                </li>
+                <li>
+                  <a href="/account/logout">{{ 'layout.customer.log_out' | t }}</a>
+                </li>
+            </ul>
+          {% else %}
+            <ul class="header__session-links">
+                <li>
+                  <a href="/account/login">{% include 'icon-login' %}{{ 'layout.customer.log_in' | t }}</a>
+                </li>
+                <li>
+                  <a href="/account/register">{% include 'icon-user' %}{{ 'layout.customer.create_account' | t }}</a>
+                </li>
+            </ul>
+          {% endif %}
+        {% endif %}
+        {% endcomment %}
+
+        <div class="d-flex space-between selector">
+        {%- include 'bold-currency-picker-mount', openDirection: 'up' -%}
+
+        <div>{%- include 'gtranslate' %}</div>
+        </div>
+
+        <a class="header__cart" href="/cart">
+          {% include 'icon-cart' %}
+          <span class="counter" data-cart-render="item_count"></span>
+        </a>
+
+
+      </div>
+    </div>
+
+    <div class="d-flex space-between selector mobile-only">
+          <div>{%- include 'gtranslate' %}</div>
+    {%- include 'bold-currency-picker-mount', openDirection: 'up' -%}
+    </div>
+
+    <form action="/search" class="header__search medium-up--hide" method="get" role="search">
+      <label for="Search" class="label-hidden">
+        {{ 'general.search.placeholder' | t }}
+      </label>
+      <input type="search"
+             name="q"
+             id="Search"
+             value="{{ search.terms | escape }}"
+             placeholder="{{ 'general.search.placeholder' | t }}">
+      <button type="submit" class="btn">
+        {% include 'icon-search' %}
+        <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
+      </button>
+    </form>
+
+  </header>
+
+</div>
+
+</div>
+
+{% if template != 'cart' %}
+
+<nav class="header__main-menu" role="navigation">
+  <ul>
+    <li class="header__main-menu-head medium-up--hide">
+        <a href="/" itemprop="url" class="site-logo{% if section.settings.logo != blank %} site-header__logo-image{% endif %}">
+          {% if section.settings.logo != blank %}
+            {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
+            <img src="{{ section.settings.logo | img_url: image_size }}"
+                srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                alt="{{ section.settings.logo.alt | default: shop.name }}"
+                itemprop="logo">
+          {% else %}
+            {{ shop.name }}
+          {% endif %}
+        </a>
+    </li>
+
+    {% for link in linklists[section.settings.main_linklist].links %}
+      {% if link.links != blank %}
+        <li class="header__main-menu-links">
+          <a href="{{ link.url }}">{{ link.title | escape }}</a>
+
+          <ul>
+            {% for childlink in link.links %}
+              {% if childlink.links != blank %}
+                <li>
+                  <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                  <ul>
+                    {% for grandchildlink in childlink.links %}
+                      <li>
+                        <a href="{{ grandchildlink.url }}">{{ grandchildlink.title | escape }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </li>
+              {% else %}
+                <li>
+                  <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+
+        </li>
+      {% else %}
+        <li class="header__main-menu-links">
+          <a href="{{ link.url }}">{{ link.title | escape }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+
+
+    {% comment %}
+    {% if shop.customer_accounts_enabled %}
+      {% if customer  %}
+        <li class="header__session-links2 medium-up--hide">
+          <a href="/account" class="header__session-account">{% include 'icon-user' %}{{ 'layout.customer.my_account' | t }}{{ customer.first_name }}!</a>
+          <a href="/account/logout" class="header__session-logout">{{ 'layout.customer.log_out' | t }}</a>
+        </li>
+      {% else %}
+        <li class="header__session-links2 medium-up--hide">
+          <a href="/account/login" class="btn btn-primary">{{ 'layout.customer.log_in' | t }}</a>
+          <a href="/account/register" class="btn btn-black">{{ 'layout.customer.create_account' | t }}</a>
+        </li>
+      {% endif %}
+    {% endif %}
+{% endcomment %}
+
+  </ul>
+
+  {% comment %}
+  <a class="header__menu-close medium-up--hide" href="#">
+    {% include 'icon-close' %}
+  </a>
+  {% endcomment %}
+
+</nav>
+
+{% else %}
+
+<div class="cart-border"></div>
+
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "topbanner",
+        "label": "Desktop topbanner"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_topbanner",
+        "label": "Mobile topbanner"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image"
+      },
+      {
+        "type": "link_list",
+        "id": "main_linklist",
+        "label": "Menu",
+        "default": "main-menu"
+      }
+    ]
+  }
+{% endschema %}

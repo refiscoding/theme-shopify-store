@@ -1,0 +1,58 @@
+<div class="banner">
+  {% if section.settings.banner-link != blank %}
+  <a class="banner-container" href="{{ section.settings.banner-link }}">
+  {% else %}
+  <div class="banner-container">
+  {% endif %}
+    <picture>
+      <source media="(min-width: 750px)"
+        srcset="
+        {{ section.settings.banner-image-desktop | img_url: '1260x' }} 1x,
+        {{ section.settings.banner-image-desktop | img_url: '1260x', scale: '2' }}g 2x,
+        {{ section.settings.banner-image-desktop | img_url: '1260x', scale: '3' }} 3x
+        ">
+      <source
+        srcset="
+        {{ section.settings.banner-image-mobile | img_url: '600x' }} 1x,
+        {{ section.settings.banner-image-mobile | img_url: '600x', scale: '2' }} 2x,
+        {{ section.settings.banner-image-mobile | img_url: '600x', scale:'3' }} 3x
+        ">
+      <img src="{{ section.settings.banner-image-desktop | img_url: '1260x' }}" class="small--hide">
+      <img src="{{ section.settings.banner-image-mobile | img_url: '600x' }}" class="medium-up--hide">
+    </picture>
+  {% if section.settings.banner-link != blank %}
+  </a>
+  {% else %}
+  </div>
+  {% endif %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner-image-mobile",
+        "label": "Image for mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner-image-desktop",
+        "label": "Image for desktop"
+      },
+      {
+        "type": "url",
+        "id": "banner-link",
+        "label": "Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner",
+        "category": "Others"
+      }
+    ]
+  }
+{% endschema %}

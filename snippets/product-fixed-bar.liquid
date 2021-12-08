@@ -1,0 +1,45 @@
+<section class="product-fixed-bar">
+  <div class="container" style="padding: 0 14px;">
+    <div class="d-flex space-between align-center">
+
+        <div class="relative">
+          {% if product.compare_at_price != blank %}
+          <div class="sale-tag absolute desktop-only" style="top: 10px; right: -20px;">
+            <p><b>SALE</b></p>
+          </div>
+          {% endif %}
+          <img src="{{ featured_image | img_url: "x115" }}" loading="lazy">
+        </div>
+
+        <div>
+          <h6>{{ product.title }}</h6>
+          <div class="d-flex space-between align-center" style="margin-top: 18px;">
+            <h6>{{ product.price | money_with_currency }}</h6>
+            <img src="{{ 'icon-4_5_stars.png' | asset_img_url: 'master' }}">
+          </div>
+        </div>
+
+        <div class="desktop-only">
+          {% form "product", product %}
+            <select name="id" style="display: none;">
+            {% for variant in product.variants %}
+              <option {% if variant == product.selected_or_first_available_variant %}
+              selected="selected"
+              {% endif %}
+              value="{{ variant.id }}">
+              {{ variant.title }} - {{ variant.price | money }}
+            </option>
+            {% endfor %}
+            </select>
+            <input type="text" value="1" name="quantity" style="display: none;">
+            <button class="d-flex space-around align-center btn-primary btn-glare"
+            type="submit"
+            style="width: 320px; padding: 7px 20px;">
+              {% include 'icon-download' %} Buy and Download Now
+            </button>
+          {% endform %}
+        </div>
+
+    </div>
+  </div>
+</section>

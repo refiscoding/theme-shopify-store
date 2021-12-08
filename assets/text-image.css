@@ -1,0 +1,89 @@
+.ui-text-image-v2-wrap {
+  display: block;
+  width: 100%;
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+.ui-text-image-v2-wrap .ui-text-image-v2 {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: 0 0;
+}
+@media screen and (min-width: 1200px) {
+  .ui-text-image-v2-wrap .ui-text-image-v2 {
+    background-size: auto;
+  }
+}
+.ui-text-image-v2-wrap .ui-text-image-v2.right {
+  background-position: center left;
+}
+.ui-text-image-v2-wrap .ui-text-image-v2 .ui-text-content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 1200px) {
+  .ui-text-image-v2-wrap .ui-text-image-v2 .ui-text-content {
+    width: 1200px;
+  }
+}
+.ui-text-image-v2-wrap .ui-text-image-v2 .ui-text-content .ui-text-inner {
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 1200px) {
+  .ui-text-image-v2-wrap .ui-text-image-v2 .ui-text-content .ui-text-inner {
+    width: 50%;
+    padding: 0;
+  }
+}
+.ui-text-image-v2-wrap .ui-text-image-v2 .ui-text-content .ui-text-inner h3 {
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: #202020;
+  font-size: 45px;
+  font-weight: 700;
+}
+.ui-text-image-v2-wrap .ui-text-image-v2 .ui-text-content .ui-text-inner p {
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: #202020;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 15px;
+  padding: 0;
+}
+.ui-text-image-v2-wrap .ui-text-image-v2 .ui-text-content .ui-text-inner p strong {
+  font-weight: 700;
+}
+.ui-text-image-v2-wrap .ui-text-image-v2.right .ui-text-content {
+  justify-content: flex-end;
+}
+.ui-text-image-v2-wrap .background-placeholder {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+.ui-text-image-v2-wrap .background-placeholder.right {
+  background-position: center left;
+}
+@media screen and (min-width: 1200px) {
+  .ui-text-image-v2-wrap .background-placeholder {
+    display: none;
+  }
+}
