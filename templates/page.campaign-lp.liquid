@@ -115,8 +115,9 @@
 <div class="list-products-bf">
   <div class="content-bf">
     <h4>Top Products</h4>
+
       <h4>MS Office</h4>
-      {%- assign collection = collections[section.settings.collection-2] -%}
+      {%- assign collection = collections[section.settings.collection-1] -%}
     <section class="deals-of-the-week">
 <div class="container">
         <div class="d-flex space-between deals-collection">
@@ -140,7 +141,7 @@
 <div class="list-products-bf">
   <div class="content-bf">
       <h4>Windows</h4>
-      {%- assign collection = collections[section.settings.collection-3] -%}
+      {%- assign collection = collections[section.settings.collection-2] -%}
     <section class="deals-of-the-week">
 <div class="container">
         <div class="d-flex space-between deals-collection">
@@ -164,7 +165,7 @@
 <div class="list-products-bf">
   <div class="content-bf">
       <h4>Windows Server</h4>
-      {%- assign collection = collections[section.settings.collection-4] -%}
+      {%- assign collection = collections[section.settings.collection-3] -%}
     <section class="deals-of-the-week">
 <div class="container">
         <div class="d-flex space-between deals-collection">
@@ -188,7 +189,7 @@
 <div class="list-products-bf">
   <div class="content-bf">
       <h4>Office Apps</h4>
-      {%- assign collection = collections[section.settings.collection-5] -%}
+      {%- assign collection = collections[section.settings.collection-4] -%}
     <section class="deals-of-the-week">
 <div class="container">
         <div class="d-flex space-between deals-collection">
@@ -209,3 +210,36 @@
       <a href="/collections/office-apps">View All</a>
   </div>
 </div>
+
+{% schema %}
+{
+  "name": "BF content",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Promo title"
+    },
+    {
+      "type": "collection",
+      "id": "collection-1",
+      "label": "Collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection-2",
+      "label": "Collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection-3",
+      "label": "Collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection-4",
+      "label": "Collection"
+    }
+  ]
+}
+{% endschema %}
